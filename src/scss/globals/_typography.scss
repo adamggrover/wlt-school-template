@@ -1,0 +1,92 @@
+@use 'colors' as c;
+
+$font-family-base: 'Open Sans', sans-serif;
+
+p{
+    font-family: 'Open Sans', sans-serif; 
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6{
+    font-family: 'Open Sans', sans-serif; 
+    color: c.$primary;
+    
+}
+
+#logo1-text #logo-heading{
+    color: white!important;
+}
+
+#logo1-text #logo-heading{
+    color: white!important;
+}
+
+[class^='Display']{
+    font-family: 'Open Sans', sans-serif; 
+}
+
+#welcome #welcome-display-text{
+    color: white!important;
+}
+
+
+
+
+.section-title{
+    color: c.$primary;
+    font-weight: 400;
+}
+
+.section-link{
+    font-size: 0.8rem;
+    color: c.$dark;
+    &:hover{
+        color: c.$weare-blue-sky;
+    }
+}
+
+//News Section
+
+.news-tags{
+    color: c.$secondary;
+}
+
+.news-title{
+    color: c.$dark;
+}
+
+.news-date{
+    color: c.$muted;
+}
+
+//Calendar Section
+
+.calendar-date{
+    color: c.$secondary;
+}
+
+.calendar-month{
+    color: c.$dark;
+
+}
+
+.calendar-event{
+    color: c.$primary;
+}
+
+.calendar-time{
+    color: c.$muted;
+}
+
+//Content page
+.content-column{
+
+
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6{
+        color: c.$primary;
+
+        
+    }
+
+}

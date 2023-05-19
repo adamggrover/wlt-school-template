@@ -1,0 +1,7 @@
+@use 'globals' as g;
+
+.search-heading{
+    color: g.$primary;
+    font-weight: bold;
+    padding-top: 1rem;
+}

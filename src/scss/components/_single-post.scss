@@ -1,0 +1,85 @@
+@use 'globals' as g;
+
+#post-content-column{
+
+    margin-bottom: 10rem;
+    width: 100%;
+    
+}
+
+#single-post-main-page-area{
+    
+    
+    margin-top: 1rem;
+    padding: 0 1.5rem 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    max-width: 55rem;
+    
+}
+
+#content-subheading{
+    color: g.$primary;  
+    font-weight: 700;  
+
+}
+
+#post-content p:first-child, #post-content p:nth-child(2){
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    
+    
+
+}
+
+
+
+.wp-post-image{
+    width: 100%;
+    height: auto;
+  
+    margin-bottom: 1.5rem;
+}
+
+.content-footer{
+    margin-top: 5rem;
+}
+
+.nav-links,
+.posts-navigation .nav-links,
+.post-navigation .nav-links {
+    display: flex;
+}
+ 
+.nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+    flex: 1 0 50%;
+}
+ 
+.nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+    text-align: end;
+    flex: 1 0 50%;
+}
+
+.post-navigation {
+
+    a{
+        text-decoration: none;
+    }
+
+    padding:0px;
+    }
+    .nav-previous, .nav-next{
+    padding:10px;
+    font-weight: bold;
+    
+    color: g.$muted-light;
+}
+
+
+

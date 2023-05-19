@@ -1,0 +1,43 @@
+@use 'globals' as g;
+
+div.cky-btn-revisit-wrapper.cky-revisit-bottom-left{
+    backdrop-filter: blur(14px)!important;
+    background-color: g.$weare-blue-sky!important;
+    opacity: 0.8;
+    width: 30px;
+    height: 30px;
+
+
+    button:before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f564";
+        color: white;
+        display: inline-block;
+        font-size: 1.2rem;
+        
+        
+        font-weight: 900;
+     }
+
+
+    img{
+        
+        display: none;
+    }
+    
+}
+
+.cky-footer-wrapper div:not(.cky-prefrence-btn-wrapper){
+    display: none!important;
+    
+}
+
+.cky-btn-close{
+    display: none;
+}
+
+
+.cky-btn-reject{
+    display: none;
+}
+

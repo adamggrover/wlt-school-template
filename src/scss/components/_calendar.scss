@@ -1,0 +1,34 @@
+/* CALENDAR SECTION */
+
+@use 'globals' as g;
+
+#calendar-section{
+    
+    padding-bottom: 7rem;
+    
+    background-color: g.$light;
+    
+}
+
+.calendar-card{
+    background-color: white;
+    padding: 0 2rem;
+    max-width: 17rem;
+    min-height: 20rem;    
+    color: white;    
+    border-radius: 0;
+    border: none;
+    
+}
+
+.calendar-card:hover{
+    background-color: g.$green;
+    border-color: rgba((g.$green), 0.9);
+}
+
+.calendar-card-group{
+    gap: 2rem;
+    margin-top: 2rem;
+    
+    
+}

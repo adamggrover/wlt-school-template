@@ -1,0 +1,41 @@
+@use 'globals' as g;
+
+
+
+table{
+    border: none;
+    width: 100%;
+}
+
+.wp-block-table td{
+    border: none;
+}
+  
+td {
+   
+    padding: 0.7rem;
+    &:not(:first-child){
+        border-left: g.$light 2px solid;
+
+    }
+  }
+  
+ tr:nth-child(odd){background-color: g.$primary-light;}
+ tr:nth-child(even){background-color: g.$light-light;}
+  
+
+
+th {
+    
+    text-align: left;
+    background-color: g.$primary;
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    border-top: 0!important;
+    border-right: 0!important;
+    border-left: 0!important;
+    border-bottom: g.$light 2px solid;
+    font-weight: 500;
+  }
+

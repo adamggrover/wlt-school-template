@@ -1,0 +1,113 @@
+/* FOOTER SECTION */
+
+@use 'globals' as g;
+
+footer{
+    background-color: g.$primary;
+    padding-top: 1.3rem;
+    margin-top: 2rem;
+    color: white;
+
+    p{
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .heading{
+        color: white;
+    }
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+footer a:hover{
+    color: g.$secondary;
+}
+
+.footer-column{
+    margin-top: 1rem;
+}
+
+.footer-text{
+    color: white;
+}
+
+.footer-text ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-text li{
+    //margin-bottom: 0.3rem;
+}
+
+
+.footer-spacer{
+    display: inline-block;
+    width: 0.7rem;
+}
+.footer-link{
+    display: block;
+    margin-bottom: 0.8rem;
+    
+}
+
+.wlt-logo{
+
+    width: 100%;
+    max-width: 12rem;
+    height: auto;
+    
+    
+    content: url(Assets/logos/logo-bold-no-background.svg);
+
+    
+}
+
+.footer-icon{
+    
+    max-width: 10rem;
+    padding-top: 1rem;
+    margin-left: -0.5rem;
+    content: url(Assets/logos/weare-logo-no-background.png);
+    
+    
+}
+
+
+.footer-accessability{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer .footer-bottom{
+    background-color: g.$wlt-purple;
+    width: 100%;
+
+
+
+        a:hover{
+            #sub-footer-row{
+            
+                color: white;
+            
+        }
+        }
+
+    
+    
+
+    
+    
+    p{
+        font-size: 12px;
+        margin: 0;
+    }
+
+    
+}

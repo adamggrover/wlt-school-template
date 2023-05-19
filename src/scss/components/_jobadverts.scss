@@ -1,0 +1,25 @@
+@use 'globals' as g;
+
+div.job-advert-post{
+    
+    background-color: white;
+    border: g.$light 1rem solid;
+    display: flex;
+    
+    box-shadow: 5px 5px 5px #888888;
+    
+    margin-bottom: 3rem;
+    
+    height: fit-content;  
+
+}
+
+.job-adverts-logo{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+

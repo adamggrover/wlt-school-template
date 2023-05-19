@@ -1,0 +1,100 @@
+/* WELCOME SECTION */
+
+
+@use 'globals' as g;
+
+#welcome{
+    background-color: g.$primary;
+    color: white;
+    padding-top: 2rem;
+
+    a{
+        color: g.$weare-blue-sky;
+        &:hover{
+            //color: g.$purple;
+        }
+    }
+
+    .welcome-background{
+        
+        h1, h2, h3 ,h4 ,h5, h6, p{
+            color: white;
+          }
+    }
+    
+}
+
+#mask{
+    position: absolute;
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(20, 20, 20, 0.3));
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#img-link-img{
+
+    width: 100%;
+    max-height: 200px;
+    object-fit:cover;
+}
+
+.welcome-img-link1{
+    content: url(Assets/images/600px/may-pole.jpg);
+}
+
+.welcome-img-link2{
+    content: url(Assets/images/600px/birdhouse.jpg);
+}
+
+.welcome-img-link3{
+    content: url(Assets/images/600px/magnifying-glass.jpg);
+}
+
+.welcome-img-link4{
+    content: url(Assets/images/600px/net.jpg);
+}
+
+#img-link-text{
+    color: white;       
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#img-link-overlay{
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    
+    transition: .5s ease;
+    background-color: rgba(144, 204, 238, 0.85);
+}
+
+#img-link-text-top{
+    color: white;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#img-container{
+    position: relative;
+    width: 100%;
+}

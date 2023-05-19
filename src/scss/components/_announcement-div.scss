@@ -1,0 +1,68 @@
+@use 'globals' as g;
+
+#announcement-area{
+    
+    color: white;
+    position: relative;
+    padding-bottom: 2rem;
+    background-color: g.$weare-blue-sky;
+
+    a{
+        color: g.$primary;
+        &:hover{
+            color: white;
+        }
+    }
+    
+}
+
+.announcement-post-title{
+    color: g.$primary;
+    
+
+}
+
+.announcement-post-title-link{
+    text-decoration: none;
+}
+
+
+
+.announcement-div-container-box{
+    padding-top: 4rem;
+}
+
+
+
+
+.announcement-div-content{
+    padding-top: 1rem;
+   
+}
+
+//announcement archive
+
+div.announcement-post{
+    
+    background-color: white;
+    //border: g.$light 1rem solid;
+    
+    //box-shadow: 5px 5px 5px #888888;
+    //padding: 2rem 2rem 3rem 2rem;
+    margin-bottom: 3rem;
+    
+    height: fit-content;
+
+   
+
+}
+
+.slick-arrow{
+    display: none!important;
+}
+
+#announcement-divider{
+    height: 0.6rem;
+    color: g.$muted-light-light;
+    margin-top: 2rem;
+}

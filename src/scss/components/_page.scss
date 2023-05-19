@@ -1,0 +1,168 @@
+@use 'globals' as g;
+
+#main-page-area{
+    min-height: 15rem;
+    background-color: white;
+    padding-bottom: 1.5rem;
+    padding-top: 0.5rem;
+    
+    
+    margin-bottom: 4rem;
+    max-width: 70rem;
+
+}
+
+
+
+
+.content-header-breadcrumb-wrapper{
+    display: flex;
+    align-items: baseline;
+    align-content: baseline;
+    
+    padding-top: 1rem;
+
+    a{
+        text-decoration: none;
+    }
+    
+}
+
+.content-header-breadcrumb-links{
+
+    display: flex;
+    align-content: flex-start;
+   
+}
+
+
+
+.content-header{
+    margin-bottom: 4rem;
+    color: g.$muted;
+    font-size: 0.5rem;
+    color: g.$muted-light;
+    font-weight: bold;
+    
+    
+
+    a{
+        color: g.$muted-light;
+        
+    }
+
+    a:hover{
+        color: g.$primary;
+
+    }
+}
+
+
+.breadcrumb-spacer{
+    width: 0.7rem;
+}
+
+.content-header-social{
+    display: flex;
+    justify-content: end;
+    align-items: baseline;
+    padding-top: 1rem;
+
+}
+
+.content-area-social-links{
+    display: flex;
+    gap: 0.6rem;
+}
+
+@media screen and (max-width: 992px){
+    .content-header-social{
+        display: flex;
+        justify-content: start;
+        
+  }
+}
+
+#content-h1{
+    color: g.$primary;
+    margin-bottom: 4rem;
+    
+    font-weight: light;
+    
+}
+
+.content-column{
+    margin-bottom: 9rem;
+}
+
+.content-column p:first-child, #content-body p:nth-child(2){
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    
+    
+
+}
+
+div.content-header-social{
+    align-items: center;
+}
+
+
+
+.content-body{
+    margin-top: 2rem;
+    
+
+
+    
+
+}
+
+#sidebar-container-nav{
+    margin-top: -3rem;
+    background-color: g.$primary;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    
+    
+    width: 100%;
+    height: fit-content;
+    //font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    
+    
+    
+    
+
+    & .sidenav-heading{
+        //font-family: 'Ubuntu', sans-serif;
+        font-weight: light;
+        padding: 1rem 0 0 1rem;
+        margin-bottom: .3rem;
+        color: white;
+    }
+
+    a{
+        padding-right: 2rem;
+        
+        
+        
+        
+    }
+
+
+    a:hover{
+        background-color: g.$primary-dark;
+        color: white!important;
+    }
+    
+}
+
+
+
+div#site-header img{
+    width: 100%;
+    max-height: 800px;
+    object-fit: cover;
+}

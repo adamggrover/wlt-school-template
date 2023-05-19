@@ -1,0 +1,47 @@
+@use 'globals' as g;
+
+.form-container{
+    border: 1px g.$muted-light solid;
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+.form-contents{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem
+}
+
+.epq-yes, .epq-no, .core-maths-yes, .core-maths-no{
+
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+}
+
+#external-applicants{
+    display: none;
+    flex-direction: column;
+}
+
+#internal-applicants{
+    display: none;
+    flex-direction: column;
+}
+
+.form-question{
+    font-weight: 500;
+    padding-top: 0.5rem;
+    
+}
+
+#form-submit{
+    margin-top: 2rem;
+    background-color: g.$purple;
+    color: white;
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.4rem
+}

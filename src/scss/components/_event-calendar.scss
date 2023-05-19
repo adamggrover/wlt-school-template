@@ -1,0 +1,53 @@
+@use 'globals' as g;
+
+.em-list{
+
+    #month-title{
+
+        color: white;
+        background: g.$primary;
+        text-align: center;
+        margin-top: 1.5rem;
+        padding: 0.8rem;
+        margin-bottom: 0!important;
+        
+
+    }
+}
+
+.em-event{
+    //background: g.$primary;
+    
+    
+    padding: 1rem;
+    border-bottom: 0.6rem solid g.$muted-light-light;
+
+    .date{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1.5rem 0 1.5rem;
+        margin-right: 1rem;
+    }
+
+
+
+    
+}
+
+.em-item-info{
+    display: flex;
+    align-items: center;
+}
+
+.em-item-title{
+    margin-bottom: 0!important;
+    color: g.$primary;
+
+    
+}
+
+.em-event.em-item-single{
+    background: none;
+    color: g.$primary;
+}
