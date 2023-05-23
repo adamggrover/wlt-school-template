@@ -2,7 +2,7 @@
 
 // Disable ssl verify **REMOVE BEFORE GOING LIVE
 
-add_filter('https_ssl_verify', '__return_false');
+//add_filter('https_ssl_verify', '__return_false');
 
 
 /**
@@ -61,11 +61,19 @@ set_post_thumbnail_size( 350, 350);
 
 add_action('after_setup_theme', 'wlt_theme_support');
 	
+add_post_type_support( 'page', 'excerpt' );
+	
 add_filter('jpeg_quality', function($arg){return 95;});
 
-//add small image size
+//add custom image sizes
 
-add_image_size( 'Small size', 500, 400 );
+add_image_size( 'small-size', 300, 300 );
+add_image_size( 'medium-size', 500, 400 );
+add_image_size( 'background-size', 1920, 1080 );
+add_image_size( 'page-size-landscape', 1080, 810 );
+add_image_size( 'page-size-portrait', 810, 1080 );
+add_image_size( 'landscape-size', 1200, 900 );
+add_image_size( 'portrait-size', 900, 1200 );
 
 //featured image header
 
@@ -171,7 +179,9 @@ add_action('init', function() {
 
 });
 
-//--------------Posts
+
+
+//--------------Posts-------------------------------------
 
 //Change default 'posts' name to something else
 
@@ -204,21 +214,22 @@ function cp_change_post_object() {
 function custom_post_type() {
   
     // Set UI labels for Custom Post Type
-        $labels1 = array(
-            'name'                => _x( 'Merit Badges', 'Post Type General Name' ),
-            'singular_name'       => _x( 'Merit Badges', 'Post Type Singular Name' ),
-            'menu_name'           => __( 'Merit Badges' ),
-            'parent_item_colon'   => __( 'Parent Merit Badges' ),
-            'all_items'           => __( 'All Merit Badges' ),
-            'view_item'           => __( 'View Merit Badges' ),
-            'add_new_item'        => __( 'Add New Merit Badges' ),
+    $labels1 = array(
+            'name'                => _x( 'Key Information', 'Post Type General Name' ),
+            'singular_name'       => _x( 'Key Information Item', 'Post Type Singular Name' ),
+            'menu_name'           => __( 'Key Information' ),
+            'parent_item_colon'   => __( 'Parent Key Information' ),
+            'all_items'           => __( 'All Key Information' ),
+            'view_item'           => __( 'View Key Information' ),
+            'add_new_item'        => __( 'Add New Key Information' ),
             'add_new'             => __( 'Add New' ),
-            'edit_item'           => __( 'Edit Merit Badges' ),
-            'update_item'         => __( 'Update Merit Badges' ),
-            'search_items'        => __( 'Search Merit Badges' ),
+            'edit_item'           => __( 'Edit Key Information' ),
+            'update_item'         => __( 'Update Key Information' ),
+            'search_items'        => __( 'Search Key Information' ),
             'not_found'           => __( 'Not Found' ),
             'not_found_in_trash'  => __( 'Not found in Trash' ),
         );
+
 
         $labels2 = array(
             'name'                => _x( 'Announcements', 'Post Type General Name' ),
@@ -236,31 +247,17 @@ function custom_post_type() {
             'not_found_in_trash'  => __( 'Not found in Trash' ),
         );
           
-        $labels3 = array(
-            'name'                => _x( 'Vacancies', 'Post Type General Name' ),
-            'singular_name'       => _x( 'Vacancy', 'Post Type Singular Name' ),
-            'menu_name'           => __( 'Vacancies' ),
-            'parent_item_colon'   => __( 'Vacancy' ),
-            'all_items'           => __( 'Vacancies' ),
-            'view_item'           => __( 'Vacancy' ),
-            'add_new_item'        => __( 'Add New Vacancy' ),
-            'add_new'             => __( 'Add New' ),
-            'edit_item'           => __( 'Edit Vacancy' ),
-            'update_item'         => __( 'Update Vacancy' ),
-            'search_items'        => __( 'Search Vacancies' ),
-            'not_found'           => __( 'Not Found' ),
-            'not_found_in_trash'  => __( 'Not found in Trash' ),
-        );
+
     // Set other options for Custom Post Type
           
         $args1 = array(
-            'label'               => __( 'merit-badges' ),
-            'description'         => __( 'Merit Badges' ),
+            'label'               => __( 'key-information' ),
+            'description'         => __( 'Key Information' ),
             'labels'              => $labels1,
             // Features this CPT supports in Post Editor
             'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
             // You can associate this CPT with a taxonomy or custom taxonomy. 
-            'taxonomies'          => array( 'genres' ),
+            'taxonomies'          => array( ''),
             /* A hierarchical CPT is like Pages and can have
             * Parent and child items. A non-hierarchical CPT
             * is like Posts.
@@ -272,7 +269,7 @@ function custom_post_type() {
             'show_in_nav_menus'   => true,
             'show_in_admin_bar'   => true,
             'menu_position'       => 5,
-            'menu_icon'           => 'dashicons-star-empty',
+            'menu_icon'           => 'dashicons-category',
             'can_export'          => true,
             'has_archive'         => true,
             'exclude_from_search' => false,
@@ -311,39 +308,12 @@ function custom_post_type() {
       
         );
 
-        $args3 = array(
-            'label'               => __( 'vacancies' ),
-            'description'         => __( 'Vacancies' ),
-            'labels'              => $labels3,
-            // Features this CPT supports in Post Editor
-            'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
-            // You can associate this CPT with a taxonomy or custom taxonomy. 
-            'taxonomies'          => array( 'genres' ),
-            /* A hierarchical CPT is like Pages and can have
-            * Parent and child items. A non-hierarchical CPT
-            * is like Posts.
-            */
-            'hierarchical'        => false,
-            'public'              => true,
-            'show_ui'             => true,
-            'show_in_menu'        => true,
-            'show_in_nav_menus'   => true,
-            'show_in_admin_bar'   => true,
-            'menu_position'       => 5,
-            'menu_icon'           => 'dashicons-text-page',
-            'can_export'          => true,
-            'has_archive'         => true,
-            'exclude_from_search' => false,
-            'publicly_queryable'  => true,
-            'capability_type'     => 'post',
-            'show_in_rest' => true,
-      
-        );
+        
           
         // Registering your Custom Post Type
-        register_post_type( 'merit-badges', $args1 );
+        register_post_type( 'key-information', $args1 );
         register_post_type( 'announcements', $args2 );
-        register_post_type( 'vacancies', $args3 );
+        
       
     }
       
