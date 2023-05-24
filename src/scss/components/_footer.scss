@@ -5,7 +5,7 @@
 footer{
     background-color: g.$primary;
     padding-top: 1.3rem;
-    margin-top: 2rem;
+   // margin-top: 2rem;
     color: white;
 
     p{
@@ -70,10 +70,12 @@ footer a:hover{
 
 .footer-icon{
     
-    max-width: 10rem;
+    max-height: 7rem;
+    width: auto;
     padding-top: 1rem;
+    padding-bottom: 0.5rem;
     margin-left: -0.5rem;
-    content: url(Assets/logos/weare-logo-no-background.png);
+    //content: url(Assets/logos/weare-logo-no-background.png);
     
     
 }

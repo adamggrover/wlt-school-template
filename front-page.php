@@ -432,7 +432,7 @@ if (get_field('display_twitter') == "yes"):
 <div class="twitter-card-container-container">
 
 
-<div class="container mb-0 p-5">
+<div class="container mb-0 p-0">
 
 
 

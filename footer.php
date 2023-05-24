@@ -1,10 +1,12 @@
 </main>
     <!-- FOOTER SECTION-->
     <footer class="container-fluid p-0">
-        <div class="footer-content container pb-4">
+        <div class="footer-content container pb-2">
             <div class="row footer-logo">
                 <div class="col-md-4">
-                    <img src="" alt="Weare Academy Logo" class="footer-icon">
+                    <img src="<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
+$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+echo $image[0]; ?>" alt="Weare Academy Logo" class="footer-icon">
                 </div>
 
             </div>
@@ -38,9 +40,12 @@
                 </div>
 
             </div>
+            <div class="row-12 mt-5">
+            <hr>
+        </div>
         </div>
         <a href="https://wessexlearningtrust.co.uk" target="_blank">
-            <div class="footer-bottom pb-3 pt-3 m-0" id="sub-footer-row">
+            <div class="footer-bottom pb-4 pt-4 m-0" id="sub-footer-row">
 
                 <div class="sub-footer-container container">
 
@@ -54,7 +59,22 @@
                                     
                         </div>
 
-                    <div class="col-md-4 pt-0 align-self-end">
+
+                        
+
+                        <div class="col-md-4 pt-0 ">
+                            <small><p>Station Road, Cheddar</p></small>
+                            <small><p>Somerset, BS27 3AQ</p></small>
+                            <small><p>Company Number: 7348580</p></small>
+                            
+                            
+                            
+                                    
+                        </div>
+
+                        <div class="col-md-4 pt-0 align-self-center">
+
+                        <small><p><i class="fa-solid fa-phone"></i><span class="footer-spacer"></span>01934 745363</p></small>
                         
                         <small><p>www.wessexlearningtrust.co.uk</p></small>
                         
@@ -64,17 +84,6 @@
 
                                     
                     </div>
-                        
-
-                        <div class="col-md-4 pt-0 ">
-                            <small><p>Station Road, Cheddar</p></small>
-                            <small><p>Somerset, BS27 3AQ</p></small>
-                            <small><p>Company Number: 7348580</p></small>
-                            <small><p><i class="fa-solid fa-phone"></i><span class="footer-spacer"></span>01934 745363</p></small>
-                            
-                            
-                                    
-                        </div>
 
                      
                 
