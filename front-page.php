@@ -386,10 +386,14 @@ $post_object = get_field('image_page_link_4'); ?>
 
 
 <!----------Twitter Section----------------------------------------------------->
-
-
 <?php
-      $url = "https://api.twitter.com/2/users/1232650136184066050/tweets?exclude=retweets,replies&max_results=10&media.fields=preview_image_url,url&tweet.fields=text,created_at&expansions=attachments.media_keys,author_id&user.fields=url,username,profile_image_url";
+
+if (get_field('display_twitter') == "yes"):
+
+
+
+      $twitter_id = get_field('twitter_id'); 
+      $url = "https://api.twitter.com/2/users/{$twitter_id}/tweets?exclude=retweets,replies&max_results=10&media.fields=preview_image_url,url&tweet.fields=text,created_at&expansions=attachments.media_keys,author_id&user.fields=url,username,profile_image_url";
       $authorization = "Authorization: Bearer AAAAAAAAAAAAAAAAAAAAAJy%2FjgEAAAAA9NWGe5o%2FjDoTFjnVrPfjPWFi1Cw%3DrotYh2pzyq7xypGwtoYDSQcBPbTlNU4X3T4NA8oPOdZhla50Pc";
   
       $ch = curl_init();
@@ -457,7 +461,7 @@ if (strlen($tweet) > 150){
 <div class="twitter-slick-item p-2">
    
   <div class="twitter-card-container">
-  <a class="twitter-card-link" href="https://twitter.com/wessextrust/status/<?php print_r($twitter->data[$x]->id);?>" target="_blank"> 
+  <a class="twitter-card-link" href="https://twitter.com/<?php the_field('twitter_handle'); ?>/status/<?php print_r($twitter->data[$x]->id);?>" target="_blank"> 
   
     <div class="twitter-card">
         
@@ -521,6 +525,8 @@ echo $image[0]; ?>"><img></div>
 </div>
 
 </section>
+
+<?php endif; ?>
     
 
         <!--CALENDAR SECTION
