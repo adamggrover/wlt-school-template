@@ -354,7 +354,7 @@ if (get_field('display_news') == "yes"):
                            
                            <p class="card-link-text news-card-date mt-2"><small><?php the_date(); ?></small></p>
                          </div>
-                         <div class="news-card-line-container mt-3"></div>
+                         <!--<div class="news-card-line-container mt-3"></div>-->
 
                        </div>
                        
