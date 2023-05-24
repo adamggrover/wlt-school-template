@@ -20,6 +20,7 @@
     transition: 0.5s;  
     
     
+    
 }
 
 .header1{
@@ -41,7 +42,7 @@
     
 }
 
-.logo1-container{
+.logo-container{
     //width: 20rem;
     display: flex;
     justify-content: center;
@@ -49,14 +50,22 @@
 }
 
 .logo-img{
-    content: url(Assets/logos/weare-logo-no-background.png);
+   // content: url(Assets/logos/weare-logo-no-background.png);
     max-width: 7rem;
+    transition: all 0.3s;
+    transition-timing-function: ease-in-out;
 }
 
-.logo1{
+.logo-img-scroll{
+    max-width: 5rem;
+}
+
+.logo-content{
 
     
-   
+display: flex;
+flex-direction: column;
+align-items: center;
   width: 100%;
   //max-width: 19rem;
 
@@ -73,6 +82,14 @@
 
 .home-logo-link{
     text-decoration: none;
+}
+
+.logo-heading{
+
+    margin-top: 1rem;
+    text-align: center;
+    max-width: 14rem;
+    color: white;
 }
 
 #logo1-text{

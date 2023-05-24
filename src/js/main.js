@@ -173,20 +173,28 @@ function headerBackground() {
 //function to change header logo size on scroll
 
 function logoChange(){
-    let logo = $(".logo1"); $(window).scroll(function() {
+    let logo = $(".logo-content"); 
+    let logoText = $(".logo-heading"); 
+    let logoImg = $(".logo-img"); 
+    
+    $(window).scroll(function() {
     //let scroll = $(window).scrollTop();
     
 
     
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        if(!logo.hasClass("logo2")) {
-          logo.hide();
-          logo.removeClass('logo1').addClass("logo2").fadeIn( "slow");
+        if(logo.hasClass("logo-front-page")) {
+          logoText.hide();
+          logoImg.hide().fadeIn( "slow");
+          logoImg.addClass("logo-img-scroll");
+          logo.removeClass('logo-front-page').addClass("logo-default-page").fadeIn( "slow");
         }
       } else {
-        if(!logo.hasClass("logo1")) {
-          logo.hide();
-          logo.removeClass("logo2").addClass('logo1').fadeIn( "slow");
+        if(logo.hasClass("logo-default-page") && document.getElementById("header").classList.contains("header1")) {
+          logoText.show();
+          logoImg.show().fadeIn( "slow");
+          logoImg.removeClass("logo-img-scroll");
+          logo.removeClass("logo-default-page").addClass('logo-front-page').fadeIn( "slow");
         }
       }
     });

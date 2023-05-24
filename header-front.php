@@ -38,8 +38,15 @@
             </div>
             
             <div class="logo-col col-8">
-                <div class="logo1-container">
-                    <a class="home-logo-link" href="<?php echo get_home_url(); ?>"><div alt="Weare Academy Logo" class="logo1 img-fluid"><div id="logo1-text"><div class="logo-img"></div><h1 class="mb-2 h3" id="logo-heading">Weare Academy</h1><h2 class="h4" id="logo-heading">CofE First School</h2></div></div></a>
+                <div class="logo-container">
+                    <a class="home-logo-link" href="<?php echo get_home_url(); ?>">
+                        <div alt="Logo" class="logo-content logo-front-page img-fluid">
+                            <img class="logo-img" src="<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
+                                $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                                    echo $image[0]; ?>"></img>
+                            <h1 class="mb-2 h3 logo-heading"><?php echo get_bloginfo('name'); ?></h1>
+                        </div>
+                    </a>
                 </div>
             </div> 
 

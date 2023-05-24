@@ -42,9 +42,18 @@
                 </div>          
             </div>
             
-            <div class="col-2 logo-col text-center">
-                <a href="<?php echo get_home_url(); ?>"><img alt="Weare Academy Logo" class="logo2 img-fluid"></a>
-            </div>
+            <div class="logo-col col-2">
+                <div class="logo-container">
+                    <a class="home-logo-link" href="<?php echo get_home_url(); ?>">
+                        <div alt="Logo" class="logo-content logo-default-page img-fluid">
+                            <img class="logo-img logo-img-scroll" src="<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
+                                $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                                    echo $image[0]; ?>"></img>
+                            
+                        </div>
+                    </a>
+                </div>
+            </div> 
                     
             <div class="social-col col-5 pt-2 p-0">
                 <a href="https://twitter.com/weare_school" target="_blank" class="social-links"><i class="fa-brands fa-twitter header-icon d-none d-sm-block d-md-block d-lg-block"></i></a>
