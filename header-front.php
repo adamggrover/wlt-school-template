@@ -82,16 +82,40 @@
         </div> -->
 
         <div class="slide-holder">
-          <img class="slide slide-img1"src="/wp-content/themes/weare23/Assets/images/2000px/school.jpg" alt=""> 
+        <?php $image = get_field('slider_img_1'); ?>
+                  <?php if($image): //dont output an empty image tag ?>
+
+
+                 <img src="<?php echo $image['sizes']['background-size']; ?>" alt="" class="slide slide-img1"> 
+
+                 
+       
+                  <?php endif; ?> 
             <div class="overlay-hero"></div>
         </div>
        
         <div class="slide-holder">
-            <img class="slide slide-img2"src="/wp-content/themes/weare23/Assets/images/2000px/birdhouse.jpg" alt="">
+        <?php $image = get_field('slider_img_2'); ?>
+                  <?php if($image): //dont output an empty image tag ?>
+
+
+                 <img src="<?php echo $image['sizes']['background-size']; ?>" alt="" class="slide slide-img2"> 
+
+                 
+       
+                  <?php endif; ?> 
             <div class="overlay-hero"></div>
         </div>
         <div class="slide-holder">
-        <img class="slide slide-img3"src="/wp-content/themes/weare23/Assets/images/2000px/boys-on-pc.jpg" alt=""> 
+        <?php $image = get_field('slider_img_3'); ?>
+                  <?php if($image): //dont output an empty image tag ?>
+
+
+                 <img src="<?php echo $image['sizes']['background-size']; ?>" alt="" class="slide slide-img3"> 
+
+                 
+       
+                  <?php endif; ?> 
             <div class="overlay-hero"></div>
         </div>
 
