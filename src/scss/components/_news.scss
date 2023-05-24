@@ -1,25 +1,61 @@
 @use 'globals' as g;
 
 #news{
-  background-color: g.$light;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  //background-color: g.$light;
+  //padding-top: 4rem;
+  //padding-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0 3rem 0;
 
   a{
     text-decoration: none;
   }
+
+  .card-body{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
+
+.news-card-line-container{
+  border-top: 7px solid g.$accent;
+  height: fit-content;
+  width: 40%;
+  transition: 0.3s ease-in-out;
+}
+
+
+.news-overlay{
+  
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  
+  transition: 0.3s ease-in-out;
+  background-color: g.$accent;
+}
+
 
 .section-headings{
   width: 100%;
 }
 
 .card{
-  border-radius: 0;
+  border: none;
   background-color: white;
   //border: g.$light 1rem solid;
-  box-shadow: 5px 10px 18px #888888;
+  //box-shadow: 0 0 10px rgb(0 0 0 / 10%);
   min-height: fit-content;
+  width: 100%;
+  
   
 
   a{
@@ -40,7 +76,17 @@
   align-items: center;
   justify-content: center;
   align-content: center;
-  padding: 0.5rem 0 0.5rem 0;
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  //padding: 0.5rem 0 0.5rem 0;
+
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   
 }
@@ -50,15 +96,35 @@
   
     
     border-radius: 0;
-    content: url(Assets/logos/weare-logo-no-background.png);
-    transition: .5s ease;
-    width: 75%;
+    //content: url(Assets/logos/weare-logo-no-background.png);
+    //transition: .5s ease;
+    width: 100%;
     height: auto;
+    transition: .3s ease-in;
+    
+
+    
     
 }
 
+/*
+
+.card-img-top-hover{
+  scale: 1.05;
+}
+
+*/
 .news-row{
   height: fit-content;
+}
+
+.news-card-container-container{
+  //max-width: 1000px;
+  min-width: 50%;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  display: flex;
+  justify-items: center;
 }
 
 
@@ -69,8 +135,13 @@
 
 #news-card-container{
   position: relative;
+  width: 100%;
+
+  
   
 }
+
+
 
 .news-card-title{
   color: g.$primary;
@@ -85,27 +156,21 @@
   }
 }
 
-.news-overlay{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  
-  
-  transition: .5s ease;
-  background-color: rgba(144, 204, 238, 0.9);
-}
+
 
 .news-card-content{
   width: 100%;
   min-height: fit-content;
-  padding: 1.5rem;
+  
 }
 
 .news-card-link{
     width: 100%;
   height: 100%;
+  transition: 0.7s ease-in;
 }
+
+
 
 a .card-body-text{
   color: g.$dark;
@@ -123,6 +188,22 @@ a .card-body-text{
 
 .news-card{
   min-height: 20rem;
+  transition: 0.7s ease-in-out;
+  
+}
+
+.news-card-hover{
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+
+  .news-card-line-container{
+    width: 100%;
+    
+  }
+
+  .news-overlay{
+    opacity: 0.2;
+    
+  }
 }
 
 .pagination-container{
@@ -135,10 +216,9 @@ a .card-body-text{
   }
 
   span, a{
-    padding: 1rem;
+    //padding: 1rem;
   }
 }
-
 
 
 

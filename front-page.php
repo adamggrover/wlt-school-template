@@ -289,12 +289,20 @@ $post_object = get_field('image_page_link_4'); ?>
 
    <!--NEWS LINKS SECTION-->
 
+   <?php
+
+if (get_field('display_news') == "yes"):
+
+  $news_slug = get_field('news_slug'); 
+
+  ?>
+
    <section id="news" class="">
 
 <!-- <div class="section-headings text-center row">
      <h2 class="mt-5 mb-3 section-title">Latest News</h2>
      <a href="<?php
-             $page_object = get_page_by_path( '/news-blog' );
+             $page_object = get_page_by_path( "/{$news_slug}" );
              $page_id = $page_object->ID;
              $permalink = get_permalink( $page_id );
              echo $permalink;
@@ -312,7 +320,7 @@ $post_object = get_field('image_page_link_4'); ?>
 
        <?php
          
-         $newsPosts = new WP_Query( array( 'pagename' => 'latest-news', 'posts_per_page' => '4' ) );
+         $newsPosts = new WP_Query( array( 'pagename' => $news_slug, 'posts_per_page' => '4' ) );
          
 
          while ($newsPosts->have_posts()) : $newsPosts->the_post(); ?>
@@ -383,6 +391,10 @@ $post_object = get_field('image_page_link_4'); ?>
  </div>
 
  </section>
+
+ <?php 
+wp_reset_query();
+endif; ?>
 
 
 <!----------Twitter Section----------------------------------------------------->
