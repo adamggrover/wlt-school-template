@@ -1,5 +1,132 @@
-/*#twitter-section{
+@use 'globals' as g;
+
+#twitter-section{
+
+    background-color: g.$primary;
     height:fit-content;
     min-height: 400px;
+
+    //display: flex;
+    //flex-direction: column;
+    //align-items: center;
+    padding: 2rem 0;
+
+    .twitter-slider{
+
+
+    }
+
+  
+    a{
+      text-decoration: none;
+    }
+
+    .twitter-card-container-container{
+
+      position: relative;
+    }
+
+    .twitter-slick-item{
+
+     
+    }
+
+    .twitter-card-container{
+
+      height: 100%;
+      max-width: 300px;
+      min-height: 0;
+      min-width: 0;
+
+        a:hover{
+          color: g.$primary;
+        }
+
+        .twitter-card{
+          background-color: white;
+          border-radius: 8px;
+          height: 100%;
+          
+
+        }
+
+        .twitter-card-content-top{
+          display: flex;
+          height: 40px;
+          gap: 1rem;
+          align-items: center;
+          padding-bottom: 2.5rem;
+          padding-top: 1rem;
+
+          .twitter-user-icon-container{
+            width: 3.5rem;
+            height: 3.5rem;
+            display:flex;
+            justify-content: center;
+            align-content: center;
+          }
+
+          .twitter-user-icon{
+           // content: url(Assets/logos/wlt-icon-circle.svg);
+            width: auto;
+            height: 100%;
+          }
+
+          .twitter-user-title{
+            font-weight: bold;
+            margin-bottom: 0;
+          }
+        }
+    }
+
+    .twitter-card-content{
+      min-height: 330px;
+      max-height: max-content;
+
+      display: flex;
+      flex-direction: column;
+    
+      
+    }
+
+    .twitter-card-text{
+      font-size: 0.9rem;
+    }
+
+
+
+    .twitter-card{
+
+        padding: 2rem 1rem 0.8rem 1rem;
+        height: 100%;
+        
+
+
+        .twitter-card-body{
+            padding: 0;
+            display: flex!important;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            flex: 1 0 auto;
+          }
+
+        .twitter-card-bottom-icons-container{
+
+          display: flex;
+          gap: 0.8rem;
+          justify-content: flex-end;
+          padding: 0 0.2rem;
+          
+          
+          
+
+          a{
+            color: g.$muted-light-light;
+          }
+          
+        }
+    }
+  
+
 }
-*/

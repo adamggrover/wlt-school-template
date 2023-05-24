@@ -14,6 +14,65 @@ jQuery(function(){
   touchMove: false,
   arrows:false
   });
+
+  
+  $('.twitter-slider').slick({
+    
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    accessibility: true,
+    arrows: false,
+    cssEase: 'ease-in-out',
+    dots: false,
+    
+
+    autoplay: true,
+    autoplaySpeed: 2500,
+    speed: 600,
+    mobileFirst:true,
+    //centerMode: true,
+    
+
+    
+
+    responsive: [{
+      breakpoint: 1000,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        
+        
+       
+    
+      }
+    
+    }, {
+      breakpoint: 700,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        //centerMode: false
+        
+        
+        
+
+      }
+    },{
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        //centerMode: false
+        
+        
+        
+
+      }
+    }]
+
+    
+    
+    });
   
   
   
@@ -341,5 +400,5 @@ const documentHeight = () => {
   doc.style.setProperty('--doc-height', `${window.innerHeight}px`)
  }
  window.addEventListener('resize', documentHeight)
- documentHeight()
+ documentHeight();
 
