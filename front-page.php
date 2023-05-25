@@ -473,7 +473,7 @@ if (strlen($tweet) > 150){
 <div class="twitter-slick-item p-2">
    
   <div class="twitter-card-container">
-  <a class="twitter-card-link" href="https://twitter.com/<?php the_field('twitter_handle'); ?>/status/<?php print_r($twitter->data[$x]->id);?>" target="_blank"> 
+  <a class="twitter-card-link" href="https://twitter.com/<?php print_r($twitter->includes->users[0]->username);?>/status/<?php print_r($twitter->data[$x]->id);?>" target="_blank"> 
   
     <div class="twitter-card">
         
@@ -482,10 +482,12 @@ if (strlen($tweet) > 150){
         
 
             <div class="twitter-card-content-top">
-               <div class="twitter-user-icon-container"><img class="twitter-user-icon" src="<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
-$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-echo $image[0]; ?>"><img></div>
-               <h1 class="twitter-user-title h6"><?php echo get_bloginfo('name'); ?></h1>
+               <div class="twitter-user-icon-container">
+                <img class="twitter-user-icon" src="<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
+                    $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                    echo $image[0]; ?>"><img>
+                </div>
+               <h1 class="twitter-user-title h6"><?php print_r($twitter->includes->users[0]->name);?></h1>
             </div>
            
 
