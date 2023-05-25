@@ -305,37 +305,65 @@ function announcementClose() {
 
   
 
-//--------------------news card section effects-----------------------------------------------
+
+
+//-----------------100vh Fix ---------------------------------------------------------
+// set --doc-height for 100vh fix
+
+const documentHeight = () => {
+  const doc = document.documentElement
+  doc.style.setProperty('--doc-height', `${window.innerHeight}px`)
+ }
+ window.addEventListener('resize', documentHeight)
+ documentHeight();
+
+
+ //--------------------news card section effects-----------------------------------------------
 
 //jquery version
 
-$('.news-card').mouseenter(function() {
-
-  
-  $(this).find(".card-img-top").css('opacity', '0.8');  
-  $(this).find('.news-overlay').css('opacity', '1');
-  $(this).find(".card-img-top").css('zIndex', '5');  
-  $(this).find(".news-card-content").css('zIndex', '2');
-  
+$('.news-card-link').mouseenter(function() {
 
 
-  
+  $(this).find(".news-card").addClass("news-card-hover"); 
+ 
+  //$(this).find(".card-img-top").addClass("card-img-top-hover"); 
+});
+
+
+$('.news-card-link').mouseleave(function() {
+  $(this).find(".news-card").removeClass("news-card-hover");
+  //$(this).find(".card-img-top").removeClass("card-img-top-hover"); 
+});
+
+ 
+//--------------------key information link effects---------------------------------------------------
+
+
+
+$('.key-information-item-link').mouseenter(function() {
+
+
+  $(this).addClass("key-information-item-link-hover"); 
+ 
 
 });
 
-$('.news-card').mouseleave(function() {
-  
-  $(this).find('.news-overlay').css('opacity', '0');
-  $(this).find(".card-img-top").css('opacity', '1');
-  $(this).find(".card-img-top").css('zIndex', '0');
-  $(this).find(".news-card-content").css('zIndex', '0');
 
-  
+$('.key-information-item-link').mouseleave(function() {
+
+
+  $(this).removeClass("key-information-item-link-hover"); 
+ 
+
 });
+
 
 //--------------------image links section effects-----------------------------------------------
 
 //jquery version
+
+/*
 
 $('#img-link-overlay').mouseenter(function() {
 
@@ -374,39 +402,11 @@ $('.kings-latest-posts').find('li').mouseleave(function() {
 */
 
 
+//---------------Modal Button ----------------------------------------------------------------------
 
-//--------------Sixth form application Form------------------------------------------
+//make it so modal appears above the rest of the content and take it out from its positioned parents
 
-//gets section of page to be hidden/show
-
-const box = document.getElementById('external-applicants');
-const box2 = document.getElementById('internal-applicants');
-
-function handleRadioClick() {
-  if (document.getElementById('kings-no').checked) {
-    box.style.display = 'flex';
-    box2.style.display = 'none';
-    
-  } else {
-    box.style.display = 'none';
-    box2.style.display = 'flex';
-    
-  }
-}
-
-const radioButtons = document.querySelectorAll('input[name="kings-student"]');
-radioButtons.forEach(radio => {
-  radio.addEventListener('click', handleRadioClick);
-});
+$('.modal').appendTo("body");
 
 
-//-----------------100vh Fix ---------------------------------------------------------
-// set --doc-height for 100vh fix
-
-const documentHeight = () => {
-  const doc = document.documentElement
-  doc.style.setProperty('--doc-height', `${window.innerHeight}px`)
- }
- window.addEventListener('resize', documentHeight)
- documentHeight();
 
