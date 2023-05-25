@@ -123,6 +123,19 @@
             <div class="overlay-hero"></div>
         </div>
 
+        <div class="slide-holder">
+        <?php $image = get_field('slider_img_4'); ?>
+                  <?php if($image): //dont output an empty image tag ?>
+
+
+                 <img src="<?php echo $image['sizes']['background-size']; ?>" alt="" class="slide slide-img4"> 
+
+                 
+       
+                  <?php endif; ?> 
+            <div class="overlay-hero"></div>
+        </div>
+
    
 
         
@@ -133,7 +146,7 @@
             <a class="hero-arrow " href="#welcome"><i class="fa-solid fa-circle-arrow-down fa-2x animate__animated animate__fadeIn animate__delay-2s animate__slower"></i></a>
         </div>
         <div class="hero-banner-text-container">
-            <h4 class="hero-banner-text text-center display-6 text-white animate__animated animate__fadeInUp  animate__slower animate__delay-1s"><span class="hero-banner-text-bold">All Can Achieve</span></h4>
+            <h4 class="hero-banner-text text-center display-6 text-white animate__animated animate__fadeInUp  animate__slower animate__delay-1s"><span class="hero-banner-text-bold"><?php the_field('school_motto'); ?></span></h4>
         </div>
     
     
