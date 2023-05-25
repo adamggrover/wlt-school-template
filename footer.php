@@ -1,5 +1,14 @@
 </main>
     <!-- FOOTER SECTION-->
+
+    <?php
+
+//$front_page_id = get_option('page_on_front');
+
+$query = new WP_Query( array( 'page_id' => get_option('page_on_front')) ); ?>
+
+<?php while( $query->have_posts() ) : $query->the_post(); ?>
+
     <footer class="container-fluid p-0">
         <div class="footer-content container pb-2">
             <div class="row footer-logo">
@@ -12,16 +21,18 @@ echo $image[0]; ?>" alt="Weare Academy Logo" class="footer-icon">
             </div>
             <div class="row footer-text">
                 <div class="col-md-4 footer-contact footer-column">
-                    <p class="mb-3">Weare Academy<br>Notting Hill Way, Weare<br>Somerset BS26 2JS</p>
-                    <p class="mb-4">Executive Headteacher: Emma Tovey</p>
-                    <p><i class="fa-solid fa-phone"></i><span class="footer-spacer"></span>01934 732270</p>
-                    <p><a href="mailto:office@weareacademy.co.uk"><i class="fa-solid fa-envelope"></i></i><span class="footer-spacer"></span>Email Us</a></p>
-                    <p class="mb-4"><a href="https://www.google.com/maps/dir//Weare+Academy+First+School+and+Rainbow+Woods+Pre-School,+Notting+Hill+Way,+Weare,+Axbridge/@51.2733777,-2.8855986,13z/data=!4m8!4m7!1m0!1m5!1m1!1s0x48721d21c9005ee1:0x223018a0fa07df35!2m2!1d-2.8505693!2d51.2733289" target="_blank" ><i class="fa-solid fa-location-dot"></i></i><span class="footer-spacer"></span>Get Directions</a></p>
+                    <p class="mb-3"><?php echo get_bloginfo('name'); ?><br><?php the_field('address_line_1') ?><br><?php the_field('county') ?> <?php the_field('postcode') ?></p>
+                    <p class="mb-4"><?php the_field('headteacher_position') ?>: <?php the_field('headteacher_name') ?></p>
+                    <p><i class="fa-solid fa-phone"></i><span class="footer-spacer"></span><?php the_field('phone_number') ?></p>
+                    <p><a href="mailto:<?php the_field('email_address') ?>"><i class="fa-solid fa-envelope"></i></i><span class="footer-spacer"></span>Email Us</a></p>
+                    <p class="mb-4"><a href="<?php the_field('google_map_direction_link') ?>" target="_blank" ><i class="fa-solid fa-location-dot"></i></i><span class="footer-spacer"></span>Get Directions</a></p>
 
-                    <div class="footer-social mb-4"><a href="https://twitter.com/weare_school" target="_blank" ><i class="fa-brands fa-twitter fa-xl"></i></a><span class="footer-spacer"></span><span class="footer-spacer"></span><a href="https://en-gb.facebook.com/weareacademyschool/" target="_blank"><i class="fa-brands fa-facebook-f fa-xl"></i></a></div>
+                    <div class="footer-social mb-4"><a href="<?php the_field('twitter_link') ?>" target="_blank" ><i class="fa-brands fa-twitter fa-xl"></i></a><span class="footer-spacer"></span><span class="footer-spacer"></span><a href="<?php the_field('facebook_link') ?>" target="_blank"><i class="fa-brands fa-facebook-f fa-xl"></i></a></div>
 
                     <p class="mt-4">
-                    
+                    <?php endwhile; 
+                     wp_reset_query();
+                     ?>
                 </div>
                 <div class="col-md-4 footer-links footer-column">
                     <h6 class="footer heading mb-3">Quick Links</h6>
@@ -104,6 +115,7 @@ echo $image[0]; ?>" alt="Weare Academy Logo" class="footer-icon">
 
   
     <?php
+       
 
 wp_footer();
 ?>
