@@ -1,15 +1,20 @@
 <?php
     get_header();
-    ?>
+?>
+
+
+
     
-<?php
- 
- if ( ( is_single() || ( is_page() ) ) && has_post_thumbnail( get_queried_object_id() ) ) :
-     echo '<div class="single-featured-image-header">';
-     echo get_the_post_thumbnail( get_queried_object_id(), 'featured-image' );
-     echo '</div><!-- .single-featured-image-header -->';
- endif;
- ?>
+    <?php
+    
+    if ( ( is_single() || ( is_page() ) ) && has_post_thumbnail( get_queried_object_id() ) ) :
+        echo '<div class="single-featured-image-header">';
+        echo get_the_post_thumbnail( get_queried_object_id(), 'featured-image' );
+        echo '</div><!-- .single-featured-image-header -->';
+    endif;
+    ?>
+
+
 
 <div class="container" data-aos="fade-up" data-aos-delay="200" data-aos-duration='800' id="main-page-area">
 <?php include 'content-header.php';?>
