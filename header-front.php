@@ -55,10 +55,7 @@
             
 
             <div class="social-col col-2 pt-2 p-0">
-                <a href="https://twitter.com/weare_school" target="_blank" class="social-links"><i class="fa-brands fa-twitter header-icon d-none d-md-block"></i></a>
-                <a href="https://en-gb.facebook.com/weareacademyschool/" target="_blank" class="social-links"><i class="fa-brands fa-facebook-f header-icon d-none d-md-block"></i></a>
-                <button onclick="openSearch()" class="social-links"><i class="fa-solid fa-magnifying-glass header-icon pe-2"></i></button>
-                <div class="header-spacer p-1 d-none d-md-block"></div>
+            <?php include 'header-social-links.php';?>
                 
                 
                 

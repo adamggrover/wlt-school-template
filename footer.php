@@ -27,7 +27,21 @@ echo $image[0]; ?>" alt="Weare Academy Logo" class="footer-icon">
                     <p><a href="mailto:<?php the_field('email_address') ?>"><i class="fa-solid fa-envelope"></i></i><span class="footer-spacer"></span>Email Us</a></p>
                     <p class="mb-4"><a href="<?php the_field('google_map_direction_link') ?>" target="_blank" ><i class="fa-solid fa-location-dot"></i></i><span class="footer-spacer"></span>Get Directions</a></p>
 
-                    <div class="footer-social mb-4"><a href="<?php the_field('twitter_link') ?>" target="_blank" ><i class="fa-brands fa-twitter fa-xl"></i></a><span class="footer-spacer"></span><span class="footer-spacer"></span><a href="<?php the_field('facebook_link') ?>" target="_blank"><i class="fa-brands fa-facebook-f fa-xl"></i></a></div>
+                    <div class="footer-social mb-4">
+
+                        <?php if (get_field('display_header_footer_twitter_link') == "yes"): ?>
+                        
+                            <a href="<?php the_field('twitter_link') ?>" target="_blank" ><i class="fa-brands fa-twitter fa-xl"></i></a><span class="footer-spacer"></span><span class="footer-spacer"></span>
+                        
+                        <?php endif; 
+
+                        if (get_field('display_header_footer_facebook_link') == "yes"): ?>
+                            
+                            <a href="<?php the_field('facebook_link') ?>" target="_blank"><i class="fa-brands fa-facebook-f fa-xl"></i></a>
+                        
+                        <?php endif; ?>
+                        
+                    </div>
 
                     <p class="mt-4">
                     <?php endwhile; 
