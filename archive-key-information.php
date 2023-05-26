@@ -3,7 +3,7 @@
     get_header();
 ?>
 
-<div class="container" class="key-information-single-page" data-aos="fade-up" data-aos-delay="200" data-aos-duration='800' >
+<div class="container key-information-single-page" data-aos="fade-up" data-aos-delay="200" data-aos-duration='800' >
     
 <?php include 'content-header-full.php'; ?>
 
@@ -15,7 +15,7 @@
 
 
 
-                <div class="row row-cols-1 row-cols-md-3 g-3">
+                <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4  g-2">
 
                      
 

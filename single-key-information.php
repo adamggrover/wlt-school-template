@@ -19,7 +19,7 @@
     get_header();
 ?>
 
-<div class="container" class="key-information-single" data-aos="fade-up" data-aos-delay="200" data-aos-duration='800'>
+<div class="container key-information-single-page" data-aos="fade-up" data-aos-delay="200" data-aos-duration='800'>
     
     <?php include 'content-header-full.php'; ?>
 
@@ -30,7 +30,9 @@
                     <div class="icon-wrapper">
                         <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
                     </div>
-                    <p class="p">Back to Key Information Menu</p>
+                    <p class="p d-none d-md-block">Back to Key Information Menu</p>
+                    
+                    
 
                     </div>
                 </a>
@@ -65,7 +67,7 @@
                         </div>
 
 
-                        <div class="content-footer">
+                       <!-- <div class="content-footer">
 
                         	
                         <?php the_post_navigation( array(
@@ -79,7 +81,7 @@
 
            
 
-                        </div>
+                        </div> -->
 
 
                 </div>
