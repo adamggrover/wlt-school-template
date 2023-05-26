@@ -371,6 +371,17 @@ function custom_post_type() {
     add_action( 'init', 'custom_post_type', 0 );
     
 
+// Function to sort key-information posts alphabetically
+
+add_action( 'pre_get_posts', function ( $query ) {
+    if ( $query->is_archive() && $query->is_main_query() ) { 
+      if ( get_query_var( 'post_type' ) == 'key-information' ) { 
+        $query->set( 'order', 'ASC' );
+        $query->set( 'orderby', 'title' );
+      };
+    };
+} );
+
 // Search box
 
 
