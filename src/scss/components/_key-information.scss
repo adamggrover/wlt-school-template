@@ -1,0 +1,137 @@
+@use 'globals' as g;
+
+a.key-information-item-link{
+    text-decoration: none;
+}
+
+.key-information-item-container{
+    
+    background-color: g.$primary;
+    color: white;
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 0.8rem;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: 0.2s ease-in-out;
+
+    a{
+        text-decoration: none;
+    }
+
+
+
+    
+
+    .key-information-item-content{
+        display: flex;
+        gap: 0.8rem;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    
+
+    .key-information-title{
+        color: white;
+        margin-bottom: 0.5rem;
+        line-height: 1.8rem;
+
+    }
+
+    .key-information-icon-wrapper{
+
+        font-size: 1rem;
+        display: flex;
+        align-items: flex-end;
+        padding: 0 0.75rem 1rem 0.75rem;
+        
+
+        span{
+            width: 0.4rem;
+        }
+
+        p{
+            font-weight: 400;
+            margin-bottom: 0;
+            
+        }
+
+    }
+
+    .key-information-line-container{
+        padding: 0.5rem 0;
+        
+        
+        width: 100%;
+        
+        
+        
+        
+
+        .key-information-line{
+            width: 20%;
+            border-top: 5px solid g.$accent;
+            transition: 0.3s ease-in-out;
+
+        }
+    }
+
+
+}
+
+.key-information-single-page{
+
+    margin-top: 1rem;
+    padding: 0 1.5rem 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    max-width: 65rem;
+    
+}
+
+.key-information-back-button-link{
+
+    a{
+        text-decoration: none;
+    }
+
+    
+}
+
+.key-information-back-button{
+
+    color: white;
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: g.$accent;
+    display: flex;
+
+   
+}
+
+div .key-information-item-link-hover{
+
+
+
+.key-information-item-container{
+
+    background-color: g.$accent;
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+
+
+    .key-information-line{
+        width: 100%;
+    }
+
+}
+
+}
+
+#single-post-main-page-area .key-information-single{
+
+    max-width:75rem ;
+}
+
+

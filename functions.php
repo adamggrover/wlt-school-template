@@ -247,6 +247,22 @@ function custom_post_type() {
             'not_found_in_trash'  => __( 'Not found in Trash' ),
         );
           
+        $labels3 = array(
+            'name'                => _x( 'Curriculum', 'Post Type General Name' ),
+            'singular_name'       => _x( 'Curriculum Item', 'Post Type Singular Name' ),
+            'menu_name'           => __( 'Curriculum' ),
+            'parent_item_colon'   => __( 'Parent Curriculum' ),
+            'all_items'           => __( 'Curriculum' ),
+            'view_item'           => __( 'View Curriculum' ),
+            'add_new_item'        => __( 'Add New Curriculum' ),
+            'add_new'             => __( 'Add New' ),
+            'edit_item'           => __( 'Edit Curriculum' ),
+            'update_item'         => __( 'Update Curriculum' ),
+            'search_items'        => __( 'Search Curriculums' ),
+            'not_found'           => __( 'Not Found' ),
+            'not_found_in_trash'  => __( 'Not found in Trash' ),
+        );
+          
 
     // Set other options for Custom Post Type
           
@@ -308,11 +324,41 @@ function custom_post_type() {
       
         );
 
+        $args3 = array(
+            'label'               => __( 'curriculum' ),
+            'description'         => __( 'Curriculum' ),
+            'labels'              => $labels3,
+            // Features this CPT supports in Post Editor
+            'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+            // You can associate this CPT with a taxonomy or custom taxonomy. 
+            'taxonomies'          => array( 'genres' ),
+            /* A hierarchical CPT is like Pages and can have
+            * Parent and child items. A non-hierarchical CPT
+            * is like Posts.
+            */
+            'hierarchical'        => false,
+            'public'              => true,
+            'show_ui'             => true,
+            'show_in_menu'        => true,
+            'show_in_nav_menus'   => true,
+            'show_in_admin_bar'   => true,
+            'menu_position'       => 5,
+            'menu_icon'           => 'dashicons-book',
+            'can_export'          => true,
+            'has_archive'         => true,
+            'exclude_from_search' => false,
+            'publicly_queryable'  => true,
+            'capability_type'     => 'post',
+            'show_in_rest' => true,
+      
+        );
+
         
           
         // Registering your Custom Post Type
         register_post_type( 'key-information', $args1 );
         register_post_type( 'announcements', $args2 );
+        register_post_type( 'curriculum', $args3 );
         
       
     }
