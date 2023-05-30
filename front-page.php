@@ -168,7 +168,7 @@ $post_object = get_field('image_page_link_1'); ?>
       <div class="img-link-text-container">
         <h2 class="text h5 img-link-text mb-0"><?php echo get_the_title($post_object); ?></h2>
       </div>
-      <div class="img-link-line-container"></div>
+      <!--<div class="img-link-line-container"></div>-->
     </a>
   </div>
 </div>

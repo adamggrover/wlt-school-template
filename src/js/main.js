@@ -318,6 +318,24 @@ const documentHeight = () => {
  documentHeight();
 
 
+ 
+//--------------------------Img links hover---------------------------------------------------------------------
+
+
+
+
+$('.img-link').mouseenter(function() {
+
+
+  $(this).addClass("img-link-hover"); 
+  
+});
+
+
+$('.img-link').mouseleave(function() {
+  $(this).removeClass("img-link-hover");
+});
+
  //--------------------news card section effects-----------------------------------------------
 
 //jquery version
