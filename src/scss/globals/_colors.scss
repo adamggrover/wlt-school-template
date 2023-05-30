@@ -1,6 +1,4 @@
-///Theme colors
-
-
+// Initialise scss color variables 
 
 $light:   #F5F5F5;
 $light-light:   #f0f0f0;
@@ -14,29 +12,80 @@ $body-color: #231F20;
 $body-bg: #F5F5F5;
 $overlay:hsla(248, 95%, 15%, 0.2);
 
-$primary:       #2D4190;
+$primary:       #a79600;
 $primary-dark: #162355;
 $primary-light: #7e95f0;
+$primary-light-light: #b1b6ce;
 $secondary:     #c5e062;
 $success:       #61e682;
 $accent:        #e0dd21;
 
+:root {
 
-// Kow Colors
+// set css custom color properties to be value of scss variables
 
-$dark-purple:  #411763;
-$purple:  #5B2A84;
-$muted-purple:  #7152a3;
-$green:   #b3d82b;
-$green-light: #e5ebc3;
+  //General colors
+    --light:  #{$light};
+    --light-light: #{$light-light};
+    --light-dark:#{$light-dark};
+    --dark:   #{$dark};
+    --muted:    #{$muted};
+    --muted-light:   #{$muted-light};
+    --muted-light-light:   #{$muted-light-light};
 
-// Weare Colors 
+    --body-color: #{$body-color};
+    --body-bg: #{$body-bg};
+    --overlay:#{$overlay};
 
-$weare-blue: #2D4190;
-$weare-blue-dark: #25367a;
-$weare-blue-darker: #192245;
-$weare-blue-light: #e2e6f8;
-$weare-blue-sky: #90ccee;
+
+  // Theme specific colors
+    --primary: #{$primary};
+    --primary-dark: #{$primary-dark};
+    --primary-light: #{$primary-light};
+    --primary-light: #{$primary-light-light};
+    --secondary: #{$secondary};
+    --success: #{$success};
+    --accent: #{$accent};
+    
+
+
+  }
+
+
+// Set sccs color properties to be the value of scss variables
+
+$light:   var(--light);
+$light-light:   var(--light-light);
+$light-dark:var(--light-dark);
+$dark:   var(--dark);
+$muted:    var(--muted);
+$muted-light:    var(--muted-light);
+$muted-light-light:    var(--muted-light-light);
+
+$body-color: var(--body-color);
+$body-bg: var(--body-bg);
+$overlay:var(--overlay);
+
+$primary:       var(--primary);
+$primary-dark:var(--primary-dark);
+$primary-light:var(--primary-light);
+$primary-light-light: var(--primary-light-light);
+$secondary:     var(--secondary);
+$success:       var(--success);
+$accent:        var(--accent);
+
+
+
+//WLT Colors
+
+// WLT Colors
+
 $wlt-purple: rgba(65,16,81);
+$wlt-purple-light: #d1c3d6;
+$wlt-purple-light-light: #e9e3eb;
+$wlt-yellow: #E5A100;
+$wlt-purple-dark-light: #622478;
+
+
 
 
