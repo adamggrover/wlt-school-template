@@ -331,7 +331,7 @@ function custom_post_type() {
             // Features this CPT supports in Post Editor
             'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
             // You can associate this CPT with a taxonomy or custom taxonomy. 
-            'taxonomies'          => array( 'genres' ),
+            'taxonomies'          => array( 'curriculum-category' ),
             /* A hierarchical CPT is like Pages and can have
             * Parent and child items. A non-hierarchical CPT
             * is like Posts.
@@ -433,3 +433,22 @@ function new_excerpt_more($more) {
     return '...';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+
+// Add custom taxonomy
+
+function tr_create_my_taxonomy() {
+
+    register_taxonomy(
+        'curriculum-category',
+        'curriculum',
+        array(
+            'label' => __( 'Curriculum Category' ),
+            'rewrite' => array( 'slug' => 'curriculum' ),
+            'show_in_rest'          => true,
+            'hierarchical' => true,
+
+        )
+    );
+}
+add_action( 'init', 'tr_create_my_taxonomy' );
