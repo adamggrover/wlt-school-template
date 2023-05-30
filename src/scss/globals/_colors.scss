@@ -1,6 +1,26 @@
+///Theme colors
+
+
+
+$light:   #F5F5F5;
+$light-light:   #f0f0f0;
+$light-dark: #F2F2F2;
+$dark:    #231F20;
+$muted:    #424242; 
+$muted-light:    #7e7e7e; 
+$muted-light-light:    #b4b3b3;
+
 $body-color: #231F20;
 $body-bg: #F5F5F5;
 $overlay:hsla(248, 95%, 15%, 0.2);
+
+$primary:       #2D4190;
+$primary-dark: #162355;
+$primary-light: #7e95f0;
+$secondary:     #c5e062;
+$success:       #61e682;
+$accent:        #e0dd21;
+
 
 // Kow Colors
 
@@ -9,13 +29,6 @@ $purple:  #5B2A84;
 $muted-purple:  #7152a3;
 $green:   #b3d82b;
 $green-light: #e5ebc3;
-$light:   #F5F5F5;
-$light-light:   #f0f0f0;
-$light-dark: #F2F2F2;
-$dark:    #231F20;
-$muted:    #424242; 
-$muted-light:    #7e7e7e; 
-$muted-light-light:    #b4b3b3;
 
 // Weare Colors 
 
@@ -27,9 +40,3 @@ $weare-blue-sky: #90ccee;
 $wlt-purple: rgba(65,16,81);
 
 
-$primary:       $weare-blue;
-$primary-dark: $weare-blue-dark;
-$primary-light: $weare-blue-light;
-$secondary:     $light-dark;
-$success:       $muted-purple;
-$accent:        $muted-purple;
