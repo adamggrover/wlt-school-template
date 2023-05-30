@@ -352,7 +352,7 @@ if (get_field('display_news') == "yes"):
                          <div class="card-body-text">
                            <!--<p><?php the_excerpt();?></p>-->
                            
-                           <p class="card-link-text news-card-date mt-2"><small><?php the_date(); ?></small></p>
+                           <p class="card-link-text news-card-date mt-2"><small><?php echo get_the_date(); ?></small></p>
                          </div>
                          <!--<div class="news-card-line-container mt-3"></div>-->
 
