@@ -53,6 +53,7 @@ add_action( 'after_setup_theme', 'wlt_custom_header_setup' );
 function wlt_theme_support(){
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+    add_theme_support( 'custom-logo' );
     
 
 }
