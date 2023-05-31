@@ -30,7 +30,7 @@
                     <div class="icon-wrapper">
                         <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
                     </div>
-                    <p class="p d-none d-md-block">Back to Key Information Menu</p>
+                    <p class="p d-none d-md-block">Back to <?php echo get_post_type(); ?> menu</p>
                     
                     
 
