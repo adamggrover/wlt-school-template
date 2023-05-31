@@ -13,43 +13,10 @@
 
     </div>
 -->
-<div class="featured-img-header">
-    <?php
-    // Check if this is a post or page, if it has a thumbnail, and if it's a big one
-    if ( is_singular() && current_theme_supports( 'post-thumbnails' ) &&
-    has_post_thumbnail( $post->ID ) &&
-    ( /* $src, $width, $height */ $image = wp_get_attachment_image_src(
-    get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
-    $image[1] >= HEADER_IMAGE_WIDTH ) :
-    // Houston, we have a new header image!
-    echo get_the_post_thumbnail( $post->ID );
-    elseif ( get_header_image() ) : ?>
-    <img src="<?php header_image(); ?>" width="<?php echo
-    HEADER_IMAGE_WIDTH; ?>" height="<?php echo
-    HEADER_IMAGE_HEIGHT; ?>" alt="" />
-    <?php endif; ?>
-</div>
+
 
 <div class="container" id="main-page-area" data-aos="fade-up" data-aos-delay="200" data-aos-duration='800' >
-            <div class="content-header row gx-3">
-                <div class="content-header-breadcrumb-wrapper col-lg-6 col-md-12">
-                    <i class="fa-solid fa-house fa-xl"></i><span class="breadcrumb-spacer"></span>
-                    <h6 class="mb-0 content-header-breadcrumb-links"><small><?php if( function_exists( 'aioseo_breadcrumbs' ) ) aioseo_breadcrumbs(); ?></small></h6>
-                    
-
-                </div>
-                <div class="content-header-social col-lg-6 col-md-12">
-                    <h6 class="mb-0"><small>Share This Page</small></h6><span class="breadcrumb-spacer"></span>
-                    <div class="content-area-social-links">
-                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" target="_blank" data-show-count="false"><i class="fa-brands fa-twitter ps-2 fa-xl"></i></a>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target="_blank"><i class="fa-brands fa-facebook-f ps-2 fa-xl"></i></a>
-                        <a href="mailto:office@weareacademy.co.uk"><i class="fa-solid fa-envelope ps-2 fa-xl"></i></a>   
-
-                    </div>
-                    
-                    
-                </div>
-            </div>
+<?php include 'content-header-full.php';?>
             <div class="content-area row" >
                 <div class="col-lg-12 content-column">
                     
@@ -58,25 +25,61 @@
                     <div class="content-body row">
 
                         <div class="col-md-5">
+    
+
+                        <?php $query = new WP_Query( array( 'page_id' => get_option('page_on_front')) ); ?>
+
+                        <?php while( $query->have_posts() ) : $query->the_post(); ?>
+
+                        <p class="mb-3 contact-us-address"><?php echo get_bloginfo('name'); ?><br><?php the_field('address_line_1') ?><br><?php the_field('county') ?> <?php the_field('postcode') ?></p>
+
+                        <p class="mb-4"><?php the_field('headteacher_position') ?>: <?php the_field('headteacher_name') ?></p>
+
+                        <p class="mb-4">Tel: <?php the_field('phone_number') ?></p>
+
+                        <p class="mb-4">E-mail: <a href="mailto:<?php the_field('email_address') ?>"><?php the_field('email_address') ?></p></a>
+
+                        <?php endwhile; 
+                     wp_reset_query();
+                     ?>
+
                         <?php
                         if (have_posts()):
                         while (have_posts()) : the_post();
-                            the_content();
-                        endwhile;
-                        else:
-                        echo '<p>Sorry, no posts matched your criteria.</p>';
-                        endif;
+                        
+                            
+                   
                         ?>
 
+                        <h4 class="h5 mt-5">The School Day</h4>
+
+                        <p><?php the_field('school_day'); ?></p>
+
+
+                        <h3 class="h5 mt-5">Paper Copies</h4>
+
+                        <p>If you, as a parent, request a paper copy of the information on this website, you will be provided it free of charge. Please contact the office using the information above</p>
+                        
+                        
 
 
                         </div>
+
+      
 
                         <div class="col-md-7">
-                        <div style="width: 100%"><iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Weare%20Academy%20First%20School%20and%20Rainbow%20Woods%20Pre-School,%20Notting%20Hill%20Way,%20Weare,%20Axbridge%20BS26%202JS&t=&z=13&ie=UTF8&iwloc=&output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">measure area map</a></iframe></div>
+                        <div style="width: 100%"><iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="<?php the_field('map_url'); ?>" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
 
 
                         </div>
+
+                        <?php
+                             endwhile;
+                            else:
+                            
+                            endif;
+
+                        ?>
 
                         
 
