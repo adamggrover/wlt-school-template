@@ -1,6 +1,6 @@
 <div class="hero-wrapper" id="hero-wrapper">
 
-     <header id="header" class="header1 row p-0 pt-1 m-0 ">
+     <header id="header" class="header1 row p-2 pt-1 m-0 ">
         <div  id="header-search-container">
             <div class="container d-flex align-items-center search-input-box">
                 <div class="search-left">
