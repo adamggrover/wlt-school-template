@@ -30,7 +30,10 @@
                     <div class="icon-wrapper">
                         <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
                     </div>
-                    <p class="p d-none d-md-block">Back to <?php echo get_post_type(); ?> menu</p>
+                    <p class="p d-none d-md-block">Back to <?php $postType = get_post_type_object(get_post_type());
+                                                                                if ($postType) {
+                                                                                    echo esc_html($postType->labels->menu_name);
+                                                                                } ?> Menu</p>
                     
                     
 
