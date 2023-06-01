@@ -483,9 +483,7 @@ if (strlen($tweet) > 150){
 
             <div class="twitter-card-content-top">
                <div class="twitter-user-icon-container">
-                <img class="twitter-user-icon" src="<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
-                    $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-                    echo $image[0]; ?>"><img>
+                <img class="twitter-user-icon" src="<?php print_r($twitter->includes->users[0]->profile_image_url);?>"><img>
                 </div>
                <h1 class="twitter-user-title h6"><?php print_r($twitter->includes->users[0]->name);?></h1>
             </div>
