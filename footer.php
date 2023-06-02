@@ -13,9 +13,11 @@ $query = new WP_Query( array( 'page_id' => get_option('page_on_front')) ); ?>
         <div class="footer-content container pb-2">
             <div class="row footer-logo">
                 <div class="col-md-4">
+                <?php if( function_exists('custom_logo')) { ?>
                     <img src="<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
 $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 echo $image[0]; ?>" alt="Weare Academy Logo" class="footer-icon">
+<?php }else{} ?>
                 </div>
 
             </div>
