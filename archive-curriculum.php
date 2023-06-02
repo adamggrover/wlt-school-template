@@ -35,7 +35,9 @@
                 <?php
                 $options = array( 
                     'post_type' => 'curriculum',     
-                    'curriculum-category' => 'subject'
+                    'curriculum-category' => 'subject',
+                    'order' =>  'ASC',
+                    'orderby' => 'title'
                     
                 );
                     
@@ -90,7 +92,9 @@
 <?php
                 $options = array( 
                     'post_type' => 'curriculum',     
-                    'curriculum-category' => 'year-group'
+                    'curriculum-category' => 'year-group',
+                    'order' =>  'ASC',
+                    'orderby' => 'title'
                     
                 );
                     
@@ -167,14 +171,14 @@
                 <div class="content-footer">
 
 
-                    <div class="pagination-container">	
+                   <!-- <div class="pagination-container">	
                                 
                                 <?php the_posts_pagination( array(
                                 'prev_text'  => __( '← Previous' ),
                                 'next_text'  => __( 'Next →' ),
                                 ) );
                                 ?>
-                    </div>
+                    </div> -->
 
                  
 
