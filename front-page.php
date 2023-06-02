@@ -291,27 +291,29 @@ $post_object = get_field('image_page_link_4'); ?>
 
    <?php
 
+      $news_archive_url = get_post_type_archive_link( 'news' );
+      $news_archive_id = url_to_postid($news_archive_url);
+      $news_archive_slug = get_post_field( 'news', $news_archive_id );
+
 if (get_field('display_news') == "yes"):
 
-  $news_slug = get_field('news_slug'); 
+
 
   ?>
 
    <section id="news" class="">
 
-<!-- <div class="section-headings text-center row">
-     <h2 class="mt-5 mb-3 section-title">Latest News</h2>
-     <a href="<?php
-             $page_object = get_page_by_path( "/{$news_slug}" );
-             $page_id = $page_object->ID;
-             $permalink = get_permalink( $page_id );
-             echo $permalink;
-             ?>" class=" section-link">View all news</a>
- </div> -->
-<div class="news-card-container-container">
- <div class="container mb-0 p-3">
-   
- 
+    <!-- <div class="section-headings text-center row">
+        <h2 class="mt-5 mb-3 section-title">Latest News</h2>
+        <a href="<?php
+
+                echo $news_archive_url;
+                ?>" class=" section-link">View all news</a>
+    </div> -->
+    <div class="news-card-container-container">
+    <div class="container mb-0 p-3">
+      
+    
      
      <div class="row gy-5 row-cols-1 row-cols-md-4 mb-4 mt-1" data-aos="fade-up" data-aos-delay="100">
 
@@ -319,8 +321,10 @@ if (get_field('display_news') == "yes"):
 
 
        <?php
+
+
          
-         $newsPosts = new WP_Query( array( 'pagename' => $news_slug, 'posts_per_page' => '4' ) );
+         $newsPosts = new WP_Query( array( 'pagename' => $news_archive_slug, 'posts_per_page' => '4' ) );
          
 
          while ($newsPosts->have_posts()) : $newsPosts->the_post(); ?>
