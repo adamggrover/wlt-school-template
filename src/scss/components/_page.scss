@@ -109,6 +109,13 @@
 
 .content-column{
     margin-bottom: 9rem;
+
+
+    .wp-block-embed iframe{
+
+        width: 100%;
+        min-height: 500px;
+    }
     
 
 }
