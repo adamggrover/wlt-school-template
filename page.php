@@ -19,7 +19,7 @@
 <div class="container" data-aos="fade-up" data-aos-delay="200" data-aos-duration='800' id="main-page-area">
 <?php include 'content-header.php';?>
 
-            <div class="content-area row gx-3">
+            <div class="content-area row gx-5">
                 <div class="col-lg-9 content-column">
                     
                     <h1 id="content-h1"><?php the_title(); ?></h1>
