@@ -6,15 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo get_bloginfo('name'); ?></title>
     
+    <?php
+    $query = new WP_Query( array( 'page_id' => get_option('page_on_front')) ); ?>
 
+    <?php while( $query->have_posts() ) : $query->the_post(); ?>
+    
     <!-- Google tag (gtag.js) -->
 
+    <?php the_field('google_tag') ?>
+
+    <?php endwhile; 
+    wp_reset_query();
+
 
 
 
    
    
-    <?php
+    
     wp_head();
     ?>
 
