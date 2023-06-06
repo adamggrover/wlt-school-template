@@ -17,6 +17,11 @@ table{
         border: none;
     }
 
+    tr{
+        font-size: 0.9rem;
+        vertical-align: text-top;
+    }
+
 }
 
 
@@ -40,9 +45,10 @@ td {
 th {
     
     text-align: left;
+    vertical-align: text-top;
     background-color: g.$primary;
     color: white;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     padding: 0.8rem;
     border-top: 0!important;
     border-right: 0!important;
