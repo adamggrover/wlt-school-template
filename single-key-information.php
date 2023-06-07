@@ -64,7 +64,56 @@
 
                     the_content();
 
+                    
+
+
+                
                     ?>
+
+                    <div class="wlt-site-content">
+
+                    <?php
+
+                        $wlt_site_cat = get_field('wlt_site_cat');
+
+                        switch_to_blog( 5 );
+                        // pull in posts from main blog
+
+                        $args = array(
+                            'post_type' => 'key-information',
+                            'key-information-category' => $wlt_site_cat
+                        );
+
+                            $query = new WP_Query( $args);
+
+                        if ( $query->have_posts() ) { ?>
+
+                            <h2>Additional Wessex Learning Trust Information</h2>
+                            <?php
+                            while ( $query->have_posts() ) :
+                            $query->the_post();
+
+                            
+                            ?>
+                            <h2><?php the_title(); ?></h2>
+                            <?php the_content();?>
+                            <div class="wlt-site-content-spacer"></div>
+
+                            <?php
+                            endwhile;
+                        wp_reset_postdata();
+                        } else {
+                        // none were found
+                        }
+
+                        restore_current_blog();
+
+
+                    ?>                                                          
+
+                    </div>
+
+
 
 
                         </div>

@@ -449,7 +449,7 @@ function new_excerpt_more($more) {
 add_filter('excerpt_more', 'new_excerpt_more');
 
 
-// Add custom taxonomy
+//**********Add custom taxonomy***************************************
 
 function tr_create_my_taxonomy() {
 
@@ -466,6 +466,24 @@ function tr_create_my_taxonomy() {
     );
 }
 add_action( 'init', 'tr_create_my_taxonomy' );
+
+  //**********Add custom taxonomy***************************************
+
+  function wlt_create_my_taxonomy() {
+
+    register_taxonomy(
+        'key-information-category',
+        'key-information',
+        array(
+            'label' => __( 'Key Information Category' ),
+            'rewrite' => array( 'slug' => 'key-information' ),
+            'show_in_rest'          => true,
+            'hierarchical' => true,
+
+        )
+    );
+}
+add_action( 'init', 'wlt_create_my_taxonomy' );  
 
 //*****************Remove Comments********************************
 
