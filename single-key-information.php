@@ -58,8 +58,7 @@
 
                     <div class="content-body">
 
-                     
-
+                    <div class="key-information-post-content">
                     <?php
 
                     the_content();
@@ -69,6 +68,9 @@
 
                 
                     ?>
+
+                    </div>
+
 
                     <div class="wlt-site-content">
 
@@ -88,14 +90,14 @@
 
                         if ( $query->have_posts() ) { ?>
 
-                            <h2>Additional Wessex Learning Trust Information</h2>
+                            
                             <?php
                             while ( $query->have_posts() ) :
                             $query->the_post();
 
                             
                             ?>
-                            <h2><?php the_title(); ?></h2>
+                            <h2>Wessex Learning Trust <?php the_title(); ?></h2>
                             <?php the_content();?>
                             <div class="wlt-site-content-spacer"></div>
 
