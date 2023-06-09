@@ -8,7 +8,7 @@
 .editor-styles-wrapper .is-style-wlt-file-block { 
 	
 		a{
-			background-color: g.$primary-light;
+			background-color: g.$primary-light-light;
 			padding: 1rem;
 			margin-bottom: 4px;
 			color: g.$dark;
@@ -135,23 +135,24 @@
 
 	a{
 		background-color: g.$primary!important;
-		padding: 0.6rem 1.2rem 0.6rem 1.2rem!important;
+		padding: 0.7rem 1.3rem !important;
 		font-weight: 500!important;
 		font-size: 1rem;
 		color: white!important;
-		border-radius: 0.4rem!important;
+		border-radius: 0!important;
 		min-width: 3rem;
-		border: g.$primary solid 1px!important;
-		margin-top: 1.3rem;
-		margin-bottom: 1.3rem;
+		border: none!important;
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
 
 		&:hover{
-			background-color: white!important;
-			border: g.$primary solid 1px!important;
-			color: g.$primary!important;
+			background-color: g.$accent!important;
+			border: none!important;
+			color: white!important;
 
 		}
 	}
+	
 }
 	
 

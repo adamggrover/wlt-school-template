@@ -110,6 +110,7 @@
 
                         restore_current_blog();
 
+                        $wlt_site_cat = "";
 
                     ?>                                                          
 
