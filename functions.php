@@ -394,7 +394,18 @@ add_action( 'pre_get_posts', function ( $query ) {
     };
 } );
 
-// Search box
+// Function to sort class pages alphabetically
+
+add_action( 'pre_get_posts', function ( $query ) {
+    if ( $query->is_archive() && $query->is_main_query() ) { 
+      if ( get_query_var( 'post_type' ) == 'class-pages' ) { 
+        $query->set( 'order', 'ASC' );
+        $query->set( 'orderby', 'title' );
+      };
+    };
+} );
+
+
 
 // Search box
 
