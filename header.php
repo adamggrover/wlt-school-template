@@ -50,7 +50,7 @@
 
 
           <div class="primary-menu-container animate__animated" id="primary-menu-container">
-          <?php bellows( 'main' , array( 'menu' => 6 ) ); ?>
+          <?php bellows( 'main' , array( 'theme_location' => 'primary' ) ); ?>
           </div>
 
           </div>
