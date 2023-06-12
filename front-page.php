@@ -102,20 +102,31 @@
                     <div class="welcome-right-background col-lg-6 pt-5">
                         
                         <div class="welcome-video-container" data-aos="fade-left" data-aos-delay="600" data-aos-duration='800'>
-                          <!--<video width="800" controls class="img-fluid">
-                          <source src="mov_bbb.mp4" type="video/mp4">
-                          <source src="mov_bbb.ogg" type="video/ogg">
-                            Your browser does not support HTML5 video.
-                          </video>-->
-                          <?php $image = get_field('welcome_image'); ?>
-                  <?php if($image): //dont output an empty image tag ?>
+
+                        <?php if (get_field('welcome_file_type') == "video"): ?>
+
+                          <video width="800" controls class="img-fluid">
+                          <source src="<?php the_field('welcome_video') ?>" type="video/mp4">
+                          
+                            
+                          </video>
+
+                          <?php endif; 
+
+                          if (get_field('welcome_file_type') == "photo"): 
 
 
-                 <img src="<?php echo $image['sizes']['medium']; ?>" alt="Avatar" class="image img-fluid img-link-img"> 
+                            $image = get_field('welcome_image'); ?>
+                            <?php if($image): //dont output an empty image tag ?>
 
-                 
-       
-                  <?php endif; ?>
+
+                              <img src="<?php echo $image['sizes']['medium']; ?>" alt="Avatar" class="image img-fluid img-link-img"> 
+
+                            
+                  
+                            <?php endif; ?>
+
+                          <?php endif; ?>
 
                         </div>
                         
@@ -410,7 +421,7 @@ if (get_field('display_twitter') == "yes"):
 
       $twitter_id = get_field('twitter_id'); 
       $url = "https://api.twitter.com/2/users/{$twitter_id}/tweets?exclude=retweets,replies&max_results=10&media.fields=preview_image_url,url&tweet.fields=text,created_at&expansions=attachments.media_keys,author_id&user.fields=url,username,profile_image_url";
-      $authorization = "Authorization: Bearer AAAAAAAAAAAAAAAAAAAAAJy%2FjgEAAAAA9NWGe5o%2FjDoTFjnVrPfjPWFi1Cw%3DrotYh2pzyq7xypGwtoYDSQcBPbTlNU4X3T4NA8oPOdZhla50Pc";
+      $authorization = "Authorization: Bearer AAAAAAAAAAAAAAAAAAAAAJy%2FjgEAAAAA5FJO31E80NGGhlJRYfT1jIeawQc%3Da5GBkJynSUSQIYpDCcxmYTRyWW24T4nyaL4FJNyDkH5TMoJVGG";
   
       $ch = curl_init();
   
