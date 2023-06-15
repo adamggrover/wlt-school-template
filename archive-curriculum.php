@@ -50,7 +50,7 @@
 
                     ?>
 
-                    <h3 class="curriculum-cat-heading h3">Curriculum By Subject Area</h3>
+                    <h3 class="curriculum-cat-heading h3 mt-5 pt-5 mb-5">Curriculum By Subject Area</h3>
                     <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4  g-2 mb-5"> 
 
                     <?php
@@ -107,7 +107,7 @@
 
                     ?>
 
-                    <h3 class="curriculum-cat-heading h3">Curriculum By Year Group</h3>
+                    <h3 class="curriculum-cat-heading h3 mt-5 pt-5 mb-5">Curriculum By Year Group</h3>
                     <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4  g-2 mb-5"> 
 
                     <?php
