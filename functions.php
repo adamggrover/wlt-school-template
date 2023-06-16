@@ -91,7 +91,7 @@ function wlt_menus(){
         'primary' => 'Desktop Primary Left',
         'quick-links-footer' => 'Quick Links Footer',
         'quick-links-header' => 'Quick Links Header',
-        'accessability' => 'Accessability Footer'
+        'accessibility' => 'Accessibility Footer'
         
     );
 
@@ -394,16 +394,7 @@ add_action( 'pre_get_posts', function ( $query ) {
     };
 } );
 
-// Function to sort class pages alphabetically
 
-add_action( 'pre_get_posts', function ( $query ) {
-    if ( $query->is_archive() && $query->is_main_query() ) { 
-      if ( get_query_var( 'post_type' ) == 'class-pages' ) { 
-        $query->set( 'order', 'ASC' );
-        $query->set( 'orderby', 'title' );
-      };
-    };
-} );
 
 
 

@@ -57,8 +57,8 @@ echo $image[0]; ?>" alt="school Logo" class="footer-icon">
 
                 <div class="col-md-4 footer-accessability d-flex-column footer-column">
                     <div class="accesability-top">
-                        <h6 class="footer heading mb-3">Accessability</h6>
-                        <?php wp_nav_menu( array( 'theme_location' => 'accessability' ) ); ?>
+                        <h6 class="footer heading mb-3">Accessibility</h6>
+                        <?php wp_nav_menu( array( 'theme_location' => 'accessibility' ) ); ?>
                     </div>
 
                     <a href="https://wessexlearningtrust.co.uk" target="_blank"><img class="wlt-white mb-3 mt-3 img-fluid" src="" alt=""></a>               
