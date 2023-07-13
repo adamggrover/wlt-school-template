@@ -103,7 +103,7 @@ echo $image[0]; ?>" alt="school Logo" class="footer-icon">
                         
                         <small><p>www.wessexlearningtrust.co.uk</p></small>
                         
-                        <small><p class="mb-0">&#169 Wessex Learning Trust 2022</p></small> 
+                        <small><p class="mb-0">&#169 Wessex Learning Trust <?php echo date("Y"); ?></p></small> 
                         
                         
 
