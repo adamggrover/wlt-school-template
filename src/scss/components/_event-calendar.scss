@@ -51,3 +51,15 @@
     background: none;
     color: g.$primary;
 }
+
+// Hide event manager branding
+
+#em-wrapper{
+
+p:last-child{
+
+    display: none;
+
+}
+
+}
