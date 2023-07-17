@@ -58,3 +58,8 @@ a{
 li{
     padding: 0.2rem;
 }
+
+.wordpress-page-area *:not(li){
+
+   margin-bottom: 20px;
+}

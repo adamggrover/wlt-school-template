@@ -16,7 +16,7 @@
 
 
 
-<div class="container" data-aos="fade-up" data-aos-delay="200" data-aos-duration='800' id="main-page-area">
+<div class="container wordpress-page-area" data-aos="fade-up" data-aos-delay="200" data-aos-duration='800' id="main-page-area">
 <?php include 'content-header.php';?>
 
             <div class="content-area row gx-5">

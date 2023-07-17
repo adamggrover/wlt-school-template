@@ -19,7 +19,7 @@
     get_header();
 ?>
 
-<div class="container key-information-single-page" data-aos="fade-up" data-aos-delay="200" data-aos-duration='800'>
+<div class="container key-information-single-page wordpress-page-area" data-aos="fade-up" data-aos-delay="200" data-aos-duration='800'>
     
     <?php include 'content-header-full.php'; ?>
 
