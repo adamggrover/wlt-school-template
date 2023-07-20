@@ -414,6 +414,8 @@ endif; ?>
 
 <!----------Twitter Section----------------------------------------------------->
 <?php
+/*
+
 
 if (get_field('display_twitter') == "yes"):
 
@@ -553,7 +555,7 @@ if (strlen($tweet) > 150){
 
 </section>
 
-<?php endif; ?>
+<?php endif; */?>
     
 
         <!--CALENDAR SECTION
