@@ -541,7 +541,7 @@ echo $image[0]; ?>);  //Add your own logo image in this url
     padding-bottom: 30px; 
     }
     
-    body.login.login-action-login.wp-core-ui.locale-en-gb{
+    body.login.login-action-login.wp-core-ui{
         background-color: #9a9a9a;
     }
 
