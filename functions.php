@@ -528,3 +528,26 @@ add_action('init', function () {
         remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
     }
 });
+
+//------Add custom logo to login screen---------------------------
+
+function my_login_logo_one() { 
+    ?> 
+    <style type="text/css"> 
+    body.login div#login h1 a {
+    background-image: url(<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
+$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+echo $image[0]; ?>);  //Add your own logo image in this url 
+    padding-bottom: 30px; 
+    }
+    
+    body.login.login-action-login.wp-core-ui.locale-en-gb{
+        background-color: #9a9a9a;
+    }
+
+    
+    </style>
+    <?php 
+    } add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
+    
+    ?>
