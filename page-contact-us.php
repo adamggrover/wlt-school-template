@@ -15,10 +15,10 @@
 -->
 
 
-<div class="container wordpress-page-area" id="main-page-area" data-aos="fade-up" data-aos-delay="200" data-aos-duration='800' >
+<div class="container" id="main-page-area" data-aos="fade-up" data-aos-delay="200" data-aos-duration='800' >
 <?php include 'content-header-full.php';?>
             <div class="content-area row" >
-                <div class="col-lg-12 content-column">
+                <div class="col-lg-12 content-column  wordpress-page-area">
                     
                     <h1 id="content-h1"><?php the_title(); ?></h1>
 

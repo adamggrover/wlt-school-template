@@ -19,11 +19,11 @@
     get_header();
 ?>
 
-<div class="container key-information-single-page wordpress-page-area" data-aos="fade-up" data-aos-delay="200" data-aos-duration='800'>
+<div class="container key-information-single-page " data-aos="fade-up" data-aos-delay="200" data-aos-duration='800'>
     
     <?php include 'content-header-full.php'; ?>
 
-            <div class="content-area row gx-5">
+            <div class="content-area row gx-5 wordpress-page-area">
 
             <a href="<?php echo get_post_type_archive_link(get_post_type()); ?>" class="col-2 key-information-back-button-link">
                     <div class="key-information-back-button">

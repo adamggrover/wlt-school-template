@@ -2,10 +2,10 @@
     get_header();
 ?>
 
-<div class="container wordpress-page-area" id="single-post-main-page-area" data-aos="fade-up" data-aos-delay="200" data-aos-duration='800' >
+<div class="container" id="single-post-main-page-area" data-aos="fade-up" data-aos-delay="200" data-aos-duration='800' >
 <?php include 'content-header-full.php';?>
 
-            <div class="content-area row gx-3">
+            <div class="content-area row gx-3 wordpress-page-area">
                 <div id="post-content-column col-12">
                     
                     
