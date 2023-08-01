@@ -23,7 +23,7 @@
     
     <?php include 'content-header-full.php'; ?>
 
-            <div class="content-area row gx-5 wordpress-page-area">
+            <div class="content-area row gx-5 ">
 
             <a href="<?php echo get_post_type_archive_link(get_post_type()); ?>" class="col-2 key-information-back-button-link">
                     <div class="key-information-back-button">
@@ -42,7 +42,7 @@
    
                 
 
-                <div id="post-content-column" class="col">
+                <div id="post-content-column" class="col wordpress-page-area">
 
 
                     
