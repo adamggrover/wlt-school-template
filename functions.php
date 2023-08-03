@@ -135,7 +135,7 @@ wp_enqueue_script('wlt-jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3
 wp_enqueue_script('wlt-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js', array(), '3.4', true); 
 wp_enqueue_script('wlt-slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array(), '1.8.1', true);
 wp_enqueue_script('wlt-main', get_template_directory_uri().'/Assets/js/main.js', array('wlt-jquery', 'wlt-slick', 'wlt-popper'), '1.1', true);
-wp_enqueue_script('wlt-main', get_template_directory_uri().'/Assets/js/slick.js', array('wlt-main'), '1.0', true);
+wp_enqueue_script('wlt-main', get_template_directory_uri().'/Assets/js/slick.js', array('wlt-main'), '1.1', true);
 
 }
 
@@ -551,3 +551,13 @@ echo $image[0]; ?>);  //Add your own logo image in this url
     } add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
     
     ?>
+
+<!-------------------- Event Manger ---------------------------->
+
+<?php
+function my_em_custom_formats( $array ){
+	$my_formats = array('dbem_event_list_item_format'); //the format you want to override, corresponding to file above.
+	return $array + $my_formats; //return the default array and your formats.
+}
+add_filter('em_formats_filter', 'my_em_custom_formats', 1, 1);
+?>
