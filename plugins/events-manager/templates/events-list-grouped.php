@@ -30,12 +30,22 @@ $id = esc_attr($args['id']);
 <div id="cal-feed-instructions-container">
 	<div class="cal-feed-link-container">
 
-		<div class="cal-feed-instructions">
+		<div class="cal-feed-instructions mb-0">
 			<i id="instructions-close-btn" class="fa-solid fa-square-xmark"></i>
-			<p><small>Please find below instructions on how to configure some of the most popular calendar programmes to automatically display dates from our calendar using the address below:</small></p>
-			<p><small><?php echo $url . "/events.ics"; ?></small></p>
-			<p><small>Copy the URL below and click the device type below for further instructions:</small></p>
-
+			
+			<p><small>To subscribe to the calendar copy the url below and then follow the relevant instructions for your calendar programme of choice.</small></p>
+			<input id="iCalUrl" type="text" value="<?php echo $url . "/events.ics"; ?>" >
+			<div class="copy-text-btn-container-wrapper">
+				<div class="copy-text-btn-container">
+					<i id="copy-text-btn" class="fa-solid fa-clone mb-0"></i>
+				</div>
+			</div>
+			<div id="copy-text-notification-wrapper">
+				<p>Text copied</p>
+			</div>
+			<a href="https://support.office.com/en-us/article/Import-or-subscribe-to-a-calendar-in-Outlook-com-cff1429c-5af6-41ec-a5b4-74f2c278e98c"><li>Outlook</li></a>
+			<a href="https://support.google.com/calendar/answer/37100?hl=en"><li>Gmail/Android</li></a>
+			<a href="webcal://www.theblueschoolwells.co.uk/calendar/events.ics"><li>iPhone</li></a>
 		</div>
 	</div>
 </div>

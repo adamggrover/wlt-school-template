@@ -430,6 +430,8 @@ $('.modal').appendTo("body");
 
 //------------------Event Calendar----------------------------------------------------------------
 
+// open/close instructions container
+
 const calBtn = document.getElementById('calendar-subscribe-link-container')
 
 calBtn.addEventListener("click", iFeedInfo);
@@ -449,3 +451,32 @@ function iCloseInfo(){
   element.classList.toggle("show-instructions");
 
 }
+
+// copy text for ical url
+
+function copyIcalUrl() {
+
+  // Get the text field
+  let copyText = document.getElementById("iCalUrl");
+  let copyNotification = document.getElementById("copy-text-notification-wrapper");
+
+  // Select the text field
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+
+   // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+
+  // Display Copy text notification
+  copyNotification.classList.add("show");
+
+  copyNotification.addEventListener("transitionend", function (){copyNotification.classList.remove("show")});
+
+  
+
+}
+
+const iCalUrlBtn = document.getElementById('copy-text-btn')
+
+iCalUrlBtn.addEventListener("click", copyIcalUrl);
+
