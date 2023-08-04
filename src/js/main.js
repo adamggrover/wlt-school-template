@@ -432,11 +432,19 @@ $('.modal').appendTo("body");
 
 const calBtn = document.getElementById('calendar-subscribe-link-container')
 
-
-
 calBtn.addEventListener("click", iFeedInfo);
 
 function iFeedInfo(){
+  let element = document.getElementById("cal-feed-instructions-container");
+  element.classList.toggle("show-instructions");
+
+}
+
+const iCloseBtn = document.getElementById('instructions-close-btn')
+
+iCloseBtn.addEventListener("click", iCloseInfo);
+
+function iCloseInfo(){
   let element = document.getElementById("cal-feed-instructions-container");
   element.classList.toggle("show-instructions");
 

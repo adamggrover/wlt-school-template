@@ -31,9 +31,10 @@ $id = esc_attr($args['id']);
 	<div class="cal-feed-link-container">
 
 		<div class="cal-feed-instructions">
-			<p>Please find below instructions on how to configure some of the most popular calendar programmes to automatically display dates from our calendar using the address below:</p>
+			<i id="instructions-close-btn" class="fa-solid fa-square-xmark"></i>
+			<p><small>Please find below instructions on how to configure some of the most popular calendar programmes to automatically display dates from our calendar using the address below:</small></p>
 			<p><small><?php echo $url . "/events.ics"; ?></small></p>
-			<p>Copy the URL below and click the device type below for further instructions:</p>
+			<p><small>Copy the URL below and click the device type below for further instructions:</small></p>
 
 		</div>
 	</div>

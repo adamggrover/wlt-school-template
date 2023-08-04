@@ -12,14 +12,16 @@
 
     height: 4px;
     //background-color: g.$muted-light-light;
-    transition: all 0.2s;
+    transition: all 0.6s;
     transition-timing-function: ease-in-out;
     border: 4px solid g.$muted-light-light;
+    position: relative;
 
     .cal-feed-link-container{
-        transition: all 0.2s;
+        transition: all 0.6s;
         transition-timing-function: ease-in-out;
         opacity: 0;
+        padding: 2rem 2rem 0rem 2rem;
     }
     
 
@@ -29,17 +31,30 @@
 
 }
 
+.cal-feed-link-container > *{
+
+    margin-bottom: 0;
+}
+
+i#instructions-close-btn{
+
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+    
+}
+
 #cal-feed-instructions-container.show-instructions{
     //background-color: g.$muted-light-light;
-    height: fit-content;
+    height: 350px;
     
     
   
-    transition: all 0.2s;
+    transition: all 0.6s;
     transition-timing-function: ease-in-out;
 
     .cal-feed-link-container{
-        padding: 1rem;
         opacity: 1;
     }
 
