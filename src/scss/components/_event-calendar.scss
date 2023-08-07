@@ -219,7 +219,12 @@ div.categories-section{
     z-index: 5;
 }
 
+// Remove event manager branding
 
+.em-view-container + p{
+
+    display: none;
+}
 
 
 
