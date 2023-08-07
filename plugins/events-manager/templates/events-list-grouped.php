@@ -16,8 +16,11 @@ $id = esc_attr($args['id']);
 <div id="calendar-subscribe-link-container" class="mb-0">
 	<i class="fa-regular fa-calendar-days"></i>
 	<p>Subscribe to full calendar</p>
+
+
 	
 </div>
+
 
 <!-- get ical feed url -->
 <?php 
@@ -33,7 +36,7 @@ $id = esc_attr($args['id']);
 		<div class="cal-feed-instructions mb-0">
 			<i id="instructions-close-btn" class="fa-solid fa-square-xmark"></i>
 			
-			<p><small>To subscribe to the calendar copy the url below and then follow the relevant instructions for your calendar programme of choice.</small></p>
+			<p><small>To subscribe to the calendar, copy the url below and then follow the relevant instructions for your calendar programme/device of choice.</small></p>
 			<input id="iCalUrl" type="text" value="<?php echo $url . "/events.ics"; ?>" >
 			<div class="copy-text-btn-container-wrapper">
 				<div class="copy-text-btn-container">
@@ -41,15 +44,29 @@ $id = esc_attr($args['id']);
 				</div>
 			</div>
 			<div id="copy-text-notification-wrapper">
-				<p>Text copied</p>
+				<p>Link copied</p>
 			</div>
-			<a href="https://support.office.com/en-us/article/Import-or-subscribe-to-a-calendar-in-Outlook-com-cff1429c-5af6-41ec-a5b4-74f2c278e98c"><li>Outlook</li></a>
-			<a href="https://support.google.com/calendar/answer/37100?hl=en"><li>Gmail/Android</li></a>
-			<a href="webcal://www.theblueschoolwells.co.uk/calendar/events.ics"><li>iPhone</li></a>
+			<ul>
+				<a href="https://support.office.com/en-us/article/Import-or-subscribe-to-a-calendar-in-Outlook-com-cff1429c-5af6-41ec-a5b4-74f2c278e98c" target="_blank"><li>Outlook</li></a>
+				<a href="https://support.google.com/calendar/answer/37100?hl=en" target="_blank"><li>Gmail/Android</li></a>
+				<a href="webcal://www.theblueschoolwells.co.uk/calendar/events.ics" target="_blank"><li>iPhone</li></a>
+			</ul>
+			
 		</div>
 	</div>
 </div>
 
+<div class="categories-section">
+	
+	<hr class="mb-1">
+	<div class="categories-wrapper">
+		<p id="categories-title" class="mb-2"><small>Categories</small></p>
+		<ul>[categories_list hide_empty=0]<div class="category-wrapper"><div class="category-color-box" style="background-color: #_CATEGORYCOLOR"></div><li>#_CATEGORYLINK</li></div>[/categories_list]</ul>
+	</div>
+	<hr>
+
+
+</div>
 
 
 

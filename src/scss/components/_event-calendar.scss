@@ -23,6 +23,10 @@
         opacity: 0;
         padding: 2rem 2rem 0rem 2rem;
     }
+
+    ul{
+        padding: 0;
+    }
     
 
 
@@ -101,9 +105,15 @@ i#instructions-close-btn{
     margin-left: 0.5rem;
 }
 
-.copy-text-btn-container-wrapper{
+.copy-text-btn-container-wrapper {
 
     display: inline-block;
+}
+
+div.copy-text-btn-container-wrapper * {
+
+    margin-bottom: 0;
+
 }
 
 #copy-text-notification-wrapper{
@@ -137,6 +147,10 @@ i#instructions-close-btn{
 
 .cal-feed-instructions {
 
+    input{
+        margin-bottom: 0.4rem;
+    }
+
     a{
         text-decoration: none;
     }
@@ -146,6 +160,72 @@ i#instructions-close-btn{
     list-style-type: none;
     }
 }
+
+div.categories-section * {
+
+    margin-bottom: 0;
+
+
+
+
+
+
+}
+
+div.categories-section{
+
+    .category-wrapper{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.8rem;
+        
+        text-transform: uppercase;
+    
+        #categories-title{
+            
+            color: g.$muted;
+        }
+    
+    
+        li{
+            list-style-type: none;
+        }
+    
+        a{
+            text-decoration: none;
+            color: g.$muted;
+        }
+    }
+    
+    .category-color-box{
+    
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+
+    ul{
+        display: flex;
+        gap: 0.5rem;
+        padding: 0;
+
+
+    }
+
+
+}
+
+.categories-dropdown{
+    z-index: 5;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -177,12 +257,39 @@ i#instructions-close-btn{
     padding: 1rem;
     border-bottom: 0.6rem solid g.$muted-light-light;
 
-    .date{
+    #date{
         display: flex;
-        flex-direction: column;
+
         align-items: center;
-        padding: 0 1.5rem 0 1.5rem;
+        
         margin-right: 1rem;
+        min-width: 8rem;
+        min-height: 4.5rem;
+
+        .inner-date-container{
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.3rem;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            justify-content: center;
+
+            .pointer{
+                position: absolute;
+                top: 50%;
+                left: -0.2rem;
+
+                
+
+            }
+
+            & *{
+                color: white;
+            }
+        }
     }
 
 

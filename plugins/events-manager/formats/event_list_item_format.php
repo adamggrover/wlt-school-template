@@ -1,9 +1,26 @@
 
-<div class="em-event em-item" style="--default-border:#_CATEGORYCOLOR;">
+<div class="em-event em-item">
 
-	<div class="date">
-					<span class="day h4">#d</span>
-					<span class="month h6">#M</span>
+	<div id="date">
+					{not_long}
+					<div class="inner-date-container"  style="background-color: #_CATEGORYCOLOR">
+						<span class="day h4">#d</span>
+						<span class="month h6">#M</span>
+					</div>
+					{/not_long}
+					{is_long}
+					<div class="inner-date-container"  style="background-color: #_CATEGORYCOLOR">
+						<span class="day h4">#d</span>
+						<span class="month h6">#M</span>
+					</div>
+					<div class="inner-date-container"  style="background-color: #_CATEGORYCOLORB3">
+						<i class="fa-solid fa-play fa-sm pointer" style="color: #_CATEGORYCOLOR"></i>
+						
+						<span class="day h4">#@d</span>
+						<span class="month h6">#@M</span>
+					</div>
+					{/is_long}
+				
 	</div>
 
 	<div class="em-item-info">
