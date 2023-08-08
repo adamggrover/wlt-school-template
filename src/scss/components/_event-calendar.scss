@@ -174,10 +174,17 @@ div.categories-section * {
 
 div.categories-section{
 
+    .categories-list{
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
     .category-wrapper{
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.2rem;
         font-size: 0.8rem;
         
         text-transform: uppercase;
@@ -188,9 +195,7 @@ div.categories-section{
         }
     
     
-        li{
-            list-style-type: none;
-        }
+
     
         a{
             text-decoration: none;
@@ -202,22 +207,15 @@ div.categories-section{
     
         width: 0.5rem;
         height: 0.5rem;
+        
     }
 
-    ul{
-        display: flex;
-        gap: 0.5rem;
-        padding: 0;
 
-
-    }
 
 
 }
 
-.categories-dropdown{
-    z-index: 5;
-}
+
 
 // Remove event manager branding
 
