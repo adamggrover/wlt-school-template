@@ -61,7 +61,7 @@ $id = esc_attr($args['id']);
 	<hr class="mb-1">
 	<div class="categories-wrapper">
 		<p id="categories-title" class="mb-2"><small>Categories</small></p>
-		<ul>[categories_list hide_empty=0]<div class="category-wrapper"><div class="category-color-box" style="background-color: #_CATEGORYCOLOR"></div><li>#_CATEGORYLINK</li></div>[/categories_list]</ul>
+		<div class="categories-list">[categories_list hide_empty=0]<div class="category-wrapper"><div class="category-color-box" style="background-color: #_CATEGORYCOLOR"></div><p>#_CATEGORYLINK</p></div>[/categories_list]</div>
 	</div>
 	<hr>
 
