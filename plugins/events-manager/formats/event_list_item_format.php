@@ -8,12 +8,13 @@
 						<span class="month h6">#M</span>
 					</div>
 					{/not_long}
+
 					{is_long}
 					<div class="inner-date-container"  style="background-color: #_CATEGORYCOLOR">
 						<span class="day h4">#d</span>
 						<span class="month h6">#M</span>
 					</div>
-					<div class="inner-date-container"  style="background-color: #_CATEGORYCOLORB3">
+					<div class="inner-date-container"  style="background-color: #_CATEGORYCOLORC2">
 						<i class="fa-solid fa-play fa-sm pointer" style="color: #_CATEGORYCOLOR"></i>
 						
 						<span class="day h4">#@d</span>
