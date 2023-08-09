@@ -529,35 +529,3 @@ add_action('init', function () {
     }
 });
 
-//------Add custom logo to login screen---------------------------
-
-function my_login_logo_one() { 
-    ?> 
-    <style type="text/css"> 
-    body.login div#login h1 a {
-    background-image: url(<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
-$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-echo $image[0]; ?>);  //Add your own logo image in this url 
-    padding-bottom: 30px; 
-    }
-    
-    body.login.login-action-login.wp-core-ui{
-        background-color: #9a9a9a;
-    }
-
-    
-    </style>
-    <?php 
-    } add_action( 'login_enqueue_scripts', 'my_login_logo_one' );
-    
-    ?>
-
-<!-------------------- Event Manger ---------------------------->
-
-<?php
-function my_em_custom_formats( $array ){
-	$my_formats = array('dbem_event_list_item_format'); //the format you want to override, corresponding to file above.
-	return $array + $my_formats; //return the default array and your formats.
-}
-add_filter('em_formats_filter', 'my_em_custom_formats', 1, 1);
-?>
