@@ -529,3 +529,26 @@ add_action('init', function () {
     }
 });
 
+
+
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
+$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+echo $image[0];?>);
+		height:7.5rem;
+		width:auto;
+		background-size: 7.5rem auto;
+		background-repeat: no-repeat;
+        	padding-bottom: 0;
+        }
+
+            body.login.login-action-login.wp-core-ui{
+        background-color: #9a9a9a;
+    }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+?>
