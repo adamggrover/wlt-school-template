@@ -530,6 +530,8 @@ add_action('init', function () {
 });
 
 
+##--------------Modify Login Screen------------------------------------#
+
 
 function my_login_logo() { ?>
     <style type="text/css">
