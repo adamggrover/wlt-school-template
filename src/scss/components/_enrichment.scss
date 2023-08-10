@@ -1,0 +1,185 @@
+@use 'globals' as g;
+
+.enrichment-modal .modal-header{
+
+    border-bottom: none!important;
+}
+
+.enrichment-page-content p:first-child{
+    
+        font-size: 18px;
+        font-weight: 600;
+}
+
+a.enrichment-item-link{
+    text-decoration: none;
+}
+
+.enrichment-title{
+    color: g.$secondary;
+}
+
+.enrichment-item-container{
+    
+    background-color: g.$primary;
+    color: white;
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 0.8rem;
+    min-height: 165px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: 0.2s ease-in-out;
+
+    &:hover{
+        background-color: g.$accent;
+
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+
+
+    
+
+    .enrichment-item-content{
+        display: flex;
+        gap: 0.8rem;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    
+
+    .enrichment-title{
+        color: white;
+        margin-bottom: 0.5rem;
+        line-height: 1.9rem;
+
+    }
+
+    .enrichment-icon-wrapper{
+
+        font-size: 1rem;
+        display: flex;
+        align-items: flex-end;
+        padding: 0 0.75rem 1rem 0.75rem;
+        
+
+        span{
+            width: 0.4rem;
+        }
+
+        p{
+            font-weight: 400;
+            margin-bottom: 0;
+            
+        }
+
+    }
+
+    .enrichment-line-container{
+        padding: 0.5rem 0;
+        
+        
+        width: 100%;
+        
+        
+        
+        
+
+        .enrichment-line{
+            width: 20%;
+            border-top: 5px solid g.$accent;
+            transition: 0.3s ease-in-out;
+
+        }
+    }
+
+
+}
+
+.enrichment-single-page{
+
+    margin-top: 1rem;
+    padding: 0 1.5rem 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    max-width: 65rem;
+
+    .icon-wrapper{
+        font-size: 1.5rem;
+        
+    }
+    
+}
+
+a.enrichment-back-button-link{
+
+
+
+
+        text-decoration: none;
+        
+    
+
+    
+}
+
+.enrichment-back-button{
+
+    color: white;
+    height: fit-content;
+    width: fit-content;
+    aspect-ratio: 1;
+    background-color: g.$muted-light;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    padding: 0.75rem;
+
+    p{
+        margin-bottom: 0;
+        margin-top: 0.5rem;
+        padding-right: 0.5rem;
+        text-align: left;
+    }
+
+   
+}
+
+div .enrichment-item-link-hover{
+
+
+
+.enrichment-item-container{
+
+    background-color: g.$accent;
+    box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+
+
+    .enrichment-line{
+        width: 100%;
+    }
+
+}
+
+}
+
+#single-post-main-page-area .enrichment-single{
+
+    max-width:75rem ;
+}
+
+.wlt-site-content-spacer{
+
+    height: 4rem;
+}
+
+.enrichment-post-content{
+
+    margin-bottom: 4rem;
+}
+

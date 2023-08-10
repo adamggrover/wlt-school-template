@@ -1,0 +1,73 @@
+@use 'globals' as g;
+
+/*
+.modal {
+    overflow-y:auto!important;
+  }
+  
+
+.modal-backdrop {
+    display: none!important;
+    
+}
+
+
+*/
+
+.modal-content{
+    margin-top: 7rem;
+    
+}
+
+
+.school-houses-tile{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: g.$dark;
+    justify-items: center;
+    padding: 1.5rem 0;
+    border-radius: 0.5rem;
+
+    h2{
+        margin-bottom: 0;
+        margin-top: 1rem;
+        color: white;
+
+        &:hover{
+
+            color: white;
+        }
+    }
+}
+
+.school-tiles-row{
+    
+    margin-bottom: 6rem;
+    margin-top: 2rem;
+}
+
+.house-motto{
+    font-style: italic;
+    padding: 1rem 2rem;
+}
+
+.bio-pic-row{
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.hoh-name{
+    margin-top: 2.5rem;
+}
+
+.hoh-photo{
+
+    border-radius: 2rem;
+    width: 100%;
+    height: auto;
+}
+
+
+
