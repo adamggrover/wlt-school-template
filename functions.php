@@ -539,11 +539,12 @@ function my_login_logo() { ?>
             background-image: url(<?php $custom_logo_id = get_theme_mod( 'custom_logo' );
 $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 echo $image[0];?>);
-		height:7.5rem;
-		width:auto;
-		background-size: 7.5rem auto;
+		
+		width:100%;
+        min-height: max-content;
+		background-size: contain;
 		background-repeat: no-repeat;
-        	padding-bottom: 0;
+        	padding-bottom: 2rem ;
         }
 
             body.login.login-action-login.wp-core-ui{
