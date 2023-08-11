@@ -480,3 +480,4 @@ const iCalUrlBtn = document.getElementById('copy-text-btn')
 
 iCalUrlBtn.addEventListener("click", copyIcalUrl);
 
+
