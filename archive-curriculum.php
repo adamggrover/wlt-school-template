@@ -20,7 +20,7 @@
                         
                         $query->the_post(); ?>
 
-                <div class="row mb-5">
+                <div class="content-area row gx-5 wordpress-page-area mb-5 content-column content-body">
                     <?php the_content(); ?>
                 </div>
 
