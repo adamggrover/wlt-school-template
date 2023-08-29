@@ -198,6 +198,34 @@
 
 }
 
+//Custom button block
+
+.is-style-wlt-custom-button, 
+.editor-styles-wrapper .is-style-wlt-custom-button { 
+	
+
+	a{
+		background-color: g.$accent!important;
+		padding: 0.7rem 1rem !important;
+		font-weight: 500!important;
+		font-size: 1rem;
+		color: g.$primary!important;
+		border-radius: 0!important;
+		min-width: 3rem;
+		border: none!important;
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
+
+		&:hover{
+			background-color: g.$primary!important;
+			border: none!important;
+			color: white!important;
+
+		}
+	}
+	
+}
+
 .aioseo-html-page-sitemap a{
 	text-decoration: none;
 }
