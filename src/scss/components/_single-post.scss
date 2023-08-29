@@ -50,6 +50,8 @@
 .posts-navigation .nav-links,
 .post-navigation .nav-links {
     display: flex;
+    gap: 0.5rem;
+    justify-content: center;
 }
  
 .nav-previous,
