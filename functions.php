@@ -532,6 +532,7 @@ add_action('init', function () {
 
 ##--------------Modify Login Screen------------------------------------#
 
+// main login screen
 
 function my_login_logo() { ?>
     <style type="text/css">
@@ -554,4 +555,31 @@ echo $image[0];?>);
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
+
+
+// reset password login screen
+
+function my_login_logo_reset() { ?>
+    <style type="text/css">
+        .login-action-lostpassword #login h1 a, .login h1 a {
+background-image: url(<?php echo get_template_directory_uri(); ?>/Assets/logos/WLT-icon-square.svg);  //Add your own logo image in this url 
+padding-bottom: 30px; 
+
+}
+
+.login-action-lostpassword #backtoblog, .login-action-lostpassword p#nav{
+        display: none;
+    }
+
+            body.login.login-action-login.wp-core-ui{
+        background-color: #9a9a9a;
+    }
+
+
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo_reset' );
+
+
 ?>
+
