@@ -18,7 +18,7 @@
 <div class="container" id="main-page-area" data-aos="fade-up" data-aos-delay="200" data-aos-duration='800' >
 <?php include 'content-header-full.php';?>
             <div class="content-area row" >
-                <div class="col-lg-12 content-column  wordpress-page-area">
+                <div class="col-lg-12 col-md-5 content-column  wordpress-page-area">
                     
                     <h1 id="content-h1"><?php the_title(); ?></h1>
 
@@ -67,8 +67,9 @@
 
       
 
-                        <div class="col-md-7">
-                        <div style="width: 100%"><iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="<?php the_field('map_url'); ?>" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                        <div class="col-md-7 ">
+                        
+                        <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="<?php the_field('map_url'); ?>"></iframe></div>
 
 
                         </div>
