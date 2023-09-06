@@ -1,19 +1,6 @@
 
 
 
-      <?php
-
-                        if (have_posts()):
-                        while (have_posts()) : the_post();
-
-                            get_template_part('content', 'key-information');
-
-                            
-                        endwhile;
-                        else:
-                        echo '<p>Sorry, no posts matched your criteria.</p>';
-                        endif;
-         ?>
 
 <?php
     get_header();
