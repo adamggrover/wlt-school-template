@@ -44,7 +44,7 @@
 <?php 
 
 //check if events exist. If they do
-//output event calendar
+//output event calendar from wp events manager plugin
 
 if ( class_exists('em-event') ) { ?>
 
