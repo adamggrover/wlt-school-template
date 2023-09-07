@@ -43,10 +43,10 @@
                        
 <?php 
 
-//check if events exist. If they do
+//check if events calendar plugin exists. If it does
 //output event calendar from wp events manager plugin
 
-if ( class_exists('em-event') ) { ?>
+if ( class_exists('EM_Events') ){ ?>
 
     <h3>Event Calendar</h3>
 
