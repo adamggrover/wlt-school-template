@@ -48,6 +48,8 @@
 
 if ( class_exists('EM_Events') ){ ?>
 
+   
+
     <h3>Event Calendar</h3>
 
     <div id="calendar-subscribe-link-container" class="mb-0">
