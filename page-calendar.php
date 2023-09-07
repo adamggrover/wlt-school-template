@@ -86,9 +86,9 @@ if ( class_exists('EM_Events') ){ ?>
                     <p>Link copied</p>
                 </div>
                 <ul>
-                    <a href="https://support.office.com/en-us/article/Import-or-subscribe-to-a-calendar-in-Outlook-com-cff1429c-5af6-41ec-a5b4-74f2c278e98c" target="_blank"><li>Outlook</li></a>
+                    <a href="<?php echo $url . "/events.ics"; ?>" target="_blank"><li>Outlook</li></a>
                     <a href="https://support.google.com/calendar/answer/37100?hl=en&co=GENIE.Platform%3DDesktop" target="_blank"><li>Gmail/Android</li></a>
-                    <a href="webcal://www.theblueschoolwells.co.uk/calendar/events.ics" target="_blank"><li>iPhone</li></a>
+                    <a href="<?php echo $url . "/events.ics"; ?>" target="_blank"><li>iPhone</li></a>
                 </ul>
                 
             </div>
