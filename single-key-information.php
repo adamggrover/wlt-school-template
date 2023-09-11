@@ -15,7 +15,7 @@
             <a href="<?php echo get_post_type_archive_link(get_post_type()); ?>" class="col-2 key-information-back-button-link">
                     <div class="key-information-back-button">
                     <div class="icon-wrapper">
-                        <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+                        <i class="bi bi-arrow-left-circle-fill" aria-hidden="true"></i>
                     </div>
                     <p class="p d-none d-md-block">Back to <?php $postType = get_post_type_object(get_post_type());
                                                                                 if ($postType) {
