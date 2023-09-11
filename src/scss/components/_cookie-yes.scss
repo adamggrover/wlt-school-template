@@ -9,11 +9,13 @@ div.cky-btn-revisit-wrapper.cky-revisit-bottom-left{
 
 
     button:before {
-        font-family: "Font Awesome 5 Free";
-        content: "\f564";
+        
+        content: "*";
+        
         color: white;
         display: inline-block;
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+        padding-top: 0.35rem;
         
         
         font-weight: 900;

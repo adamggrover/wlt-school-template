@@ -22,12 +22,12 @@
 
                     <div class="header-spacer p-1 d-none d-md-block"></div>
 
-                    <button onclick="openNav();"><i class="fa-solid fa-bars fa-xl header-icon hamburger"></i></button> 
+                    <button id="navbtn" onclick="openNav();"><i class="bi bi-list header-icon hamburger"></i></button> 
 
                     <div class="header-spacer p-1 d-none d-md-block"></div>
 
                     <div class="dropdown">
-                        <button onclick="quickLinksMenuButton()" class="dropbtn d-none d-md-block">QUICK LINKS<span class="quick-links-spacer"></span><i class="fa-solid fa-angle-down quick-links-arrow"></i></button>
+                        <button onclick="quickLinksMenuButton()" class="dropbtn d-none d-md-block">QUICK LINKS<span class="quick-links-spacer"></span><i class="bi bi-chevron-down quick-links-arrow"></i></button>
                         <!--<button onclick="quickLinksMenuButton()" class="dropbtn d-md-none"><i class="fa-solid fa-angle-down quick-links-arrow"></i></button>-->
                         <div id="myDropdown" class="dropdown-content">
                             <?php wp_nav_menu( array( 'theme_location' => 'quick-links-header' ) ); ?>
@@ -176,7 +176,7 @@
                         <div class="title-line">
                             <h5 class="announcements-title">Announcements</h5>
                             <button class="announcement-close-btn" onclick="announcementClose()">
-                                <i class="fa-solid fa-xmark"></i>                        
+                                <i class="bi bi-x-lg"></i>                        
                             </button>
                         </div>
 
@@ -222,7 +222,7 @@
             <a id="bell-button" class="bell-button-mobile d-lg-none" href="#announcement-section" >
             <div class="bell-background">                      
                 
-                <i class="fa fa-bell faa-ring animated fa-md ringing-bell"></i>
+                <i class="bi bi-bell-fill animated ringing-bell"></i>
             </div>
             </a>
 

@@ -128,7 +128,7 @@ function wlt_register_scripts(){
     
     
 
-wp_enqueue_script('wlt-fontawesome', 'https://kit.fontawesome.com/c3ed52941f.js', array());
+
 wp_enqueue_script('wlt-aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array());
 wp_enqueue_script('wlt-popper', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js', array(), '5.2.0', true);
 wp_enqueue_script('wlt-jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js', array(), '3.6.1', true); 

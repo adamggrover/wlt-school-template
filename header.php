@@ -44,7 +44,7 @@
     <div id="sidebar-nav" class="sidenav">
       <div class="sidebar-container"  >
         <div class="closebtn-box">
-          <a href="javascript:void(0)" id = "closebtn" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-xmark"></i> </a>
+          <a href="javascript:void(0)" id = "closebtn" class="closebtn" onclick="closeNav()"><i class="bi bi-x-lg p-5"></i> </a>
         </div>
 
 

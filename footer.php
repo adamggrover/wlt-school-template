@@ -23,21 +23,21 @@ echo $image[0]; ?>" alt="school Logo" class="footer-icon">
                 <div class="col-md-4 footer-contact footer-column">
                     <p class="mb-3"><?php echo get_bloginfo('name'); ?><br><?php the_field('address_line_1') ?><br><?php the_field('county') ?> <?php the_field('postcode') ?></p>
                     <p class="mb-4"><?php the_field('headteacher_position') ?>: <?php the_field('headteacher_name') ?></p>
-                    <p><i class="fa-solid fa-phone"></i><span class="footer-spacer"></span><?php the_field('phone_number') ?></p>
-                    <p><a href="mailto:<?php the_field('email_address') ?>"><i class="fa-solid fa-envelope"></i></i><span class="footer-spacer"></span>Email Us</a></p>
-                    <p class="mb-4"><a href="<?php the_field('google_map_direction_link') ?>" target="_blank" ><i class="fa-solid fa-location-dot"></i></i><span class="footer-spacer"></span>Get Directions</a></p>
+                    <p><i class="bi bi-telephone-fill"></i><span class="footer-spacer"></span><?php the_field('phone_number') ?></p>
+                    <p><a href="mailto:<?php the_field('email_address') ?>"><i class="bi bi-envelope-fill"></i></i><span class="footer-spacer"></span>Email Us</a></p>
+                    <p class="mb-4"><a href="<?php the_field('google_map_direction_link') ?>" target="_blank" ><i class="bi bi-geo-alt-fill"></i></i><span class="footer-spacer"></span>Get Directions</a></p>
 
                     <div class="footer-social mb-4">
 
                         <?php if (get_field('display_header_footer_twitter_link') == "yes"): ?>
                         
-                            <a href="<?php the_field('twitter_link') ?>" target="_blank" ><i class="fa-brands fa-twitter fa-xl"></i></a><span class="footer-spacer"></span><span class="footer-spacer"></span>
+                            <a href="<?php the_field('twitter_link') ?>" target="_blank" ><i class="bi bi-twitter footer-social-icon"></i></a><span class="footer-spacer"></span><span class="footer-spacer"></span>
                         
                         <?php endif; 
 
                         if (get_field('display_header_footer_facebook_link') == "yes"): ?>
                             
-                            <a href="<?php the_field('facebook_link') ?>" target="_blank"><i class="fa-brands fa-facebook-f fa-xl"></i></a>
+                            <a href="<?php the_field('facebook_link') ?>" target="_blank"><i class="bi bi-facebook footer-social-icon"></i></a>
                         
                         <?php endif; ?>
                         
@@ -99,7 +99,7 @@ echo $image[0]; ?>" alt="school Logo" class="footer-icon">
 
                         <div class="col-md-4 pt-0 align-self-center">
 
-                        <small><p><i class="fa-solid fa-phone"></i><span class="footer-spacer"></span>01934 745363</p></small>
+                        <small><p><i class="bi bi-telephone-fill"></i><span class="footer-spacer"></span>01934 745363</p></small>
                         
                         <small><p>www.wessexlearningtrust.co.uk</p></small>
                         
