@@ -73,13 +73,13 @@ if ( class_exists('EM_Events') ){ ?>
         <div class="cal-feed-link-container">
 
             <div class="cal-feed-instructions mb-0">
-                <i id="instructions-close-btn" class="fa-solid fa-square-xmark"></i>
+                <i id="instructions-close-btn" class="bi bi-x-lg"></i>
                 
                 <p><small>To subscribe to the calendar, copy the url below and then follow the relevant instructions for your calendar programme/device of choice.</small></p>
                 <input id="iCalUrl" type="text" value="<?php echo $url . "/events.ics"; ?>" >
                 <div class="copy-text-btn-container-wrapper">
                     <div class="copy-text-btn-container">
-                        <i id="copy-text-btn" class="fa-solid fa-clone mb-0"></i>
+                        <i id="copy-text-btn" class="bi bi-clipboard-fill mb-0"></i>
                     </div>
                 </div>
                 <div id="copy-text-notification-wrapper">

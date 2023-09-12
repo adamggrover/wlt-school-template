@@ -121,8 +121,8 @@ div.copy-text-btn-container-wrapper * {
     display: inline-block;
     margin-left: 0.5rem;
     opacity: 0;
-    transition: all 0.6s;
-    transition-timing-function: cubic-bezier(0.14, 0, 0.55, 0.95);
+    transition: all 1.5s;
+    transition-timing-function: ease-out;
     padding: 0.1rem 0.2rem;
     border: 1px solid g.$muted-light-light;
     border-radius: 0.2rem;
@@ -141,14 +141,14 @@ div.copy-text-btn-container-wrapper * {
 #copy-text-notification-wrapper.show{
 
     opacity: 1;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0rem;
     
 }
 
 .cal-feed-instructions {
 
-    input{
-        margin-bottom: 0.4rem;
+    input, .copy-text-btn-container-wrapper{
+        margin-bottom: 0rem;
     }
 
     a{
