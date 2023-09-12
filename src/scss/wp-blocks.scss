@@ -30,8 +30,8 @@
 		}
 	
 		&::before {
-			font: var(--fa-font-solid);
-			content: "\f15b";
+			font-family: "bootstrap-icons";
+			content: "\F369";
 			font-size: 1rem;
 			color: g.$muted;
 			padding-right: 1rem;	
@@ -185,8 +185,8 @@
 		}
 
 		&::before {
-		font: var(--fa-font-solid);
-		content: "\f15b";
+		font-family: "bootstrap-icons";
+		content: "\F369";
 		font-size: 1rem;
 		color: g.$muted;
 		padding-right: 1rem;	
