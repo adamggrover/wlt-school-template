@@ -234,7 +234,7 @@
                             ?>" >
                 <div class="bell-background">                      
                     
-                    <i class="bi bi-x-lg animated fa-md ringing-bell"></i>
+                    <i class="bi bi-bell-fill animated ringing-bell"></i>
                 </div>
             </a>
 
