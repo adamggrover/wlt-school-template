@@ -257,8 +257,8 @@ div.categories-section{
     //background: g.$primary;
     
     display: flex;
-    padding: 0.8rem 1rem;
-    border-bottom: 0.3rem solid g.$muted-light-light;
+    padding: 0.8rem 0rem;
+    border-bottom: 0.4rem solid g.$muted-light-light;
 
     #date{
         display: flex;
@@ -267,7 +267,7 @@ div.categories-section{
         
         margin-right: 1rem;
         min-width: 8rem;
-        min-height: 4.5rem;
+        min-height: 4.2rem;
 
         .inner-date-container{
 
