@@ -12,7 +12,7 @@
                     
                 <h1 id="content-h1">Curriculum</h1>
 
-                <?php $query = new WP_Query( array( 'pagename' => 'curriculum-intent' ) ); 
+                <?php $query = new WP_Query( array( 'pagename' => 'curriculum' ) ); 
 
                 if ( $query->have_posts() ) {
 
