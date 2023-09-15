@@ -1,5 +1,5 @@
 <div class="content-header row gx-5">
-                <div class="content-header-breadcrumb-wrapper col-lg-6 col-md-12">
+                <!--<div class="content-header-breadcrumb-wrapper col-lg-6 col-md-12">
                     <i class="bi bi-house-fill content-header-home-icon"></i><span class="breadcrumb-spacer"></span>
                     <h6 class="mb-0 content-header-breadcrumb-links p-0"><small><?php if( function_exists( 'aioseo_breadcrumbs' ) ) aioseo_breadcrumbs(); ?></small></h6>
                     
@@ -26,11 +26,12 @@
 
                     </div>
                     
-                    
-                </div>
-
-                
+                                    
                 <?php endwhile; 
                      wp_reset_query();
                      ?>
+                    
+                </div> -->
+
+
             </div>
