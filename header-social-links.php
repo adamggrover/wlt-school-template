@@ -8,7 +8,7 @@ while( $query->have_posts() ) : $query->the_post(); ?>
 
 if (get_field('display_header_footer_twitter_link') == "yes"): ?>
 
-    <a href="<?php the_field('twitter_link') ?>" target="_blank" class="social-links"><i class="bi bi-twitter header-icon d-none d-sm-block d-md-block d-lg-block"></i></a>
+    <a href="<?php the_field('twitter_link') ?>" target="_blank" class="social-links"><i class="bi bi-twitter-x header-icon d-none d-sm-block d-md-block d-lg-block"></i></a>
 
 <?php endif; 
 

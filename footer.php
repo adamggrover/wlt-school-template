@@ -31,7 +31,7 @@ echo $image[0]; ?>" alt="school Logo" class="footer-icon">
 
                         <?php if (get_field('display_header_footer_twitter_link') == "yes"): ?>
                         
-                            <a href="<?php the_field('twitter_link') ?>" target="_blank" ><i class="bi bi-twitter footer-social-icon"></i></a><span class="footer-spacer"></span><span class="footer-spacer"></span>
+                            <a href="<?php the_field('twitter_link') ?>" target="_blank" ><i class="bi bi-twitter-x footer-social-icon"></i></a><span class="footer-spacer"></span><span class="footer-spacer"></span>
                         
                         <?php endif; 
 
