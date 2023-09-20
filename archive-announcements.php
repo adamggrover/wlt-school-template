@@ -29,7 +29,7 @@
                             
                         endwhile;
                         else:
-                        echo '<p>Sorry, no posts matched your criteria.</p>';
+                        echo '<p>Sorry, no current announcements.</p>';
                         endif;
                         ?>
 
