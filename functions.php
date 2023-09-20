@@ -146,7 +146,7 @@ add_action('wp_enqueue_scripts', 'wlt_register_scripts');
 // File Block Style Edits
 
 add_action('init', function() {
-    wp_register_style('wlt-block-styles', get_template_directory_uri() . '/wp-blocks.css', false);
+    wp_register_style('wlt-block-styles', get_template_directory_uri() . '/wp-blocks.css', true);
     
 	register_block_style('core/file', [
 		'name' => 'wlt-file-block',
