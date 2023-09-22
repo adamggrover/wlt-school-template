@@ -39,6 +39,8 @@
 
                         <p class="mb-4">E-mail: <a href="mailto:<?php the_field('email_address') ?>"><?php the_field('email_address') ?></p></a>
 
+                        
+
                         <?php endwhile; 
                      wp_reset_query();
                      ?>
@@ -50,6 +52,8 @@
                             
                    
                         ?>
+
+                        <p class="mb-4"><?php the_field('parent_queries') ?></p>
 
                         <h4 class="h5 mt-5">The School Day</h4>
 
