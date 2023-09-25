@@ -65,7 +65,7 @@ function browsersyncReload(cb){
 // Watch Task
 function watchTask(){
     //watch('*html', browsersyncReload);
-    watch(['*html, wp-content/themes/kow22/src/scss/**/*.scss', 'wp-content/themes/kow22/src/js/**/*.js']), series(scssTask, jsTask 
+    watch(['*html, /src/scss/**/*.scss', '/src/js/**/*.js']), series(scssTask, jsTask 
         //browsersyncReload
         );
 
@@ -78,5 +78,5 @@ exports.default = series(
     jsTask,
    // img,
     //browsersyncServe,    
-    watchTask
+    //watchTask
 )
