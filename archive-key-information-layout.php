@@ -46,7 +46,7 @@
                             <div class="key-information-icon-wrapper"><div><i class="fa-solid fa-file"></i></div><span></span><p class="file-count"><?php echo $file_block_count;?></p></div>
                         <?php
                         
-                        }else{}
+                        }
             
                     ?>-->
                     
