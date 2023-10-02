@@ -48,13 +48,71 @@
                     <div class="key-information-post-content">
                     <?php
 
-                    the_content();
+                    the_content(); ?>
 
+                    <div class="key-information-acf-content">
+
+                    <!-- check if text area field exists and display it if it does -->
+
+                        <?php if( get_field('text_area') ): ?>
+                        <p><?php the_field('text_area'); ?></p>
+                        <?php endif; ?>
+
+       
+        
+                   
+
+<!-- check if file upload block fields exist and display them if the do -->
+<?php               
+
+
+
+                    if( have_rows('file_section') ):
+                        while( have_rows('file_section') ) : the_row();
+
+
+                        // Display subheading
+                        if( get_sub_field('file_subheading') ): ?>
+                            <h3><?php the_sub_field('file_subheading'); ?></h3>
+                            <?php endif; 
+
+
+
+                            // Loop over sub repeater rows.
+                            if( have_rows('file_upload_section') ):
+                                while( have_rows('file_upload_section') ) : the_row();
+
+
+
+                                    ?>
+
+                                    <!-- Display acf file upload repeater fields -->
+                                    <li class="file-upload-repeater">
+                                        <a href="<?php the_sub_field('file_upload') ?>" target="_blank">
+                                        <?php the_sub_field('file_title') ?>
+                                        </a>
+                                    </li>
+                                        
+                                    <?php
+                                endwhile;
+                            endif;
+                        endwhile;
+                    endif;
                     
-
-
-                
+                    if( get_field('display_wlt_link') ) {?>
+                        <p class="mt-4">Further information can be found on the <a href="https://wessexlearningtrust.co.uk/key-information/" target="_blank">Wessex Learning Trust website</a>.</p>
+                        <?php
+                    }
                     ?>
+
+
+
+                    </div>
+
+
+
+
+                                                                          
 
                     </div>
 
