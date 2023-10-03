@@ -50,6 +50,69 @@
 
                     the_content(); ?>
 
+                    <div class="key-information-standardised-wlt-content">
+
+                    <?php
+
+                        // save local authority field to variable
+
+                        if( get_field('local_authority') ) {
+                            $local_authority = get_field('local_authority');
+                        }
+
+
+                        if( get_field('display_wlt_standard_content') ) {
+
+                            
+                            
+                            
+                            
+                            // get current post slug
+                            $current_page = get_post_field( 'post_name', get_post() );
+
+                            // pull in content from wlt master school template
+                            switch_to_blog( 11 );
+                            
+                            // query by current page
+                            $args = array(
+                                'post_type' => 'key-information',
+                                'name' => $current_page
+                            );
+
+                                $query = new WP_Query( $args);
+
+                            if ( $query->have_posts() ) { ?>
+
+                                
+                                <?php
+                                while ( $query->have_posts() ) :
+                                $query->the_post();
+                                
+
+                                // check if it is an admissions page by checking if local authority field exists
+                                // if it is display the correct admissions policy document
+                                if ($local_authority){?>
+
+                                    <li class="file-upload-repeater mb-4">
+                                    <a href="<?php the_field("admissions_{$local_authority}")?>" target="_blank">
+                                    Wessex Learning Trust Admission Arrangements
+                                    </a>
+                                    </li>
+                                    <?php
+                                }
+
+                                endwhile;
+                            wp_reset_postdata();
+                            }
+
+                            restore_current_blog();
+
+                        }
+
+                        ?>                                                          
+
+                    </div>
+
                     <div class="key-information-acf-content">
 
                     <!-- check if text area field exists and display it if it does -->
