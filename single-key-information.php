@@ -52,62 +52,62 @@
 
                     <div class="key-information-standardised-wlt-content">
 
-                    <?php
+                        <?php
 
-                        // save local authority field to variable
+                            // save local authority field to variable
 
-                        if( get_field('local_authority') ) {
-                            $local_authority = get_field('local_authority');
-                        }
-
-
-                        if( get_field('display_wlt_standard_content') ) {
-
-                            
-                            
-                            
-                            
-                            // get current post slug
-                            $current_page = get_post_field( 'post_name', get_post() );
-
-                            // pull in content from wlt master school template
-                            switch_to_blog( 11 );
-                            
-                            // query by current page
-                            $args = array(
-                                'post_type' => 'key-information',
-                                'name' => $current_page
-                            );
-
-                                $query = new WP_Query( $args);
-
-                            if ( $query->have_posts() ) { ?>
-
-                                
-                                <?php
-                                while ( $query->have_posts() ) :
-                                $query->the_post();
-                                
-
-                                // check if it is an admissions page by checking if local authority field exists
-                                // if it is display the correct admissions policy document
-                                if ($local_authority){?>
-
-                                    <li class="file-upload-repeater mb-4">
-                                    <a href="<?php the_field("admissions_{$local_authority}")?>" target="_blank">
-                                    Wessex Learning Trust Admission Arrangements
-                                    </a>
-                                    </li>
-                                    <?php
-                                }
-
-                                endwhile;
-                            wp_reset_postdata();
+                            if( get_field('local_authority') ) {
+                                $local_authority = get_field('local_authority');
                             }
 
-                            restore_current_blog();
 
-                        }
+                            if( get_field('display_wlt_standard_content') ) {
+
+                                
+                                
+                                
+                                
+                                // get current post slug
+                                $current_page = get_post_field( 'post_name', get_post() );
+
+                                // pull in content from wlt master school template
+                                switch_to_blog( 11 );
+                                
+                                // query by current page
+                                $args = array(
+                                    'post_type' => 'key-information',
+                                    'name' => $current_page
+                                );
+
+                                    $query = new WP_Query( $args);
+
+                                if ( $query->have_posts() ) { ?>
+
+                                    
+                                    <?php
+                                    while ( $query->have_posts() ) :
+                                    $query->the_post();
+                                    
+
+                                    // check if it is an admissions page by checking if local authority field exists
+                                    // if it is display the correct admissions policy document
+                                    if ($local_authority){?>
+
+                                        <li class="file-upload-repeater mb-4">
+                                        <a href="<?php the_field("admissions_{$local_authority}")?>" target="_blank">
+                                        Wessex Learning Trust Admission Arrangements
+                                        </a>
+                                        </li>
+                                        <?php
+                                    }
+
+                                    endwhile;
+                                wp_reset_postdata();
+                                }
+
+                                restore_current_blog();
+
+                            }
 
                         ?>                                                          
 
@@ -125,109 +125,109 @@
         
                    
 
-<!-- check if file upload block fields exist and display them if the do -->
-<?php               
+                        <!-- check if file upload block fields exist and display them if the do -->
+                        <?php               
 
 
 
-                    if( have_rows('file_section') ):
-                        while( have_rows('file_section') ) : the_row();
+                        if( have_rows('file_section') ):
+                            while( have_rows('file_section') ) : the_row();
 
 
-                        // Display subheading
-                        if( get_sub_field('file_subheading') ): ?>
-                            <h3><?php the_sub_field('file_subheading'); ?></h3>
-                            <?php endif; 
-
-
-
-                            // Loop over sub repeater rows.
-                            if( have_rows('file_upload_section') ):
-                                while( have_rows('file_upload_section') ) : the_row();
+                            // Display subheading
+                            if( get_sub_field('file_subheading') ): ?>
+                                <h3><?php the_sub_field('file_subheading'); ?></h3>
+                                <?php endif; 
 
 
 
-                                    ?>
-
-                                    <!-- Display acf file upload repeater fields -->
-                                    <li class="file-upload-repeater">
-                                        <a href="<?php the_sub_field('file_upload') ?>" target="_blank">
-                                        <?php the_sub_field('file_title') ?>
-                                        </a>
-                                    </li>
-                                        
-                                    <?php
-                                endwhile;
-                            endif;
-                        endwhile;
-                    endif;
-                    
-                    if( get_field('display_wlt_link') ) {?>
-                        <p class="mt-4">Further information can be found on the <a href="https://wessexlearningtrust.co.uk/key-information/" target="_blank">Wessex Learning Trust website</a>.</p>
-                        <?php
-                    }
-                    ?>
+                                // Loop over sub repeater rows.
+                                if( have_rows('file_upload_section') ):
+                                    while( have_rows('file_upload_section') ) : the_row();
 
 
 
-                    </div>
+                                        ?>
 
-
-
-
-                                                                          
-
-                    </div>
-
-
-                    <div class="wlt-site-content">
-
-                    <?php
-
-                        $wlt_site_cat = get_field('wlt_site_cat');
-
-                        switch_to_blog( 5 );
-                        // pull in posts from main blog
-
-                        $args = array(
-                            'post_type' => 'key-information',
-                            'key-information-category' => $wlt_site_cat
-                        );
-
-                            $query = new WP_Query( $args);
-
-                        if ( $query->have_posts() ) { ?>
-
-                            
-                            <?php
-                            while ( $query->have_posts() ) :
-                            $query->the_post();
-
-                            
-                            ?>
-                            <h2>Wessex Learning Trust <?php the_title(); ?></h2>
-                            <?php the_content();?>
-                            <div class="wlt-site-content-spacer"></div>
-
-                            <?php
+                                        <!-- Display acf file upload repeater fields -->
+                                        <li class="file-upload-repeater">
+                                            <a href="<?php the_sub_field('file_upload') ?>" target="_blank">
+                                            <?php the_sub_field('file_title') ?>
+                                            </a>
+                                        </li>
+                                            
+                                        <?php
+                                    endwhile;
+                                endif;
                             endwhile;
-                        wp_reset_postdata();
-                        } else {
-                        // none were found
+                        endif;
+                        
+                        if( get_field('display_wlt_link') ) {?>
+                            <p class="mt-4">Further information can be found on the <a href="https://wessexlearningtrust.co.uk/key-information/" target="_blank">Wessex Learning Trust website</a>.</p>
+                            <?php
                         }
-
-                        restore_current_blog();
-
-                        $wlt_site_cat = "";
-
-                    ?>                                                          
-
-                    </div>
-
+                        ?>
 
 
 
                         </div>
+
+
+
+
+                                                                            
+
+                        </div>
+
+
+                        <div class="wlt-site-content">
+
+                            <?php
+
+                                $wlt_site_cat = get_field('wlt_site_cat');
+
+                                switch_to_blog( 5 );
+                                // pull in posts from main blog
+
+                                $args = array(
+                                    'post_type' => 'key-information',
+                                    'key-information-category' => $wlt_site_cat
+                                );
+
+                                    $query = new WP_Query( $args);
+
+                                if ( $query->have_posts() ) { ?>
+
+                                    
+                                    <?php
+                                    while ( $query->have_posts() ) :
+                                    $query->the_post();
+
+                                    
+                                    ?>
+                                    <h2>Wessex Learning Trust <?php the_title(); ?></h2>
+                                    <?php the_content();?>
+                                    <div class="wlt-site-content-spacer"></div>
+
+                                    <?php
+                                    endwhile;
+                                wp_reset_postdata();
+                                } else {
+                                // none were found
+                                }
+
+                                restore_current_blog();
+
+                                $wlt_site_cat = "";
+
+                            ?>                                                          
+
+                        </div>
+
+
+
+
+                    </div>
 
 
                        <!-- <div class="content-footer">
