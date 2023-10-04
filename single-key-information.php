@@ -50,68 +50,113 @@
 
                     the_content(); ?>
 
-                    <div class="key-information-standardised-wlt-content">
+                <div class="key-information-standardised-wlt-content">
 
-                        <?php
+                <?php
 
-                            // save local authority field to variable
+                    // save local authority field to variable for admissions page info
 
-                            if( get_field('local_authority') ) {
-                                $local_authority = get_field('local_authority');
+                    if( get_field('local_authority') ) {
+                        $local_authority = get_field('local_authority');
+                    }
+
+                    // Display Standardised page content from WLT School Template Site--------------------------------------
+                    if( get_field('display_standardised_page_content') ) {
+
+
+                        // get current post slug
+                        $current_post = get_post_field( 'post_name', get_post() );
+
+                        // pull in content from wlt master school template
+                        switch_to_blog( 11 );
+                        
+                        // query by current page
+                        $args = array(
+                            'post_type' => 'key-information',
+                            'name' => $current_post
+                        );
+
+                            $query = new WP_Query( $args);
+
+                        if ( $query->have_posts() ) { ?>
+
+                            
+                            <?php
+                            while ( $query->have_posts() ) :
+                            $query->the_post();
+                            
+
+                            the_field('standard_text_area')
+
+                            endwhile;
+                            wp_reset_postdata();
+                        }
+
+                        restore_current_blog();
+
+                    }// end if 
+
+
+                    if( get_field('display_wlt_site_docs') ) {
+
+                        
+                        
+                        
+                        
+                        // get current post slug
+                        $current_page = get_post_field( 'post_name', get_post() );
+
+                        //---Content from wlt---------------------------------------------------------
+
+                        // pull in content from wlt main site
+                        switch_to_blog( 6 ); //wlt main site
+                        
+                        // query by current page
+                        $args = array(
+                            'post_type' => 'key-information',
+                            'name' => $current_post
+                        );
+
+                            $query = new WP_Query( $args);
+
+                        if ( $query->have_posts() ) { ?>
+
+                            
+                            <?php
+                            while ( $query->have_posts() ) :
+                            $query->the_post();
+                            
+                            //--------------admissions policy documents------------------------------------------------------------------
+                            // check if it is an admissions page by checking if local authority field exists
+                            // if it is display the correct admissions policy document
+                            if ($local_authority){?>
+
+                                <li class="file-upload-repeater mb-4">
+                                <a href="<?php the_field("admissions_{$local_authority}")?>" target="_blank">
+                                Wessex Learning Trust Admission Arrangements
+                                </a>
+                                </li>
+                                <?php
                             }
+                            //---------------------file upload section--------------------------------------------
+
+                            
+
+                            
+
+                            endwhile;
+                        wp_reset_postdata();
+                        }
+
+                        restore_current_blog();
+
+                    }// end if 
+
+                ?>                                                          
+
+                </div>
 
 
-                            if( get_field('display_wlt_standard_content') ) {
-
-                                
-                                
-                                
-                                
-                                // get current post slug
-                                $current_page = get_post_field( 'post_name', get_post() );
-
-                                // pull in content from wlt master school template
-                                switch_to_blog( 11 );
-                                
-                                // query by current page
-                                $args = array(
-                                    'post_type' => 'key-information',
-                                    'name' => $current_page
-                                );
-
-                                    $query = new WP_Query( $args);
-
-                                if ( $query->have_posts() ) { ?>
-
-                                    
-                                    <?php
-                                    while ( $query->have_posts() ) :
-                                    $query->the_post();
-                                    
-
-                                    // check if it is an admissions page by checking if local authority field exists
-                                    // if it is display the correct admissions policy document
-                                    if ($local_authority){?>
-
-                                        <li class="file-upload-repeater mb-4">
-                                        <a href="<?php the_field("admissions_{$local_authority}")?>" target="_blank">
-                                        Wessex Learning Trust Admission Arrangements
-                                        </a>
-                                        </li>
-                                        <?php
-                                    }
-
-                                    endwhile;
-                                wp_reset_postdata();
-                                }
-
-                                restore_current_blog();
-
-                            }
-
-                        ?>                                                          
-
-                    </div>
 
                     <div class="key-information-acf-content">
 
