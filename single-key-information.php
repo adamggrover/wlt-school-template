@@ -50,52 +50,62 @@
 
                     the_content(); ?>
 
-                <div class="key-information-standardised-wlt-content">
+                    <div class="key-information-standardised-wlt-content">
 
-                <?php
+                        <?php
 
-                    // save local authority field to variable for admissions page info
+                        // save local authority field to variable for admissions page info
 
-                    if( get_field('local_authority') ) {
-                        $local_authority = get_field('local_authority');
-                    }
-
-                    // Display Standardised page content from WLT School Template Site--------------------------------------
-                    if( get_field('display_standardised_page_content') ) {
-
-
-                        // get current post slug
-                        $current_post = get_post_field( 'post_name', get_post() );
-
-                        // pull in content from wlt master school template
-                        switch_to_blog( 11 );
-                        
-                        // query by current page
-                        $args = array(
-                            'post_type' => 'key-information',
-                            'name' => $current_post
-                        );
-
-                            $query = new WP_Query( $args);
-
-                        if ( $query->have_posts() ) { ?>
-
-                            
-                            <?php
-                            while ( $query->have_posts() ) :
-                            $query->the_post();
-                            
-
-                            the_field('standard_text_area')
-
-                            endwhile;
-                            wp_reset_postdata();
+                        if( get_field('local_authority') ) {
+                            $local_authority = get_field('local_authority');
                         }
 
-                        restore_current_blog();
+                        //---------------- Display Standardised page content from WLT School Template Site Section--------------------------------------
+                        if( get_field('display_standardised_page_content') ) {
 
-                    }// end if 
 
+                            // get current post slug
+                            $current_post = get_post_field( 'post_name', get_post() );
+
+                            // pull in content from wlt master school template
+                            switch_to_blog( 11 );
+                            
+                            //ok below
+
+                                // query by current page
+                                $args = array(
+                                    'post_type' => 'key-information',
+                                    'name' => $current_post
+                                );
+    
+                                    $template_query = new WP_Query( $args);
+
+                                    if ( $template_query->have_posts() ) { 
+    
+                                    
+                                      
+
+                                        while ( $template_query->have_posts() ) :
+                                            $template_query->the_post();
+                                        
+                                            if(get_field('standard_text_area')){
+                                                the_field('standard_text_area');
+                                            }
+                                        
+        
+                                        endwhile;
+                                    }
+                               
+
+                                
+                                    wp_reset_postdata();
+    
+                                restore_current_blog();
+
+                        }// end if 
+
+             
+                    //------------WLT main site docs section----------------------------------------------------------
 
                     if( get_field('display_wlt_site_docs') ) {
 
@@ -110,7 +120,7 @@
 
                         // pull in content from wlt main site
                         switch_to_blog( 6 ); //wlt main site
-                        
+
                         // query by current page
                         $args = array(
                             'post_type' => 'key-information',
@@ -141,7 +151,37 @@
                             //---------------------file upload section--------------------------------------------
 
                             
-
+                            if( have_rows('file_section') ):
+                                while( have_rows('file_section') ) : the_row();
+    
+    
+                                // Display subheading
+                                if( get_sub_field('file_subheading') ): ?>
+                                    <h3><?php the_sub_field('file_subheading'); ?></h3>
+                                    <?php endif; 
+    
+    
+    
+                                    // Loop over sub repeater rows.
+                                    if( have_rows('file_upload_section') ):
+                                        while( have_rows('file_upload_section') ) : the_row();
+    
+    
+    
+                                            ?>
+    
+                                            <!-- Display acf file upload repeater fields -->
+                                            <li class="file-upload-repeater">
+                                                <a href="<?php the_sub_field('file_upload') ?>" target="_blank">
+                                                <?php the_sub_field('file_title') ?>
+                                                </a>
+                                            </li>
+                                                
+                                            <?php
+                                        endwhile;
+                                    endif;
+                                endwhile;
+                            endif;
                             
 
                             endwhile;
@@ -150,14 +190,18 @@
 
                         restore_current_blog();
 
-                    }// end if 
+                        }// end if 
 
-                ?>                                                          
-
-                </div>
+                        ?>                                               
 
 
 
+                    </div>
+
+
+
+
+                <!---works below this ----------------------------------------------------------------------------------------->
                     <div class="key-information-acf-content">
 
                     <!-- check if text area field exists and display it if it does -->
