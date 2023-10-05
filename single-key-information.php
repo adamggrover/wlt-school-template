@@ -48,7 +48,65 @@
                     <div class="key-information-post-content">
                     <?php
 
+                    // default content - this weill be removed once all has been transfered over to new system
+
                     the_content(); ?>
+
+                    <!----------ACF fields content form key information on individual school sites------- -->
+
+                    <div class="key-information-acf-content">
+
+                    <!-- check if text area field exists and display it if it does -->
+
+                        <?php if( get_field('text_area') ): ?>
+                        <p><?php the_field('text_area'); ?></p>
+                        <?php endif; ?>
+
+
+
+
+
+                        <!-- check if file upload block fields exist and display them if the do -->
+                        <?php               
+
+
+
+                        if( have_rows('file_section') ):
+                            while( have_rows('file_section') ) : the_row();
+
+
+                            // Display subheading
+                            if( get_sub_field('file_subheading') ): ?>
+                                <h3><?php the_sub_field('file_subheading'); ?></h3>
+                                <?php endif; 
+
+
+
+                                // Loop over sub repeater rows.
+                                if( have_rows('file_upload_section') ):
+                                    while( have_rows('file_upload_section') ) : the_row();
+
+
+
+                                        ?>
+
+                                        <!-- Display acf file upload repeater fields -->
+                                        <li class="file-upload-repeater">
+                                            <a href="<?php the_sub_field('file_upload') ?>" target="_blank">
+                                            <?php the_sub_field('file_title') ?>
+                                            </a>
+                                        </li>
+                                            
+                                        <?php
+                                    endwhile;
+                                endif;
+                            endwhile;
+                        endif;?>
+                        
+
+
+
+                    </div>
 
                     <div class="key-information-standardised-wlt-content">
 
@@ -72,13 +130,13 @@
                             
                             //ok below
 
-                                // query by current page
-                                $args = array(
+                                // query by current post name
+                                $args1 = array(
                                     'post_type' => 'key-information',
                                     'name' => $current_post
                                 );
     
-                                    $template_query = new WP_Query( $args);
+                                    $template_query = new WP_Query( $args1);
 
                                     if ( $template_query->have_posts() ) { 
     
@@ -88,9 +146,7 @@
                                         while ( $template_query->have_posts() ) :
                                             $template_query->the_post();
                                         
-                                            if(get_field('standard_text_area')){
-                                                the_field('standard_text_area');
-                                            }
+                                            the_content();
                                         
         
                                         endwhile;
@@ -114,20 +170,20 @@
                         
                         
                         // get current post slug
-                        $current_page = get_post_field( 'post_name', get_post() );
+                        $current_post = get_post_field( 'post_name', get_post() );
 
                         //---Content from wlt---------------------------------------------------------
 
                         // pull in content from wlt main site
-                        switch_to_blog( 6 ); //wlt main site
+                        switch_to_blog( 5 ); //wlt main site
 
-                        // query by current page
-                        $args = array(
+                        // query by current post name
+                        $args2 = array(
                             'post_type' => 'key-information',
                             'name' => $current_post
                         );
 
-                            $query = new WP_Query( $args);
+                            $query = new WP_Query( $args2);
 
                         if ( $query->have_posts() ) { ?>
 
@@ -135,18 +191,56 @@
                             <?php
                             while ( $query->have_posts() ) :
                             $query->the_post();
+
+                           
                             
                             //--------------admissions policy documents------------------------------------------------------------------
                             // check if it is an admissions page by checking if local authority field exists
                             // if it is display the correct admissions policy document
-                            if ($local_authority){?>
+                            if ($local_authority){
 
-                                <li class="file-upload-repeater mb-4">
-                                <a href="<?php the_field("admissions_{$local_authority}")?>" target="_blank">
-                                Wessex Learning Trust Admission Arrangements
-                                </a>
-                                </li>
-                                <?php
+                       
+
+                                        //----display admission documents from WLT site for relevant local authority----------------------------------------------
+                                        // Loop over sub repeater rows.
+                                            if( have_rows("file_upload_section_{$local_authority}") ):
+                                                while( have_rows("file_upload_section_{$local_authority}") ) : the_row();
+            
+            
+            
+                                                    ?>
+            
+                                                    <!-- Display acf file upload repeater fields -->
+                                                    <li class="file-upload-repeater">
+                                                        <a href="<?php the_sub_field("file_upload_{$local_authority}") ?>" target="_blank">
+                                                        <?php the_sub_field("file_title_{$local_authority}") ?>
+                                                        </a>
+                                                    </li>
+                                                        
+                                                    <?php
+                                                endwhile;
+                                            endif;
+
+                                        //----display univeral admission documents from WLT site suitable for all schools----------------------------------------------
+                                        // Loop over sub repeater rows.
+                                        if( have_rows("file_upload_section_universal") ):
+                                            while( have_rows("file_upload_section_universal") ) : the_row();
+        
+        
+        
+                                                ?>
+        
+                                                <!-- Display acf file upload repeater fields -->
+                                                <li class="file-upload-repeater">
+                                                    <a href="<?php the_sub_field("file_upload_universal") ?>" target="_blank">
+                                                    <?php the_sub_field("file_title_universal") ?>
+                                                    </a>
+                                                </li>
+                                                    
+                                                <?php
+                                            endwhile;
+                                        endif;
+
                             }
                             //---------------------file upload section--------------------------------------------
 
@@ -185,14 +279,22 @@
                             
 
                             endwhile;
-                        wp_reset_postdata();
+                        
                         }
-
+                        wp_reset_postdata();
                         restore_current_blog();
 
                         }// end if 
 
-                        ?>                                               
+                        //----------------Display link to WLT webiste-----------------------------------------------------------
+
+                        if( get_field('display_wlt_link') ) {?>
+                            <p class="mt-4">Further information can be found on the <a href="https://wessexlearningtrust.co.uk/key-information/" target="_blank">Wessex Learning Trust website</a>.</p>
+                            <?php
+                        }
+                        ?>
+
+                                             
 
 
 
@@ -201,65 +303,8 @@
 
 
 
-                <!---works below this ----------------------------------------------------------------------------------------->
-                    <div class="key-information-acf-content">
-
-                    <!-- check if text area field exists and display it if it does -->
-
-                        <?php if( get_field('text_area') ): ?>
-                        <p><?php the_field('text_area'); ?></p>
-                        <?php endif; ?>
-
-       
-        
-                   
-
-                        <!-- check if file upload block fields exist and display them if the do -->
-                        <?php               
 
 
-
-                        if( have_rows('file_section') ):
-                            while( have_rows('file_section') ) : the_row();
-
-
-                            // Display subheading
-                            if( get_sub_field('file_subheading') ): ?>
-                                <h3><?php the_sub_field('file_subheading'); ?></h3>
-                                <?php endif; 
-
-
-
-                                // Loop over sub repeater rows.
-                                if( have_rows('file_upload_section') ):
-                                    while( have_rows('file_upload_section') ) : the_row();
-
-
-
-                                        ?>
-
-                                        <!-- Display acf file upload repeater fields -->
-                                        <li class="file-upload-repeater">
-                                            <a href="<?php the_sub_field('file_upload') ?>" target="_blank">
-                                            <?php the_sub_field('file_title') ?>
-                                            </a>
-                                        </li>
-                                            
-                                        <?php
-                                    endwhile;
-                                endif;
-                            endwhile;
-                        endif;
-                        
-                        if( get_field('display_wlt_link') ) {?>
-                            <p class="mt-4">Further information can be found on the <a href="https://wessexlearningtrust.co.uk/key-information/" target="_blank">Wessex Learning Trust website</a>.</p>
-                            <?php
-                        }
-                        ?>
-
-
-
-                        </div>
 
 
 
