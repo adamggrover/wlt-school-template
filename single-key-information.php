@@ -48,24 +48,53 @@
                     <div class="key-information-post-content">
                     <?php
 
-                    // default content - this weill be removed once all has been transfered over to new system
+                    // default content - this will be removed once all has been transfered over to new system
 
                     the_content(); ?>
 
-                    <!----------ACF fields content form key information on individual school sites------- -->
+                    <!----------ACF fields content form key information on individual school sites-------------------------------------->
 
                     <div class="key-information-acf-content">
 
                     <!-- check if text area field exists and display it if it does -->
 
                         <?php if( get_field('text_area') ): ?>
-                        <p><?php the_field('text_area'); ?></p>
+                        <?php the_field('text_area'); ?>
                         <?php endif; ?>
 
+                    <!---------------------GOVERNANCE SECTION------------------------------------------------------ -->
+                    <!-- Check if governance page and upload Governance team table if it is -->
 
+                    <?php
 
+                    
 
+                    if( have_rows("governance_team") ): ?>
+                                                 <table>
+                                                    <tr>
+                                                        <th colspan="2">Governance Team</th>
+                                                    </tr>
+                                            <?php while( have_rows("governance_team") ) : the_row();
+            
+            
+            
+                                                    ?>
+            
+                                                    <!-- Display acf file upload repeater fields -->
+                                                    
+                                                        <tr>
+                                                            <td><?php the_sub_field("governance_name") ?></td>
+                                                            <td><?php the_sub_field("governance_position") ?></td>
+                                                            
+                                                        </tr>
+                                                    
+                                                    <?php
+                                                endwhile; ?>
+                                                </table>
+                                           <?php endif;
+                                            ?>
 
+                    <!----------------------FILE UPLOAD SECTION------------------------------------------------------ -->
                         <!-- check if file upload block fields exist and display them if the do -->
                         <?php               
 
