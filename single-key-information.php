@@ -70,7 +70,7 @@
                     
 
                     if( have_rows("governance_team") ): ?>
-                                                 <table>
+                                                 <table class="mb-5">
                                                     <tr>
                                                         <th colspan="2">Governance Team</th>
                                                     </tr>
@@ -318,7 +318,7 @@
                         //----------------Display link to WLT webiste-----------------------------------------------------------
 
                         if( get_field('display_wlt_link') ) {?>
-                            <p class="mt-4">Further information can be found on the <a href="https://wessexlearningtrust.co.uk/key-information/" target="_blank">Wessex Learning Trust website</a>.</p>
+                            <p class="mt-5">Further information can be found on the <a href="https://wessexlearningtrust.co.uk/key-information/" target="_blank">Wessex Learning Trust website</a>.</p>
                             <?php
                         }
                         ?>
