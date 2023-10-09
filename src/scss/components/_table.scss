@@ -5,6 +5,20 @@
 table{
     border: none;
     width: 100%;
+
+    
+    td{
+        border: none;
+    }
+
+    th{
+        border: none;
+    }
+
+    tr{
+        font-size: 0.9rem;
+        vertical-align: text-top;
+    }
 }
 
 .wp-block-table{
@@ -30,7 +44,7 @@ table{
   
 td {
    
-    padding: 0.7rem;
+    padding: 0.5rem;
     &:not(:first-child){
         border-left: g.$light 2px solid;
 
