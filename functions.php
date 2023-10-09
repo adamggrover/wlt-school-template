@@ -272,7 +272,7 @@ function custom_post_type() {
             'description'         => __( 'Key Information' ),
             'labels'              => $labels1,
             // Features this CPT supports in Post Editor
-            'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+            'supports'            => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
             // You can associate this CPT with a taxonomy or custom taxonomy. 
             'taxonomies'          => array( ''),
             /* A hierarchical CPT is like Pages and can have
@@ -301,7 +301,7 @@ function custom_post_type() {
             'description'         => __( 'Announcements' ),
             'labels'              => $labels2,
             // Features this CPT supports in Post Editor
-            'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+            'supports'            => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
             // You can associate this CPT with a taxonomy or custom taxonomy. 
             'taxonomies'          => array( 'genres' ),
             /* A hierarchical CPT is like Pages and can have
@@ -330,7 +330,7 @@ function custom_post_type() {
             'description'         => __( 'Curriculum' ),
             'labels'              => $labels3,
             // Features this CPT supports in Post Editor
-            'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+            'supports'            => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
             // You can associate this CPT with a taxonomy or custom taxonomy. 
             'taxonomies'          => array( 'curriculum-category' ),
             /* A hierarchical CPT is like Pages and can have
@@ -580,6 +580,28 @@ padding-bottom: 30px;
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo_reset' );
 
+///--------Fix issue with ACF fields not displaying in preview---------------------------------------
 
+function fix_post_id_on_preview($null, $post_id) {
+    if (is_preview()) {
+        return get_the_ID();
+    }
+    else {
+        $acf_post_id = isset($post_id->ID) ? $post_id->ID : $post_id;
+
+        if (!empty($acf_post_id)) {
+            return $acf_post_id;
+        }
+        else {
+            return $null;
+        }
+    }
+}
+add_filter( 'acf/pre_load_post_id', 'fix_post_id_on_preview', 10, 2 );
+
+
+//-----------------------------------------------------------------------------------------------------------------
 ?>
+
+
 
