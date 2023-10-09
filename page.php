@@ -63,6 +63,68 @@
                             endwhile;
                         endif;
 
+                        
+                        // -----------------Table Upload Section-----------------------------------------------
+                        //check if page has table acf fields and display them if it does
+
+                        if( have_rows('table_section') ):
+                            while( have_rows('table_section') ) : the_row();?>
+
+
+
+
+
+
+
+
+                                    
+                                    <table class="mb-5">
+                                    <?php
+                                    // Display subheading
+
+                                    
+                                    
+                                    
+                                    if( get_sub_field('table_subheading') ): ?>
+                                        <tr>
+                                            <th colspan="2">
+                                                <?php the_sub_field('table_subheading'); ?>
+                                            
+                                            </th>
+                                        </tr>
+                                    <?php endif; ?>
+
+                                    <!-- Works above -->
+                                    <?php
+                                    if( have_rows('table_cells') ): ?>
+                                    <?php while( have_rows('table_cells') ) : the_row();
+
+
+
+                                        ?>
+
+                                        <!-- Display acf repeater fields -->
+                                        <tr>
+                                            <td><?php the_sub_field("table_col_one") ?></td>
+                                            <td><?php the_sub_field("table_col_two") ?></td>
+                                            
+                                        </tr>
+                                            
+                                        <?php
+                                    endwhile;?>
+                                    <?php endif; ?>
+                                    
+                                    <!-- Works below -->
+
+                                    </table>
+
+
+
+                                    <?php
+                              
+                            endwhile;
+                        endif;
+
                         // -------------------Content Section----------------------------------------------------------
                         if (have_posts()):
                         while (have_posts()) : the_post();
