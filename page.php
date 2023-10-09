@@ -27,6 +27,43 @@
                     <div class="content-body">
 
                         <?php
+
+                        // -----------------File Upload Section-----------------------------------------------
+                        //check if page has file-upload acf fields and display them if it does
+
+                        if( have_rows('file_section') ):
+                            while( have_rows('file_section') ) : the_row();
+
+
+                            // Display subheading
+                            if( get_sub_field('file_subheading') ): ?>
+                                <h3><?php the_sub_field('file_subheading'); ?></h3>
+                                <?php endif; 
+
+
+
+                                // Loop over sub repeater rows.
+                                if( have_rows('file_upload_section') ):
+                                    while( have_rows('file_upload_section') ) : the_row();
+
+
+
+                                        ?>
+
+                                        <!-- Display acf file upload repeater fields -->
+                                        <li class="file-upload-repeater">
+                                            <a href="<?php the_sub_field('file_upload') ?>" target="_blank">
+                                            <?php the_sub_field('file_title') ?>
+                                            </a>
+                                        </li>
+                                            
+                                        <?php
+                                    endwhile;
+                                endif;
+                            endwhile;
+                        endif;
+
+                        // -------------------Content Section----------------------------------------------------------
                         if (have_posts()):
                         while (have_posts()) : the_post();
                             the_content();
