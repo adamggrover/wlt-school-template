@@ -562,7 +562,7 @@ add_action( 'login_enqueue_scripts', 'my_login_logo' );
 function my_login_logo_reset() { ?>
     <style type="text/css">
         .login-action-lostpassword #login h1 a, .login h1 a {
-background-image: url(<?php echo get_template_directory_uri(); ?>/Assets/logos/WLT-icon-square.svg);  //Add your own logo image in this url 
+background-image: url(<?php echo get_template_directory_uri(); ?>/Assets/logos/WLT-icon-square.svg);  
 padding-bottom: 30px; 
 
 }
@@ -601,7 +601,6 @@ add_filter( 'acf/pre_load_post_id', 'fix_post_id_on_preview', 10, 2 );
 
 
 //-----------------------------------------------------------------------------------------------------------------
-?>
 
 
 
