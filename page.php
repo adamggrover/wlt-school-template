@@ -21,12 +21,55 @@
 
             <div class="content-area row gx-5 wordpress-page-area">
                 <div class="col-lg-9 content-column">
+
+                    <?php
+                        // if using page builder set page title to acf field value instead
+
+                        if( get_field('page_title')):
+
+                                                                            
+                            $currentPost = get_post();
+
+                            $currentPost->post_title = get_field('page_title');
                     
+                        endif;?>
                     <h1 id="content-h1"><?php the_title(); ?></h1>
 
                     <div class="content-body">
 
                         <?php
+
+
+                        //-----------------Page Builder-------------------------------------------------------------
+
+
+
+
+                            // Check value exists.
+                            if( have_rows('page_builder') ):
+
+                                                       
+
+
+                           
+
+                                    // ACF - Flexible Content fields.
+                                    $sections = get_field( 'page_builder' );
+
+                                    echo '<pre>'; print_r($sections); echo '</pre>';
+
+                                    if ( $sections ) :
+                                        foreach ( $sections as $section ) :
+                                            $template = str_replace( '_', '-', $section['acf_fc_layout'] );
+                                            get_template_part( 'flexible-content/' . $template, '', $section );
+                                        endforeach;
+                                    endif;
+
+                          
+                       
+
+
+                            endif;
 
                         // -----------------File Upload Section-----------------------------------------------
                         //check if page has file-upload acf fields and display them if it does
