@@ -46,7 +46,7 @@
                                     // ACF - Flexible Content fields.
                                     $sections = get_field( 'page_builder' );
 
-                                    echo '<pre>'; print_r($sections); echo '</pre>';
+                                   
 
                                     if ( $sections ) :
                                         foreach ( $sections as $section ) :
