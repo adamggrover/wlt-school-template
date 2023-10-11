@@ -22,17 +22,7 @@
             <div class="content-area row gx-5 wordpress-page-area">
                 <div class="col-lg-9 content-column">
 
-                    <?php
-                        // if using page builder set page title to acf field value instead
-
-                        if( get_field('page_title')):
-
-                                                                            
-                            $currentPost = get_post();
-
-                            $currentPost->post_title = get_field('page_title');
                     
-                        endif;?>
                     <h1 id="content-h1"><?php the_title(); ?></h1>
 
                     <div class="content-body">
