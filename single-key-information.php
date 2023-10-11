@@ -104,10 +104,10 @@
                             while( have_rows('file_section') ) : the_row();
 
 
-                            // Display subheading
-                            if( get_sub_field('file_subheading') ): ?>
-                                <h3><?php the_sub_field('file_subheading'); ?></h3>
-                                <?php endif; 
+                                // Display subheading
+                                if( get_sub_field('file_subheading') ): ?>
+                                    <h3><?php the_sub_field('file_subheading'); ?></h3>
+                                    <?php endif; 
 
 
 
