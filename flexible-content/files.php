@@ -3,9 +3,9 @@
 
 
 $fileHeading = $args['file_subheading'];
-$fileUploads = $args['file_upload_section'];
+$fileUploads = $args['file_upload_section'];?>
 
-
+<div class="my-5"><?php
 
 // Display subheading
 if( $fileHeading ): ?>
@@ -15,9 +15,9 @@ if( $fileHeading ): ?>
 
 
     // Loop over sub repeater rows.
-    if( $fileUploads): ?>
+    if( $fileUploads): 
 
-        <div class="mb-5"><?php
+        
 
         
             foreach ($fileUploads as $fileUpload) :  ?>
@@ -34,11 +34,11 @@ if( $fileHeading ): ?>
                 </li>
                     
                 <?php
-            endforeach; ?>
+            endforeach; 
 
-        </div><?php
-    endif;
+        
+    endif;?>
 
-
+</div>
 
 

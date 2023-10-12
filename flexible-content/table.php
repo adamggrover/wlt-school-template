@@ -7,7 +7,7 @@ $tableRows = $args['table_cells'];
 ?>
 
 
-<table class="mb-5">
+<table class="my-5">
 <?php
 // Display subheading
 
