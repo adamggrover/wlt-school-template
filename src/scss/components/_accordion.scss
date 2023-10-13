@@ -1,0 +1,37 @@
+@use 'globals' as g;
+
+.accordion{
+
+    .accordion-button{
+        background-color: g.$primary;
+        color: white;
+        border: none;
+
+        &:focus{
+            
+            box-shadow:  none;
+           
+        }
+    }
+
+
+
+
+
+        
+
+
+
+
+
+  
+
+    margin-bottom: 0!important;
+
+    .accordion-body, .accordion-header, .accordion-item, .accordion-collapse{
+        margin-bottom: 0!important;
+    }
+
+
+}
+
