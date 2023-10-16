@@ -45,9 +45,11 @@
                               </div>
                               <a class="welcome-link" href="<?php
                             $page_object = get_page_by_path( '/welcome' );
-                            $page_id = $page_object->ID;
-                            $permalink = get_permalink( $page_id );
-                            echo $permalink;
+                            if($page_object):
+                              $page_id = $page_object->ID;
+                              $permalink = get_permalink( $page_id );
+                              echo $permalink;
+                            endif?>
                             ?>" class="">READ MORE</a>
                           </div>
                   </div>   
@@ -93,9 +95,11 @@
                                 </div>    
                             <a class="welcome-link" href="<?php
                             $page_object = get_page_by_path( '/welcome' );
-                            $page_id = $page_object->ID;
-                            $permalink = get_permalink( $page_id );
-                            echo $permalink;
+                            if($page_object):
+                              $page_id = $page_object->ID;
+                              $permalink = get_permalink( $page_id );
+                              echo $permalink;
+                            endif ?>
                             ?>">READ MORE</a>
                         </div>
                     </div>   
