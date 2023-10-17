@@ -63,7 +63,7 @@
                         <?php endif; ?>
 
                     <!---------------------GOVERNANCE SECTION------------------------------------------------------ -->
-                    <!-- Check if governance page and upload Governance team table if it is -->
+                    <!-- Check if governance key information post and upload Governance team table if it is -->
 
                     <?php
 
