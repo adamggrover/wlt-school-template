@@ -321,6 +321,14 @@
                             <p class="mt-5">Further information can be found on the <a href="https://wessexlearningtrust.co.uk/key-information/" target="_blank">Wessex Learning Trust website</a>.</p>
                             <?php
                         }
+                       
+
+                        //----------------Display link to WLT webiste-----------------------------------------------------------
+
+                        if( get_field('gov_exams_link') ) {?>
+                            <p class="mt-5">Our latest results can be viewed in full on the <a href="<?php the_field('gov_exams_link') ?>" target="_blank">government website</a>.</p>
+                            <?php
+                        }
                         ?>
 
                                              
