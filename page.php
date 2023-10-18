@@ -202,6 +202,38 @@
                             endwhile;
                         endif;
 
+                        
+                        //-------------Team Table-------------------------------------------------
+                    
+
+                        if( have_rows("team_table") ): ?>
+                            <table class="mb-5">
+                            <?php if(get_field("team_name") ): ?>
+                                <tr>
+                                    <th colspan="2"><?php the_field('team_name') ?> Team</th>
+                                </tr>
+                            <?php endif; ?>
+                            
+                            <?php while( have_rows("team_table") ) : the_row();
+    
+    
+    
+                                ?>
+    
+                                <!-- Display acf file upload repeater fields -->
+                                
+                                <tr>
+                                    <td><?php the_sub_field("team_member_name") ?></td>
+                                    <td><?php the_sub_field("team_member_position") ?></td>
+                                    
+                                </tr>
+                                    
+                                    <?php
+                                endwhile; ?>
+                                </table>
+                            <?php endif;
+                                                
+
                         // -------------------Content Section----------------------------------------------------------
                         if (have_posts()):
                         while (have_posts()) : the_post();
