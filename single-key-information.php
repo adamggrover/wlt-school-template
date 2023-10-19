@@ -36,6 +36,9 @@
                     
 
                     <h1 id="content-subheading">
+
+
+                    
                     <?php
                         the_title();
                     ?>
@@ -46,7 +49,42 @@
                     <div class="content-body">
 
                     <div class="key-information-post-content">
-                    <?php
+                    
+
+                        <!---------------------TEAM SECTION------------------------------------------------------ -->
+                        <!-- Check if team page and upload team table if it is -->
+
+                        <?php
+
+
+
+                        if( have_rows("team_table") ): ?>
+                            <table class="mb-5">
+                            <?php if(get_field("team_name") ): ?>
+                                <tr>
+                                    <th colspan="2"><?php the_field('team_name') ?> Team</th>
+                                </tr>
+                            <?php endif; ?>
+                            
+                            <?php while( have_rows("team_table") ) : the_row();
+
+
+
+                                ?>
+
+                                <!-- Display acf file upload repeater fields -->
+                                
+                                <tr>
+                                    <td><?php the_sub_field("team_member_name") ?></td>
+                                    <td><?php the_sub_field("team_member_position") ?></td>
+                                    
+                                </tr>
+                                    
+                                    <?php
+                                endwhile; ?>
+                                </table>
+                        <?php endif;
+                                               
 
                     // default content - this will be removed once all has been transfered over to new system
 
@@ -62,40 +100,7 @@
                         <?php the_field('text_area'); ?>
                         <?php endif; ?>
 
-                    <!---------------------GOVERNANCE SECTION------------------------------------------------------ -->
-                    <!-- Check if governance key information post and upload Governance team table if it is -->
 
-                    <?php
-
-                    
-
-                    if( have_rows("team_table") ): ?>
-                        <table class="mb-5">
-                        <?php if(get_field("team_name") ): ?>
-                            <tr>
-                                <th colspan="2"><?php the_field('team_name') ?> Team</th>
-                            </tr>
-                        <?php endif; ?>
-                        
-                        <?php while( have_rows("team_table") ) : the_row();
-
-
-
-                            ?>
-
-                            <!-- Display acf file upload repeater fields -->
-                            
-                            <tr>
-                                <td><?php the_sub_field("team_member_name") ?></td>
-                                <td><?php the_sub_field("team_member_position") ?></td>
-                                
-                            </tr>
-                                
-                                <?php
-                            endwhile; ?>
-                            </table>
-                        <?php endif;
-                                            ?>
 
                     <!----------------------FILE UPLOAD SECTION------------------------------------------------------ -->
                         <!-- check if file upload block fields exist and display them if the do -->
@@ -326,7 +331,7 @@
                         }
                        
 
-                        //----------------Display link to WLT webiste-----------------------------------------------------------
+                        //----------------Display link to Gov.uk webiste-----------------------------------------------------------
 
                         if( get_field('gov_exams_link') ) {?>
                             <p class="mt-5">Our latest results can be viewed in full on the <a href="<?php the_field('gov_exams_link') ?>" target="_blank">government website</a>.</p>
