@@ -325,7 +325,7 @@
 
                         //----------------Display link to WLT webiste-----------------------------------------------------------
 
-                        if( get_field('display_wlt_link') ) {?>
+                        if( get_field('display_link') ) {?>
                             <p class="mt-5">Further information can be found on the <a href="https://wessexlearningtrust.co.uk/key-information/" target="_blank">Wessex Learning Trust website</a>.</p>
                             <?php
                         }
