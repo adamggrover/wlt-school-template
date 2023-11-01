@@ -34,7 +34,7 @@
 
 
                                 // get current post slug
-                                $current_post = get_post_field( 'post_name', get_post() );
+                                $current_page = get_post_field( 'post_name', get_post() );
 
                                 
 
@@ -46,7 +46,7 @@
                                     // query by current post name
                                     $args1 = array(
                                         
-                                        'pagename' => $current_post
+                                        'pagename' => $current_page
                                     );
         
                                         $template_query = new WP_Query( $args1);
