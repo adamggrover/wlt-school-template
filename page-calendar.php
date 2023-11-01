@@ -38,6 +38,119 @@
                             endif;
                             ?>
 
+
+                            <?php
+
+                            
+                            // -----------------File Upload Section-----------------------------------------------
+                            //check if page has file-upload acf fields and display them if it does
+
+                            if( have_rows('file_section') ):
+                                while( have_rows('file_section') ) : the_row();
+
+
+                                // Display subheading
+                                if( get_sub_field('file_subheading') ): ?>
+                                    <h3><?php the_sub_field('file_subheading'); ?></h3>
+                                    <?php endif; 
+
+
+
+                                    // Loop over sub repeater rows.
+                                    if( have_rows('file_upload_section') ):
+                                        while( have_rows('file_upload_section') ) : the_row();
+
+
+
+                                            ?>
+
+                                            <!-- Display acf file upload repeater fields -->
+                                            <li class="file-upload-repeater">
+                                                <a href="<?php the_sub_field('file_upload') ?>" target="_blank">
+                                                <?php the_sub_field('file_title') ?>
+                                                </a>
+                                            </li>
+                                                
+                                            <?php
+                                        endwhile;
+                                    endif;
+                                endwhile;
+                            endif;
+
+
+                            //--------------calendar documents------------------------------------------------------------------
+
+                            if( get_field('local_authority') ) {
+                            $local_authority = get_field('local_authority');
+                            }
+                            //check which local authority
+                            if ($local_authority){
+
+
+
+
+
+
+                            // pull in content from wlt site
+                            switch_to_blog( 5);
+
+
+
+                            // query by current post name
+                            $args1 = array(
+
+                            'post_type' => 'key-information',
+                            'name' => 'term-dates'
+                            );
+
+                            $template_query = new WP_Query( $args1);
+
+                            if ( $template_query->have_posts() ) { 
+
+
+
+
+
+
+                            while ( $template_query->have_posts() ) :
+                            $template_query->the_post();
+
+
+                            //----display  documents from WLT site for relevant local authority----------------------------------------------
+                            // Loop over sub repeater rows.
+                            if( have_rows("file_upload_section_{$local_authority}") ):
+                            while( have_rows("file_upload_section_{$local_authority}") ) : the_row();?>
+
+
+
+
+                                
+
+                                <!-- Display acf file upload repeater fields -->
+                                <li class="file-upload-repeater">
+                                    <a href="<?php the_sub_field("file_upload_{$local_authority}") ?>" target="_blank">
+                                    <?php the_sub_field("file_title_{$local_authority}") ?>
+                                    </a>
+                                </li>
+                                    
+                                <?php
+                            endwhile;
+                            endif;
+
+
+                            endwhile;
+                            }
+
+
+
+                            wp_reset_postdata();
+
+                            restore_current_blog();
+
+
+                            }
+                            ?>
+
                         </div>
 
                        
