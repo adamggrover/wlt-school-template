@@ -27,51 +27,51 @@
 
                     <div class="content-body">
 
-                        <?php
+                  
 
-                            //---------------- Display Standardised page content from WLT School Template Site Section--------------------------------------
-                            if( get_field('display_standardised_page_content') ) {
+                    <?php
+                        //---------------- Display Standardised page content from WLT School Template Site Section--------------------------------------
+                        if( get_field('display_standardised_page_content') ) {
 
 
-                                // get current post slug
-                                $current_page = get_post_field( 'post_name', get_post() );
+                           
 
-                                
+                            
 
-                                // pull in content from wlt master school template
-                                switch_to_blog( 11 );
-                                
-                                //ok below
+                            // pull in content from wlt master school template
+                            switch_to_blog( 11 );
+                            
+  
 
-                                    // query by current post name
-                                    $args1 = array(
-                                        
-                                        'pagename' => $current_page
-                                    );
-        
-                                        $template_query = new WP_Query( $args1);
-
-                                        if ( $template_query->have_posts() ) { 
-        
-                                        
-                                        
-
-                                            while ( $template_query->have_posts() ) :
-                                                $template_query->the_post();
-                                            
-                                                the_content();
-                                            
-            
-                                            endwhile;
-                                        }
-                                
-
+                                // query by current post name
+                                $args1 = array(
                                     
-                                        wp_reset_postdata();
-        
-                                    restore_current_blog();
+                                    'pagename' => $current_page
+                                );
+    
+                                    $template_query = new WP_Query( $args1);
 
-                            }// end if 
+                                    if ( $template_query->have_posts() ) { 
+    
+                                    
+                                    
+
+                                        while ( $template_query->have_posts() ) :
+                                            $template_query->the_post();
+                                        
+                                            the_content();
+                                        
+        
+                                        endwhile;
+                                    }
+                            
+
+                                
+                                    wp_reset_postdata();
+    
+                                restore_current_blog();
+
+                        }// end if 
 
 
                         //-----------------Page Builder-------------------------------------------------------------
