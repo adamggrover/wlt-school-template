@@ -334,7 +334,7 @@
                         //----------------Display link to Gov.uk webiste-----------------------------------------------------------
 
                         if( get_field('gov_exams_link') ) {?>
-                            <p class="mt-5">Our latest results can be viewed in full on the <a href="<?php the_field('gov_exams_link') ?>" target="_blank">government website</a>.</p>
+                            <p class="mt-5">Our school performance can be viewed in full on the <a href="<?php the_field('gov_exams_link') ?>" target="_blank">government website</a>.</p>
                             <?php
                         }
                         ?>
