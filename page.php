@@ -34,7 +34,10 @@
                         if( get_field('display_standardised_page_content') ) {
 
 
-                           
+                           // get current post slug
+                           $current_page = get_post_field( 'post_name', get_post() );
+
+                          
 
                             
 
