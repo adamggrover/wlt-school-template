@@ -1,0 +1,24 @@
+
+@use 'globals' as g;
+
+div.alumni-card{
+
+    
+    background-color: g.$muted-light-light;
+    gap: 1rem;
+    border-radius: 20px;
+
+
+    .alumni-card-top{
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+
+    img{
+        border-radius: 10%;
+        max-height: 100px;
+        width: auto;
+    }
+}
