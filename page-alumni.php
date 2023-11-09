@@ -247,26 +247,26 @@
                         endif;
                         ?>
 
-                        <!-- <div class="alumni-profiles">  
+                        <div class="alumni-profiles">  
 
                             <?php 
                                 $rows = get_field('alumni_profiles');
-                                if( $rows ) {
+                                if( $rows ) { 
                                     
                                     foreach( $rows as $row ) {
                                         $image = $row['photo'];
 
                                         ?>
 
-                                        <div class="alumni-card p-4">
+                                        <div class="alumni-card shadow p-5 m-4">
 
-                                            <div class="alumni-card-top">
+                                            <div class="alumni-card-top mb-5">
                                                 
                                             <div class="inner-alumni-card-left p-2 mb-0">
 
-                                                <h3 class="mb-2"><?php echo $row['alumni_name'] ?></h3>
+                                                <h4 class="mb-2"><?php echo $row['alumni_name'] ?></h3>
 
-                                                <h5 class="h6 mb-0"><?php echo $row['job_role'] ?></h4>
+                                                <h5 class="h6 mb-0 job-role"><?php echo $row['job_role'] ?></h4>
 
                                                 
 
@@ -290,6 +290,8 @@
 
                                         
 
+                                        
+
 
 
 
@@ -302,7 +304,9 @@
                                 }
                             ?>
 
-                        </div> -->
+                        </div> 
+
+                      
 
 
 

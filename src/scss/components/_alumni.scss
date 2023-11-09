@@ -1,17 +1,21 @@
 
 @use 'globals' as g;
 
+
 div.alumni-card{
 
     
-    background-color: g.$muted-light-light;
+   // background-color: g.$muted-light-light;
     gap: 1rem;
     border-radius: 20px;
+
+    
 
 
     .alumni-card-top{
         display: flex;
         justify-content: space-between;
+        color: g.$primary-dark;
 
     }
 
