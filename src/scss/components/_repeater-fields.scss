@@ -96,3 +96,26 @@ li.links-repeater {
 	}
 }
 
+div[id^="gallery"] {
+
+
+
+	a{
+		pointer-events: none;
+	}
+
+
+	img{
+		border: none!important;
+		padding: 0 0.3rem;
+		width: 100%;
+		object-fit: cover;
+	
+
+
+	}
+
+
+
+}
+
