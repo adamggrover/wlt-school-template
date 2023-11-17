@@ -48,3 +48,51 @@ li.file-upload-repeater {
 }
 	
 
+
+// Links
+
+li.links-repeater { 
+
+	list-style-type: none;
+	padding: 0;
+	
+
+	a{
+		background-color: g.$primary-light-light;
+		padding: 1rem;
+		margin-bottom: 0.5rem;
+		color: g.$dark;
+		font-weight: 500;
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+
+		p{
+
+		}
+
+
+	&:hover{
+		background-color: g.$primary;
+		color: white;
+		
+		&::before{
+			color: white;
+		}
+
+	
+	}
+
+	&::before {
+		font-family: "bootstrap-icons";
+		content: "\F1C5";
+		font-size: 1rem;
+		color: g.$muted;
+		padding-right: 1rem;	
+		
+
+	
+	}
+	}
+}
+
