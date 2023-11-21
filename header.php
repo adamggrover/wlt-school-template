@@ -6,14 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo get_bloginfo('name'); ?></title>
     
-    <?php
+    
+
+
+</head>
+
+<?php
     $query = new WP_Query( array( 'page_id' => get_option('page_on_front')) ); ?>
 
     <?php while( $query->have_posts() ) : $query->the_post(); ?>
     
     <!-- Google tag (gtag.js) -->
 
-    <?php the_field('google_tag') ?>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?php the_field('google_tag_id') ?>"></script>
+
+    <script><?php the_field('google_tag') ?></script>
 
     <?php endwhile; 
     wp_reset_query();
@@ -26,9 +33,6 @@
     
     wp_head();
     ?>
-
-
-</head>
 
 <body>
     
