@@ -38,9 +38,9 @@
                         }
 
 
-                        //------------WLT main site docs section----------------------------------------------------------
+                        //------------WLT main site term dates docs section----------------------------------------------------------
 
-                        if( get_field('display_wlt_site_docs') ) {
+                        if( get_field('display_wlt_site_docs') && get_field('local_authority')) {
 
                                                 
                                                 
@@ -53,12 +53,12 @@
                             switch_to_blog( 5 ); //wlt main site
 
                             // query by current post name
-                            $args2 = array(
+                            $args3 = array(
                                 'post_type' => 'key-information',
                                 'name' => 'term-dates'
                             );
 
-                                $query = new WP_Query( $args2);
+                                $query = new WP_Query( $args3);
 
                             if ( $query->have_posts() ) { ?>
 
@@ -70,38 +70,45 @@
                             
                                 
                                 //--------------term dates documents------------------------------------------------------------------
-                                // check if if local authority field exists
-                                // if it is display the correct term dates document
-                                if ($local_authority){
 
-                        
 
-                                            //----display term dates documents from WLT site for relevant local authority----------------------------------------------
-                                            // Loop over sub repeater rows.
-                                                if( have_rows("file_upload_section_{$local_authority}") ):
-                                                    while( have_rows("file_upload_section_{$local_authority}") ) : the_row();
+            
+
+                                //----display term dates documents from WLT site for relevant local authority----------------------------------------------
+                                // Loop over sub repeater rows.
+                                    if( have_rows("file_upload_section_{$local_authority}") ):
+                                        while( have_rows("file_upload_section_{$local_authority}") ) : the_row();
 
 
 
-                                                        ?>
+                                            ?>
 
-                                                        <!-- Display acf file upload repeater fields -->
-                                                        <li class="file-upload-repeater">
-                                                            <a href="<?php the_sub_field("file_upload_{$local_authority}") ?>" target="_blank">
-                                                            <?php the_sub_field("file_title_{$local_authority}") ?>
-                                                            </a>
-                                                        </li>
-                                                            
-                                                        <?php
-                                                    endwhile;
-                                                endif;
+                                            <!-- Display acf file upload repeater fields -->
+                                            <li class="file-upload-repeater">
+                                                <a href="<?php the_sub_field("file_upload_{$local_authority}") ?>" target="_blank">
+                                                <?php the_sub_field("file_title_{$local_authority}") ?>
+                                                </a>
+                                            </li>
+                                                
+                                            <?php
+                                        endwhile;
+                                    endif;
 
+
+                                    
+
+                                endwhile;
 
                                 }
 
-                            }
+                        
+
+                            wp_reset_postdata();
+                            restore_current_blog();
+    
                         }
 
+                   
                         //---------------- Display Standardised page content from WLT School Template Site Section--------------------------------------
                         if( get_field('display_standardised_page_content') ) {
 
