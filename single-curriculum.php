@@ -46,15 +46,74 @@ the_title();
 <div class="content-body">
 
 <div class="key-information-post-content">
-<?php
-
-the_content();
 
 
+<div class="mb-2">
+
+    <?php
+
+    the_content();?>
+
+    </div>
+
+    <div class="mb-5">
+    <!-- check if text area field exists and display it if it does -->
+
+        <?php if( get_field('text_area') ): ?>
+            <?php the_field('text_area'); ?>
+            <?php endif; ?>
+
+
+    </div>
 
 
 
-?>
+
+    <!----------------------FILE UPLOAD SECTION------------------------------------------------------ -->
+                        <!-- check if file upload block fields exist and display them if the do -->
+                        <?php               
+
+
+
+                        if( have_rows('file_section') ):
+                            while( have_rows('file_section') ) : the_row();
+
+
+                                // Display subheading
+                                if( get_sub_field('file_subheading') ): ?>
+                                    <h3><?php the_sub_field('file_subheading'); ?></h3>
+                                    <?php endif; 
+
+
+
+                                // Loop over sub repeater rows.
+                                if( have_rows('file_upload_section') ):?>
+                                    <div class="mb-5"><?php
+                                    while( have_rows('file_upload_section') ) : the_row();
+
+
+
+                                        ?>
+                                        
+                                            <!-- Display acf file upload repeater fields -->
+                                            <li class="file-upload-repeater">
+                                                <a href="<?php the_sub_field('file_upload') ?>" target="_blank">
+                                                <?php the_sub_field('file_title') ?>
+                                                </a>
+                                            </li>
+                                        
+                                            
+                                        <?php
+                                    endwhile;?>
+                                    </div><?php
+                                endif;
+                            endwhile;
+                        endif;?>
+
+
+
+
+
 
 </div>
 
