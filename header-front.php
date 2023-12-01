@@ -1,6 +1,6 @@
 <div class="hero-wrapper" id="hero-wrapper">
 
-     <header id="header" class="header1 row p-2 pt-1 m-0 ">
+     <header id="header" class="header1 row py-2 px-0 m-0 ">
         <div  id="header-search-container">
             <div class="container d-flex align-items-center search-input-box">
                 <div class="search-left">
@@ -18,11 +18,11 @@
         <div class="header-container row g-0 p-0" id="header-container">
             
             <div class="col-2  hamburger-col pt-0 text-left p-0">
-                <div class="nav-box pt-1">
+                <div class="nav-box pt-1 p-0">
 
-                    <div class="header-spacer p-1 d-none d-md-block"></div>
+                    <!-- <div class="header-spacer p-1 d-none d-md-block"></div> -->
 
-                    <button id="navbtn" onclick="openNav();"><i class="bi bi-list header-icon hamburger"></i></button> 
+                    <button id="navbtn" onclick="openNav();"><i class="bi bi-list header-icon hamburger p-0"></i></button> 
 
                     <div class="header-spacer p-1 d-none d-md-block"></div>
 
