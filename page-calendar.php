@@ -84,8 +84,7 @@
                             $local_authority = get_field('local_authority');
                             }
                             //check which local authority
-                            if ($local_authority){
-
+                            if ($local_authority && get_field('display_wlt_site_docs')){
 
 
 
