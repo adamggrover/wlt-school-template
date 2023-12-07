@@ -13,7 +13,7 @@
                 </div>
                 <div class="search-right">
                     <button onclick="closeSearch()">
-                        <i class="fa-solid fa-xmark fa-lg mb-3"></i>                        
+                        <i class="bi bi-x-lg"></i>                        
                     </button>
                 </div>
             </div>
