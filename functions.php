@@ -108,7 +108,7 @@ function wlt_register_styles(){
 
     $version = wp_get_theme() ->get ('Version');
 
-    wp_enqueue_style('wlt', get_template_directory_uri().'/style.css', array(), '1.0.00021', 'all');
+    wp_enqueue_style('wlt', get_template_directory_uri().'/style.css', array(), '1.0.00022', 'all');
     wp_enqueue_style('wlt-aos', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array(), '2.3.1', 'all');
     wp_enqueue_style('wlt-slick1', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css', array(), '1.5.8', 'all');
     wp_enqueue_style('wlt-slick2', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css', array(), '1.5.8', 'all');
