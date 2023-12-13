@@ -314,6 +314,28 @@
                                 endwhile; ?>
                                 </table>
                             <?php endif;
+
+                            // If welcome page 
+
+                            if( get_field('welcome_text')){?>
+
+                                <p><?php
+
+
+                                    $image = get_field('welcome_headshot');
+                                    if( !empty( $image ) ): ?>
+                                        <img class="headteacher-photo d-none d-md-block" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                    <?php endif; 
+
+                                        
+                                    the_field('welcome_text')?></p>
+                                
+                                
+                                
+                                <?php
+
+                            }
+
                                                 
 
                         // -------------------Content Section----------------------------------------------------------
