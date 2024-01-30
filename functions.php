@@ -405,7 +405,7 @@ function custom_search_form( $form ) {
     $form = '
     <form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
       <div class="custom-form"><label class="screen-reader-text" for="s">' . __( 'Search:' ) . '</label>
-      <i class="fa-solid fa-xl fa-magnifying-glass " id="site-search-icon"></i>
+      <i class="bi bi-search" id="site-search-icon"></i> 
       <input type="text" id= "site-search" placeholder="Search the site" autocomplete="off" value="'  . get_search_query() . '" name="s" id="s" />
       <input type="submit" id="searchsubmit" value="'. esc_attr__( 'Search' ) .'" />
     </div>
