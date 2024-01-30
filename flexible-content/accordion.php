@@ -6,9 +6,11 @@
 
   if( $accordionItems): 
 
-    $collapseId = 0;
+    $collapseId = 0;?>
 
-    foreach ($accordionItems as $accordionItem) :  ?>
+    <div class="mb-5">
+
+    <?php foreach ($accordionItems as $accordionItem) :  ?>
 
     
 
@@ -23,13 +25,15 @@
         </div>
       </div>
 
-
+    
       <?php
 
       $collapseId++;
 
-    endforeach; 
+    endforeach; ?>
 
-    endif; ?>
+    </div>
+
+    <?php endif; ?>
 
 </div>
