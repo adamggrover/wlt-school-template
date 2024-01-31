@@ -97,7 +97,10 @@
                     <!-- check if text area field exists and display it if it does -->
 
                         <?php if( get_field('text_area') ): ?>
-                        <?php the_field('text_area'); ?>
+                            <div class="mb-5">
+                                <?php the_field('text_area'); ?>
+                            </div>
+                        
                         <?php endif; ?>
 
 
