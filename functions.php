@@ -108,7 +108,7 @@ function wlt_register_styles(){
 
     $version = wp_get_theme() ->get ('Version');
 
-    wp_enqueue_style('wlt', get_template_directory_uri().'/style.css', array(), '1.0.00029', 'all');
+    wp_enqueue_style('wlt', get_template_directory_uri().'/style.css', array(), '1.0.00032', 'all');
     wp_enqueue_style('wlt-aos', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array(), '2.3.1', 'all');
     wp_enqueue_style('wlt-slick1', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css', array(), '1.5.8', 'all');
     wp_enqueue_style('wlt-slick2', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css', array(), '1.5.8', 'all');
@@ -124,10 +124,6 @@ add_action('wp_enqueue_scripts', 'wlt_register_styles');
 // Register scripts
 
 function wlt_register_scripts(){
-
-    
-    
-
 
 wp_enqueue_script('wlt-aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array());
 wp_enqueue_script('wlt-popper', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js', array(), '5.2.0', true);

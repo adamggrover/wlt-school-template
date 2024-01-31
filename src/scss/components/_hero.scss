@@ -316,7 +316,7 @@
     width: 100%;
     word-wrap: break-word;
     margin: 7rem 0 0 0; 
-    width: 100%;
+    // width: max-content;
     position: absolute;
     background-color: transparent;
     
@@ -355,6 +355,11 @@
   width: 100%;
   
   position: relative;
+
+
+  // ul{
+  //   max-width: 300px;
+  // }
 
 }
 
